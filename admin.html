@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教师后台 · 互动文游</title>
+<style>
+  :root{
+    --bg:#f5faf7; --card:#ffffff; --accent:#7db892; --accent-dark:#5c9e73;
+    --ink:#2b3a30; --ink-soft:#6b7f72; --line:#e2efe6; --warn:#d9822b; --bad:#c0564b;
+    --glow:0 4px 14px rgba(125,184,146,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.7}
+  .wrap{max-width:960px;margin:0 auto;padding:20px 20px 60px}
+  h1{font-size:22px;font-weight:700;margin-bottom:4px}
+  .sub{font-size:13px;color:var(--ink-soft);margin-bottom:18px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .card .n{font-size:26px;font-weight:800;color:var(--accent-dark)}
+  .card .t{font-size:12px;color:var(--ink-soft)}
+  .tier-row{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 2px}
+  .tier{font-size:12px;padding:2px 10px;border-radius:12px;font-weight:600}
+  .tier.hidden{background:#f0e6fa;color:#7a3fb0}
+  .tier.insight{background:#e3f3e8;color:#2e7d4f}
+  .tier.understand{background:#e8f0fa;color:#2f6fb0}
+  .tier.surface{background:#fdf3e0;color:#a06a1f}
+  .tier.absurd{background:#fbeae7;color:#a8443a}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:20px}
+  .panel h2{font-size:15px;font-weight:700;margin-bottom:12px;color:var(--accent-dark)}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+  .btn{
+    padding:9px 18px;font-size:14px;font-weight:600;border:none;border-radius:10px;cursor:pointer;
+    background:var(--accent);color:#fff;transition:transform .15s,box-shadow .15s;
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:var(--glow)}
+  .btn.ghost{background:var(--card);color:var(--accent-dark);border:1.5px solid var(--accent)}
+  .btn.danger{background:var(--bad)}
+  .btn.warn{background:var(--warn)}
+  .btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  select{padding:8px 12px;font-size:14px;border:1.5px solid var(--line);border-radius:10px;background:var(--card)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{font-size:12px;color:var(--ink-soft);font-weight:500;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  td{padding:9px 10px;border-bottom:1px solid var(--line)}
+  tr:hover td{background:#f0faf4}
+  .score{font-weight:800;color:var(--accent-dark)}
+  .scroll{max-height:520px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+  .pwd-box{max-width:420px;margin:80px auto;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px}
+  .pwd-box h2{font-size:18px;margin-bottom:14px}
+  input{padding:12px 14px;font-size:16px;border:1.5px solid var(--line);border-radius:10px;outline:none;width:100%;margin-bottom:12px}
+  input:focus{border-color:var(--accent);box-shadow:var(--glow)}
+  .hidden{display:none}
+  .stats-line{font-size:13px;color:var(--ink-soft);margin-top:6px}
+
+  /* 作品卡片（教师端） */
+  .story-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:20px}
+  .scard{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:16px;transition:.2s}
+  .scard.on{border-color:var(--accent);box-shadow:var(--glow)}
+  .scard .t{font-size:17px;font-weight:700}
+  .scard .ch{font-size:12px;color:var(--ink-soft);margin:2px 0 10px}
+  .scard .acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .scard .stat{font-size:12px;font-weight:700;padding:3px 10px;border-radius:12px}
+  .scard .stat.open{background:#e3f3e8;color:#2e7d4f}
+  .scard .stat.closed{background:var(--line);color:var(--ink-soft)}
+  .qr-box{display:none;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);text-align:center}
+  .qr-box img{width:200px;height:200px;border-radius:10px;border:1px solid var(--line)}
+  .qr-box .url{font-size:12px;color:var(--ink-soft);word-break:break-all;margin-top:6px}
+  .toast{
+    position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:99;
+    background:rgba(43,58,48,.92);color:#fff;padding:14px 22px;border-radius:12px;font-size:15px;
+    opacity:0;pointer-events:none;transition:opacity .3s;max-width:80vw;text-align:center;
+  }
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 密码 -->
+  <div class="pwd-box" id="pwdBox">
+    <h2>教师后台</h2>
+    <input type="password" id="pwd" placeholder="管理密码">
+    <button class="btn" id="btn-unlock" style="width:100%">进入</button>
+    <p class="stats-line">密码见 config.js 的 adminPwd 字段</p>
+  </div>
+
+  <!-- 主面板 -->
+  <div id="main" class="hidden">
+    <h1>📚 文游管理台</h1>
+    <div class="sub" id="sub"></div>
+
+    <!-- 作品管理 -->
+    <div class="panel">
+      <h2>🎮 作品管理</h2>
+      <div class="story-cards" id="storyCards"></div>
+    </div>
+
+    <div class="cards" id="cards"></div>
+    <div class="panel" id="tierPanel" style="display:none">
+      <h2>结局档位分布</h2>
+      <div class="tier-row" id="tierRow"></div>
+    </div>
+
+    <div class="panel">
+      <h2>成绩记录</h2>
+      <div class="toolbar">
+        <select id="storyFilter"></select>
+        <select id="clsFilter"><option value="">全部班级</option></select>
+        <button class="btn ghost" id="btn-export">导出 CSV</button>
+        <button class="btn danger" id="btn-clear">清空数据</button>
+      </div>
+      <div class="scroll"><table>
+        <thead><tr>
+          <th>作品</th><th>班级</th><th>姓名</th><th>结局</th><th>档位</th><th>分数</th>
+          <th>关键选择</th><th>用时</th><th>提交时间</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table></div>
+      <p class="stats-line" id="foot"></p>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const G = window.NG || {owner:"WICKYWEN",repo:"novel-game",branch:"main",token:"",adminPwd:""};
+let PWD = sessionStorage.getItem("novel_admin_pwd") || "";
+let records = [];
+let endings = {};
+let stories = [];
+let curStoryFilter = "";
+
+const TIER_CN = {hidden:"隐藏", insight:"洞察", understand:"理解", surface:"表层", absurd:"离谱"};
+
+function toast(msg){
+  const t = $("toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove("show"), 2400);
+}
+function esc(s){ return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+/* ---------- GitHub API ---------- */
+const LIB_API = `https://api.github.com/repos/${G.owner}/${G.repo}/contents/library.json`;
+const SCORES_API = `https://api.github.com/repos/${G.owner}/${G.repo}/contents/scores.json`;
+const LIB_RAW = `https://raw.githubusercontent.com/${G.owner}/${G.repo}/${G.branch}/library.json`;
+const SCORES_RAW = `https://raw.githubusercontent.com/${G.owner}/${G.repo}/${G.branch}/scores.json`;
+
+async function ghGet(apiUrl){
+  const r = await fetch(apiUrl, {headers:{Authorization:"Bearer " + G.token}});
+  if(!r.ok) throw new Error("HTTP " + r.status);
+  return r.json();
+}
+async function ghPut(apiUrl, content, sha, msg){
+  const r = await fetch(apiUrl, {
+    method:"PUT",
+    headers:{Authorization:"Bearer " + G.token, "Content-Type":"application/json"},
+    body: JSON.stringify({message:msg, content: btoa(unescape(encodeURIComponent(content))), sha})
+  });
+  if(!r.ok) throw new Error("写入失败 HTTP " + r.status);
+  return r.json();
+}
+async function ghDelete(apiUrl, sha, msg){
+  const r = await fetch(apiUrl, {
+    method:"DELETE",
+    headers:{Authorization:"Bearer " + G.token, "Content-Type":"application/json"},
+    body: JSON.stringify({message:msg, sha})
+  });
+  if(!r.ok) throw new Error("删除失败 HTTP " + r.status);
+}
+
+/* ---------- 读数据 ---------- */
+async function loadLibrary(){
+  try{
+    const r = await fetch(LIB_RAW, {cache:"no-store"});
+    if(r.ok) return await r.json();
+  }catch(e){}
+  // 回退：API
+  try{
+    const f = await ghGet(LIB_API);
+    return JSON.parse(atob(f.content.replace(/\n/g,"")));
+  }catch(e){}
+  return {version:1, stories:[]};
+}
+async function loadScoresRaw(){
+  try{
+    const r = await fetch(SCORES_RAW, {cache:"no-store"});
+    if(r.ok) return await r.json();
+  }catch(e){}
+  return {version:1, records:[]};
+}
+
+/* ---------- 作品操作 ---------- */
+async function setStoryOpen(id, open){
+  const lib = await loadLibrary();
+  const st = lib.stories.find(s=>s.id===id);
+  if(!st) throw new Error("作品不存在");
+  st.open = open;
+  const f = await ghGet(LIB_API);
+  await ghPut(LIB_API, JSON.stringify(lib, null, 1), f.sha, open ? "启动作品 " + id : "停止作品 " + id);
+}
+
+function gameUrl(id){
+  return location.origin + location.pathname.replace(/admin\.html$/, "") + "game.html?id=" + encodeURIComponent(id);
+}
+
+/* ---------- 渲染 ---------- */
+async function enter(){
+  $("pwdBox").classList.add("hidden");
+  $("main").classList.remove("hidden");
+  $("sub").textContent = "管理平台 · " + G.owner + "/" + G.repo;
+  await refreshAll();
+}
+
+async function refreshAll(){
+  stories = (await loadLibrary()).stories || [];
+  renderStoryCards();
+  renderStoryFilter();
+  await refreshScores();
+}
+
+function renderStoryCards(){
+  $("storyCards").innerHTML = stories.map(s=>{
+    const open = !!s.open;
+    const url = gameUrl(s.id);
+    return `<div class="scard ${open?"on":""}" data-id="${esc(s.id)}">
+      <div class="t">${esc(s.title)}</div>
+      <div class="ch">${esc(s.chapters||"")}${s.desc?" · "+esc(s.desc):""}</div>
+      <div class="acts">
+        <span class="stat ${open?"open":"closed"}">${open?"🟢 开放中":"⚪ 未开放"}</span>
+        <button class="btn ${open?"warn":"ghost"}" data-act="toggle" data-id="${esc(s.id)}">${open?"停止":"启动"}</button>
+        <button class="btn ghost" data-act="qr" data-id="${esc(s.id)}">二维码</button>
+      </div>
+      <div class="qr-box" id="qr-${esc(s.id)}">
+        <img id="qr-img-${esc(s.id)}" src="" alt="二维码">
+        <div class="url" id="qr-url-${esc(s.id)}"></div>
+      </div>
+    </div>`;
+  }).join("");
+
+  // 绑定事件
+  $("storyCards").querySelectorAll("[data-act]").forEach(b=>{
+    b.addEventListener("click", async ()=>{
+      const id = b.dataset.id;
+      const act = b.dataset.act;
+      if(act === "toggle"){
+        const st = stories.find(s=>s.id===id);
+        const next = !st.open;
+        b.disabled = true;
+        try{
+          await setStoryOpen(id, next);
+          toast(next ? "作品已启动 ✓" : "作品已停止");
+          await refreshAll();
+        }catch(e){ toast("操作失败：" + e.message); }
+        finally{ b.disabled = false; }
+      }else if(act === "qr"){
+        const box = $("qr-" + id);
+        const shown = box.style.display === "block";
+        if(!shown){
+          const url = gameUrl(id);
+          const img = $("qr-img-" + id);
+          // 使用公共二维码 API（也可替换为本地生成图片）
+          img.src = "https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=" + encodeURIComponent(url);
+          $("qr-url-" + id).textContent = url;
+          box.style.display = "block";
+        }else{
+          box.style.display = "none";
+        }
+      }
+    });
+  });
+}
+
+function renderStoryFilter(){
+  const sel = $("storyFilter");
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">全部作品</option>' + stories.map(s=>
+    `<option value="${esc(s.id)}" ${s.id===cur?"selected":""}>${esc(s.title)}</option>`).join("");
+}
+
+/* ---------- 成绩 ---------- */
+async function refreshScores(){
+  const data = await loadScoresRaw();
+  records = data.records || [];
+  endings = {};  // 云端版不依赖 story endings 映射，档位用 score 字段或 endingId 推断
+  renderCards();
+  renderTier();
+  renderClsFilter();
+  renderRows();
+}
+
+function tierOf(r){
+  if(r.tier) return r.tier;
+  const id = r.endingId || "";
+  if(id.includes("light")) return "hidden";
+  if(id.includes("spark")) return "insight";
+  if(id.includes("echo")) return "understand";
+  if(id.includes("dust")) return "surface";
+  if(id.includes("cloud")) return "absurd";
+  const s = r.score;
+  if(s >= 90) return "hidden";
+  if(s >= 70) return "insight";
+  if(s >= 45) return "understand";
+  if(s >= 20) return "surface";
+  return "absurd";
+}
+function scoreOf(r){
+  if(r.score !== undefined) return r.score;
+  const t = tierOf(r);
+  return {hidden:100, insight:85, understand:60, surface:35, absurd:10}[t] || 0;
+}
+
+function renderCards(){
+  const cur = curStoryFilter ? records.filter(r=>r.storyId===curStoryFilter) : records;
+  const total = cur.length;
+  const avg = total ? Math.round(cur.reduce((a,r)=>a+scoreOf(r),0)/total) : 0;
+  const byTier = {};
+  ["hidden","insight","understand","surface","absurd"].forEach(t=>byTier[t]=0);
+  cur.forEach(r=>{ byTier[tierOf(r)]++; });
+  $("cards").innerHTML = `
+    <div class="card"><div class="n">${total}</div><div class="t">参与学生</div></div>
+    <div class="card"><div class="n">${avg}</div><div class="t">平均分</div></div>
+    ${["hidden","insight","understand","surface","absurd"].map(t=>
+      `<div class="card"><div class="n">${byTier[t]}</div><div class="t">${TIER_CN[t]}</div></div>`).join("")}
+  `;
+}
+
+function renderTier(){
+  const cur = curStoryFilter ? records.filter(r=>r.storyId===curStoryFilter) : records;
+  const byName = {};
+  cur.forEach(r=>{ const n = r.endingName||r.endingId||"?"; byName[n]=(byName[n]||0)+1; });
+  const entries = Object.entries(byName);
+  const box = $("tierPanel");
+  if(!entries.length){ box.style.display="none"; return; }
+  box.style.display="block";
+  $("tierRow").innerHTML = entries.map(([name,cnt])=>{
+    const tier = cur.find(r=>(r.endingName||r.endingId)==name);
+    return `<span class="tier ${tierOf(tier)}">${esc(name)} × ${cnt}</span>`;
+  }).join("");
+}
+
+function renderClsFilter(){
+  const classes = [...new Set(records.map(r=>r.cls))].sort();
+  const sel = $("clsFilter");
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">全部班级</option>' + classes.map(c=>
+    `<option ${c===cur?"selected":""}>${esc(c)}</option>`).join("");
+}
+
+function renderRows(){
+  let rows = records;
+  if(curStoryFilter) rows = rows.filter(r=>r.storyId===curStoryFilter);
+  const cls = $("clsFilter").value;
+  if(cls) rows = rows.filter(r=>r.cls===cls);
+  rows = [...rows].sort((a,b)=>(b.ts||"").localeCompare(a.ts||""));
+  $("rows").innerHTML = rows.map(r=>{
+    const kc = (r.keyTotal||0) > 0
+      ? `<span style="${r.keyCorrect===r.keyTotal?'color:#2e7d4f;font-weight:700':'color:#a06a1f'}">${r.keyCorrect}/${r.keyTotal}</span>`
+      : '<span style="color:var(--ink-soft)">—</span>';
+    const st = stories.find(s=>s.id===r.storyId);
+    return `<tr>
+      <td style="color:var(--ink-soft)">${st?esc(st.title):esc(r.storyId||"")}</td>
+      <td>${esc(r.cls)}</td><td style="font-weight:600">${esc(r.name)}</td>
+      <td class="score">${esc(r.endingName||r.endingId||"")}</td>
+      <td><span class="tier ${tierOf(r)}">${TIER_CN[tierOf(r)]||tierOf(r)}</span></td>
+      <td class="score">${scoreOf(r)}</td>
+      <td>${kc}</td>
+      <td>${fmt(r.seconds)}</td>
+      <td style="color:var(--ink-soft)">${esc(r.ts||"")}</td>
+    </tr>`;
+  }).join("") || '<tr><td colspan="9" style="text-align:center;color:var(--ink-soft)">暂无记录</td></tr>';
+  $("foot").textContent = `共 ${rows.length} 条记录 · 成绩口径：每人${G.rankMode==="best"?"最佳":"首次"}成绩 · 关键选择全对=💎隐藏结局线索`;
+}
+
+$("storyFilter").addEventListener("change", ()=>{ curStoryFilter = $("storyFilter").value; refreshScores(); });
+$("clsFilter").addEventListener("change", renderRows);
+
+/* ---------- 导出 CSV ---------- */
+$("btn-export").addEventListener("click", ()=>{
+  let rows = records;
+  if(curStoryFilter) rows = rows.filter(r=>r.storyId===curStoryFilter);
+  const cls = $("clsFilter").value;
+  if(cls) rows = rows.filter(r=>r.cls===cls);
+  const head = ["作品","班级","姓名","结局","档位","分数","关键选择","用时(秒)","提交时间"];
+  const lines = rows.map(r=>{
+    const st = stories.find(s=>s.id===r.storyId);
+    return [st?st.title:r.storyId, r.cls, r.name, r.endingName||r.endingId||"", TIER_CN[tierOf(r)]||tierOf(r),
+      scoreOf(r), (r.keyTotal||0)?(r.keyCorrect+"/"+r.keyTotal):"", r.seconds||0, r.ts||""]
+      .map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(",");
+  });
+  const csv = "\uFEFF" + [head.join(","), ...lines].join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], {type:"text/csv;charset=utf-8"}));
+  a.download = "文游成绩.csv";
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+
+/* ---------- 清空 ---------- */
+$("btn-clear").addEventListener("click", async ()=>{
+  if(!confirm("确定清空全部成绩记录？此操作不可恢复！")) return;
+  if(!confirm("再次确认：真的要清空吗？")) return;
+  try{
+    const f = await ghGet(SCORES_API);
+    await ghPut(SCORES_API, JSON.stringify({version:1, records:[]}, null, 1), f.sha, "清空成绩");
+    toast("已清空");
+    await refreshScores();
+  }catch(e){ toast("清空失败：" + e.message); }
+});
+
+function fmt(s){
+  const m = Math.floor(s/60), r = s%60;
+  return m>0 ? m+"分"+r+"秒" : r+"秒";
+}
+
+/* ---------- 登录 ---------- */
+$("btn-unlock").addEventListener("click", ()=>{
+  PWD = $("pwd").value.trim();
+  if(!PWD){ toast("请输入密码"); return; }
+  if(PWD === G.adminPwd){
+    sessionStorage.setItem("novel_admin_pwd", PWD);
+    enter();
+  }else{
+    toast("密码错误");
+    $("pwd").value = "";
+  }
+});
+
+if(PWD === G.adminPwd){ enter().catch(e=>toast("加载失败："+e.message)); }
+</script>
+</body>
+</html>
