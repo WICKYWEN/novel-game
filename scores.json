@@ -1,4 +1,16 @@
 {
-  "version": 1,
-  "records": []
+ "version": 1,
+ "records": [
+  {
+   "storyId": "xiyouji10",
+   "cls": "701",
+   "name": "测试同学",
+   "endingId": "e_dust",
+   "endingName": "尘路",
+   "seconds": 780,
+   "keyCorrect": 2,
+   "keyTotal": 4,
+   "ts": "2026/8/12 23:27:30"
+  }
+ ]
 }
