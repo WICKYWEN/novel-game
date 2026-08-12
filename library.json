@@ -7,7 +7,7 @@
    "book": "西游记",
    "chapters": "第一回~第十回",
    "playMinutes": 25,
-   "open": false,
+   "open": true,
    "order": 1,
    "desc": "仙石出世 · 大闹天宫"
   }
