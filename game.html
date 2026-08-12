@@ -155,6 +155,7 @@ let student = { cls:"", name:"", code:"" };
 let nodeId = null, depth = 0, startedAt = 0, visited = 0, totalNodes = 0;
 let paraShown = 0, curNode = null;
 let keyTotal = 0, keyCorrect = 0;
+let choiceLog = [];  // 每题选择明细：{node, title, text, depth, key, correct}
 let storyId = null;
 
 const LS_KEY = "novel_game_student";
@@ -298,7 +299,7 @@ function startGame(){
   $("game").style.display = "flex";
   $("gm-book").textContent = META.title || "";
   nodeId = STORY.startNodeId; depth = 0; visited = 0; startedAt = Date.now();
-  keyTotal = 0; keyCorrect = 0;
+  keyTotal = 0; keyCorrect = 0; choiceLog = [];
   showNode(nodeId);
 }
 
@@ -360,10 +361,20 @@ function renderChoices(choices){
     b.textContent = c.text;
     b.addEventListener("click", ()=>{
       depth += (c.depth !== undefined ? c.depth : 1);
-      if(curNode.key){
+      const isKey = !!curNode.key;
+      if(isKey){
         keyTotal++;
         if(c.depth === 2) keyCorrect++;
       }
+      // 记录每题选择：key节点选depth=2为对；普通节点depth≥1为正常
+      choiceLog.push({
+        node: curNode.id || nodeId,
+        title: curNode.title || "",
+        text: c.text,
+        depth: c.depth !== undefined ? c.depth : 1,
+        key: isKey,
+        correct: isKey ? (c.depth === 2) : (c.depth >= 1)
+      });
       showNode(c.next);
     });
     box.appendChild(b);
@@ -420,6 +431,7 @@ async function submitScore(endingId, seconds){
     endingName: STORY.endings[endingId].name,
     seconds,
     keyCorrect, keyTotal,
+    choices: choiceLog,
     ts: new Date().toLocaleString("zh-CN", {hour12:false})
   });
   return saveScores(records);
