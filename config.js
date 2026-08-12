@@ -14,9 +14,6 @@ window.NG = {
   // 说明：为避免仓库密钥扫描拦截，token 拆为两段拼接，浏览器运行时会合并为完整值
   token: "github_pat_" + "11AOAJ63A0sBYjXy3H6Nom_cQIdGv6BZDQGfDH2JEqyXdfmeg7b7TG62gYBPbZC53BX55BGGFHHNL6dHWm",
 
-  // 教师后台密码（请自行修改！）
-  adminPwd: "f0d9553a",
-
   // 成绩口径：first=每人首次成绩  best=每人最佳成绩
   rankMode: "first",
 
