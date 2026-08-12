@@ -168,10 +168,17 @@ function toast(msg){
 function esc(s){ return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 
 /* ---------- GitHub 数据读写 ---------- */
-const RAW = id => `https://raw.githubusercontent.com/${G.owner}/${G.repo}/${G.branch}/stories/${id}/story.json`;
-const LIB_URL = `https://raw.githubusercontent.com/${G.owner}/${G.repo}/${G.branch}/library.json`;
-const SCORES_URL = `https://raw.githubusercontent.com/${G.owner}/${G.repo}/${G.branch}/scores.json`;
-const API_SCORES = `https://api.github.com/repos/${G.owner}/${G.repo}/contents/scores.json`;
+// 统一走 GitHub Contents API（实时数据，不受 CDN 缓存延迟影响）
+const API_BASE = `https://api.github.com/repos/${G.owner}/${G.repo}/contents/`;
+const API_HEADERS = G.token ? {Authorization:"Bearer " + G.token} : {};
+
+async function ghReadJSON(path){
+  const r = await fetch(API_BASE + path, {headers:API_HEADERS, cache:"no-store"});
+  if(!r.ok) throw new Error("HTTP " + r.status);
+  const f = await r.json();
+  const text = decodeURIComponent(escape(atob(f.content.replace(/\n/g,""))));
+  return JSON.parse(text);
+}
 
 async function fetchJSON(url){
   const r = await fetch(url, {cache:"no-store"});
@@ -181,12 +188,12 @@ async function fetchJSON(url){
 
 /* 读作品清单 */
 async function loadLibrary(){
-  return fetchJSON(LIB_URL);
+  return ghReadJSON("library.json");
 }
 
 /* 读剧本（带脱敏：去掉结局分数/tier 等敏感字段） */
 async function loadStory(id){
-  const s = await fetchJSON(RAW(id));
+  const s = await ghReadJSON("stories/" + id + "/story.json");
   // 脱敏：学生端不暴露分数档位
   const clean = JSON.parse(JSON.stringify(s));
   if(clean.endings){
@@ -201,8 +208,7 @@ async function loadStory(id){
 /* 读成绩库 */
 async function loadScores(){
   try{
-    const r = await fetch(SCORES_URL, {cache:"no-store"});
-    if(r.ok) return await r.json();
+    return await ghReadJSON("scores.json");
   }catch(e){}
   return {version:1, records:[]};
 }
@@ -212,7 +218,7 @@ async function saveScores(records){
   for(let attempt = 0; attempt < 5; attempt++){
     try{
       // 1. 读当前文件拿 sha + 内容
-      const g = await fetch(API_SCORES, {headers:{Authorization:"Bearer " + G.token}});
+      const g = await fetch(API_BASE + "scores.json", {headers:{Authorization:"Bearer " + G.token}});
       if(!g.ok) throw new Error("读成绩库失败 " + g.status);
       const f = await g.json();
       let current = {version:1, records:[]};
@@ -220,7 +226,7 @@ async function saveScores(records){
       // 2. 合并
       current.records = records;
       // 3. 写回
-      const put = await fetch(API_SCORES, {
+      const put = await fetch(API_BASE + "scores.json", {
         method:"PUT",
         headers:{Authorization:"Bearer " + G.token, "Content-Type":"application/json"},
         body: JSON.stringify({
