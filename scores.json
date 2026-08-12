@@ -11,6 +11,17 @@
    "keyCorrect": 2,
    "keyTotal": 4,
    "ts": "2026/8/12 23:27:30"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "702",
+   "name": "离谱测试生",
+   "endingId": "e_cloud",
+   "endingName": "浮云",
+   "seconds": 64,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "ts": "2026/8/13 00:11:04"
   }
  ]
 }
