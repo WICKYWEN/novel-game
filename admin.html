@@ -172,21 +172,15 @@ async function ghDelete(apiUrl, sha, msg){
 
 /* ---------- 读数据 ---------- */
 async function loadLibrary(){
-  try{
-    const r = await fetch(LIB_RAW, {cache:"no-store"});
-    if(r.ok) return await r.json();
-  }catch(e){}
-  // 回退：API
-  try{
-    const f = await ghGet(LIB_API);
-    return JSON.parse(atob(f.content.replace(/\n/g,"")));
-  }catch(e){}
-  return {version:1, stories:[]};
+  // 走 GitHub API 实时读取
+  const f = await ghGet(LIB_API);
+  return JSON.parse(decodeURIComponent(escape(atob(f.content.replace(/\n/g,"")))));
 }
 async function loadScoresRaw(){
+  // 走 GitHub API 实时读取
   try{
-    const r = await fetch(SCORES_RAW, {cache:"no-store"});
-    if(r.ok) return await r.json();
+    const f = await ghGet(SCORES_API);
+    return JSON.parse(decodeURIComponent(escape(atob(f.content.replace(/\n/g,"")))));
   }catch(e){}
   return {version:1, records:[]};
 }
