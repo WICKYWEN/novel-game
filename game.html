@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>互动文游</title>
+<style>
+  :root{
+    --bg:#f5faf7; --card:#ffffff; --accent:#7db892; --accent-dark:#5c9e73;
+    --ink:#2b3a30; --ink-soft:#6b7f72; --line:#e2efe6;
+    --glow:0 4px 14px rgba(125,184,146,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg); color:var(--ink);
+    font-size:17px; line-height:1.8;
+  }
+  .wrap{max-width:640px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;
+    padding:0 20px calc(24px + env(safe-area-inset-bottom));}
+  header{padding:22px 0 10px;text-align:center}
+  .book{font-size:13px;color:var(--ink-soft);letter-spacing:2px}
+  h1{font-size:26px;font-weight:700;margin:4px 0}
+  .chapter{font-size:14px;color:var(--ink-soft);margin-top:2px}
+
+  /* 登录页 */
+  .login{flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:10px 0 40px}
+  .welcome{font-size:15px;color:var(--ink-soft);text-align:center;margin-bottom:10px}
+  label{font-size:14px;color:var(--ink-soft);display:block;margin-bottom:4px}
+  input{
+    width:100%;padding:14px 16px;font-size:17px;border:1.5px solid var(--line);
+    border-radius:12px;background:var(--card);color:var(--ink);outline:none;transition:.2s;
+  }
+  input:focus{border-color:var(--accent);box-shadow:var(--glow)}
+  .btn{
+    display:block;width:100%;padding:15px;font-size:18px;font-weight:600;color:#fff;
+    background:var(--accent);border:none;border-radius:14px;cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;margin-top:8px;
+  }
+  .btn:hover,.btn:active{transform:translateY(-2px);box-shadow:var(--glow),0 8px 20px rgba(125,184,146,.45)}
+  .btn:disabled{opacity:.55;transform:none;box-shadow:none}
+  .btn.ghost{background:transparent;color:var(--accent-dark);border:1.5px solid var(--accent);font-weight:500}
+  .hint{font-size:13px;color:var(--ink-soft);text-align:center}
+
+  /* 游戏页 */
+  .game{flex:1;display:none;flex-direction:column}
+  .topbar{display:flex;align-items:center;gap:10px;padding:16px 0 8px}
+  .topbar .book{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar{height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:2px;transition:width .5s ease}
+  .scene{
+    margin:14px 0 6px;padding:6px 14px;background:var(--card);border:1px solid var(--line);
+    border-radius:20px;font-size:13px;color:var(--accent-dark);letter-spacing:1px;
+    display:inline-block;align-self:flex-start;
+  }
+  .node-title{font-size:20px;font-weight:700;margin:6px 0 10px}
+  .story{flex:1;padding:4px 0 12px}
+  .para{font-size:17.5px;margin-bottom:16px;animation:fadeUp .4s ease}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .tap-hint{font-size:13px;color:var(--ink-soft);text-align:center;padding:8px}
+  .choices{display:flex;flex-direction:column;gap:12px;padding:8px 0 16px}
+  .choice{
+    display:block;width:100%;text-align:left;padding:15px 18px;font-size:16.5px;line-height:1.6;
+    background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:14px;cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s;
+  }
+  .choice:hover,.choice:active{transform:translateY(-2px);box-shadow:var(--glow);border-color:var(--accent)}
+
+  /* 结局页 */
+  .ending{flex:1;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:18px;padding:20px 0}
+  .ending .end-label{font-size:13px;letter-spacing:4px;color:var(--ink-soft)}
+  .ending h2{font-size:34px;font-weight:800;color:var(--accent-dark);letter-spacing:6px}
+  .end-text{font-size:17px;color:var(--ink);max-width:520px}
+  .end-meta{font-size:13px;color:var(--ink-soft)}
+  .ending .btn{max-width:280px;margin:0 auto}
+  .footer{font-size:12px;color:var(--ink-soft);text-align:center;padding-top:14px;opacity:.8}
+  .toast{
+    position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:99;
+    background:rgba(43,58,48,.92);color:#fff;padding:14px 22px;border-radius:12px;font-size:15px;
+    opacity:0;pointer-events:none;transition:opacity .3s;max-width:80vw;text-align:center;
+  }
+  .toast.show{opacity:1}
+  .small{font-size:12px;color:var(--ink-soft)}
+  .loading{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 加载中 -->
+  <section id="loading" class="loading">
+    <div>📖 正在翻开书卷…</div>
+    <div class="small" id="load-err" style="color:var(--bad,#c0564b)"></div>
+  </section>
+
+  <!-- 登录 -->
+  <section id="login" class="login" style="display:none">
+    <header>
+      <div class="book" id="lg-book">《〈书名〉》</div>
+      <h1 id="lg-title">互动文游</h1>
+      <div class="chapter" id="lg-chapter"></div>
+    </header>
+    <p class="welcome" id="lg-welcome"></p>
+    <div>
+      <label for="in-cls">班级</label>
+      <input id="in-cls" placeholder="如：701" autocomplete="off">
+    </div>
+    <div>
+      <label for="in-name">姓名</label>
+      <input id="in-name" placeholder="你的名字" autocomplete="off">
+    </div>
+    <div id="code-box" style="display:none">
+      <label for="in-code">游戏口令</label>
+      <input id="in-code" placeholder="老师给的入口口令" autocomplete="off">
+    </div>
+    <button class="btn" id="btn-start">开始游戏</button>
+    <p class="hint">约 12~30 分钟 · 每个选择都算数</p>
+  </section>
+
+  <!-- 游戏 -->
+  <section id="game" class="game">
+    <div class="topbar">
+      <span class="book" id="gm-book"></span>
+      <span class="small" id="gm-progress-txt"></span>
+    </div>
+    <div class="bar"><i id="gm-bar"></i></div>
+    <div class="scene" id="gm-scene" style="display:none"></div>
+    <div class="node-title" id="gm-title"></div>
+    <div class="story" id="gm-story"></div>
+    <div class="tap-hint" id="gm-hint">轻触屏幕继续</div>
+    <div class="choices" id="gm-choices"></div>
+  </section>
+
+  <!-- 结局 -->
+  <section id="ending" class="ending">
+    <div class="end-label">终 章</div>
+    <h2 id="en-name"></h2>
+    <p class="end-text" id="en-text"></p>
+    <p class="end-meta" id="en-meta"></p>
+    <button class="btn" id="btn-leaderboard">查看排行榜</button>
+    <button class="btn ghost" id="btn-again">再玩一次</button>
+  </section>
+
+  <div class="footer" id="footer"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+let STORY = null, META = null;
+let student = { cls:"", name:"", code:"" };
+let nodeId = null, depth = 0, startedAt = 0, visited = 0, totalNodes = 0;
+let paraShown = 0, curNode = null;
+let keyTotal = 0, keyCorrect = 0;
+let storyId = null;
+
+const LS_KEY = "novel_game_student";
+const G = window.NG || {owner:"WICKYWEN",repo:"novel-game",branch:"main",token:"",minSeconds:45};
+
+/* ---------- 工具 ---------- */
+function toast(msg){
+  const t = $("toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove("show"), 2200);
+}
+function esc(s){ return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+/* ---------- GitHub 数据读写 ---------- */
+const RAW = id => `https://raw.githubusercontent.com/${G.owner}/${G.repo}/${G.branch}/stories/${id}/story.json`;
+const LIB_URL = `https://raw.githubusercontent.com/${G.owner}/${G.repo}/${G.branch}/library.json`;
+const SCORES_URL = `https://raw.githubusercontent.com/${G.owner}/${G.repo}/${G.branch}/scores.json`;
+const API_SCORES = `https://api.github.com/repos/${G.owner}/${G.repo}/contents/scores.json`;
+
+async function fetchJSON(url){
+  const r = await fetch(url, {cache:"no-store"});
+  if(!r.ok) throw new Error("HTTP " + r.status);
+  return r.json();
+}
+
+/* 读作品清单 */
+async function loadLibrary(){
+  return fetchJSON(LIB_URL);
+}
+
+/* 读剧本（带脱敏：去掉结局分数/tier 等敏感字段） */
+async function loadStory(id){
+  const s = await fetchJSON(RAW(id));
+  // 脱敏：学生端不暴露分数档位
+  const clean = JSON.parse(JSON.stringify(s));
+  if(clean.endings){
+    for(const k in clean.endings){
+      delete clean.endings[k].tier;
+      delete clean.endings[k].score;
+    }
+  }
+  return clean;
+}
+
+/* 读成绩库 */
+async function loadScores(){
+  try{
+    const r = await fetch(SCORES_URL, {cache:"no-store"});
+    if(r.ok) return await r.json();
+  }catch(e){}
+  return {version:1, records:[]};
+}
+
+/* 写成绩库：GitHub Contents API（读-改-写 + 冲突重试） */
+async function saveScores(records){
+  for(let attempt = 0; attempt < 5; attempt++){
+    try{
+      // 1. 读当前文件拿 sha + 内容
+      const g = await fetch(API_SCORES, {headers:{Authorization:"Bearer " + G.token}});
+      if(!g.ok) throw new Error("读成绩库失败 " + g.status);
+      const f = await g.json();
+      let current = {version:1, records:[]};
+      try{ current = JSON.parse(atob(f.content.replace(/\n/g,""))); }catch(e){}
+      // 2. 合并
+      current.records = records;
+      // 3. 写回
+      const put = await fetch(API_SCORES, {
+        method:"PUT",
+        headers:{Authorization:"Bearer " + G.token, "Content-Type":"application/json"},
+        body: JSON.stringify({
+          message:"submit score",
+          content: btoa(unescape(encodeURIComponent(JSON.stringify(current, null, 1)))),
+          sha: f.sha
+        })
+      });
+      if(put.ok) return true;
+      // 409 冲突 → 重试
+    }catch(e){}
+    await new Promise(r=>setTimeout(r, 600 * (attempt+1)));
+  }
+  return false;
+}
+
+/* ---------- 初始化 ---------- */
+async function init(){
+  // 解析 ?id=
+  const params = new URLSearchParams(location.search);
+  storyId = params.get("id") || G.defaultStory;
+
+  try{
+    const lib = await loadLibrary();
+    const st = (lib.stories||[]).find(s=>s.id===storyId);
+    if(!st){ showLoadError("找不到这个作品"); return; }
+    if(!st.open){ showLoadError("这个作品尚未开放，请等老师启动"); return; }
+    META = st;
+    STORY = await loadStory(storyId);
+    if(!STORY){ showLoadError("剧本加载失败"); return; }
+  }catch(e){
+    showLoadError("加载失败：" + e.message);
+    return;
+  }
+
+  $("loading").style.display = "none";
+  $("login").style.display = "flex";
+  // 填充登录页
+  $("lg-book").textContent = "《" + (META.book||"") + "》";
+  $("lg-title").textContent = META.title || "互动文游";
+  $("lg-chapter").textContent = META.chapters || "";
+  $("lg-welcome").textContent = (STORY.meta && STORY.meta.welcome) || "";
+  $("footer").textContent = (STORY.meta && STORY.meta.footer) || "";
+  const saved = localStorage.getItem(LS_KEY);
+  if(saved){ try{ const s = JSON.parse(saved); $("in-cls").value=s.cls||""; $("in-name").value=s.name||""; }catch(e){} }
+  totalNodes = Object.keys(STORY.nodes||{}).length;
+}
+
+function showLoadError(msg){
+  $("load-err").textContent = msg;
+}
+
+/* ---------- 登录 ---------- */
+$("btn-start").addEventListener("click", async ()=>{
+  const cls = $("in-cls").value.trim();
+  const name = $("in-name").value.trim();
+  const code = $("in-code").value.trim();
+  if(!cls){ toast("请填写班级"); return; }
+  if(!name){ toast("请填写姓名"); return; }
+  student = {cls, name, code};
+  localStorage.setItem(LS_KEY, JSON.stringify(student));
+  startGame();
+});
+
+/* ---------- 游戏 ---------- */
+function startGame(){
+  $("login").style.display = "none";
+  $("ending").style.display = "none";
+  $("game").style.display = "flex";
+  $("gm-book").textContent = META.title || "";
+  nodeId = STORY.startNodeId; depth = 0; visited = 0; startedAt = Date.now();
+  keyTotal = 0; keyCorrect = 0;
+  showNode(nodeId);
+}
+
+function showNode(id){
+  const node = STORY.nodes[id];
+  if(!node){ toast("剧情节点丢失"); return; }
+  curNode = node; nodeId = id;
+  visited++;
+  $("gm-bar").style.width = Math.min(100, Math.round(visited/totalNodes*100)) + "%";
+  $("gm-progress-txt").textContent = visited + "/" + totalNodes;
+  if(node.scene){
+    const sc = $("gm-scene");
+    sc.textContent = node.scene; sc.style.display = "inline-block";
+  }
+  $("gm-title").textContent = node.title || "";
+  $("gm-story").innerHTML = "";
+  $("gm-choices").innerHTML = "";
+  paraShown = 0;
+  if(node.text && node.text.length){
+    $("gm-hint").textContent = "轻触屏幕继续";
+    $("gm-hint").style.visibility = "visible";
+    showNextPara();
+  }else{
+    afterText();
+  }
+}
+
+function showNextPara(){
+  if(paraShown >= curNode.text.length){ afterText(); return; }
+  const p = document.createElement("p");
+  p.className = "para";
+  p.textContent = curNode.text[paraShown++];
+  $("gm-story").appendChild(p);
+  if(paraShown >= curNode.text.length){
+    setTimeout(afterText, 300);
+  }
+  window.scrollTo({top: document.body.scrollHeight, behavior:"smooth"});
+}
+
+function afterText(){
+  $("gm-hint").style.visibility = "hidden";
+  if(curNode.choices && curNode.choices.length){
+    renderChoices(curNode.choices);
+  }else if(curNode.ending){
+    setTimeout(()=>finish(curNode.ending), 600);
+  }else if(curNode.route){
+    setTimeout(()=>showNode(pickRoute(curNode.route)), 400);
+  }else if(curNode.next){
+    setTimeout(()=>showNode(curNode.next), 400);
+  }
+}
+
+function renderChoices(choices){
+  const box = $("gm-choices");
+  box.innerHTML = "";
+  choices.forEach((c,i)=>{
+    const b = document.createElement("button");
+    b.className = "choice";
+    b.textContent = c.text;
+    b.addEventListener("click", ()=>{
+      depth += (c.depth !== undefined ? c.depth : 1);
+      if(curNode.key){
+        keyTotal++;
+        if(c.depth === 2) keyCorrect++;
+      }
+      showNode(c.next);
+    });
+    box.appendChild(b);
+  });
+}
+
+function pickRoute(route){
+  if(route.hidden && keyTotal > 0 && keyCorrect === keyTotal
+     && depth >= (route.hidden.min !== undefined ? route.hidden.min : 0)){
+    return route.hidden.next;
+  }
+  const map = route.map || [];
+  for(const e of map){
+    if(e.min !== undefined && depth >= e.min) return e.next;
+  }
+  const fallback = map.find(e => e.min === undefined);
+  return fallback ? fallback.next : (map[map.length-1]?.next);
+}
+
+/* ---------- 结局 & 提交 ---------- */
+async function finish(endingId){
+  const e = STORY.endings[endingId];
+  if(!e){ toast("结局丢失"); return; }
+  const seconds = Math.round((Date.now()-startedAt)/1000);
+  $("game").style.display = "none";
+  $("ending").style.display = "flex";
+  $("en-name").textContent = e.name;
+  $("en-text").textContent = e.text;
+  $("en-meta").textContent = "用时 " + fmtTime(seconds);
+
+  // 防秒提交
+  if(G.minSeconds && seconds < G.minSeconds){
+    toast("用时过短，请认真游玩（" + G.minSeconds + "秒后才能提交）");
+  }else{
+    const ok = await submitScore(endingId, seconds);
+    if(ok){ toast("成绩已提交 ✓"); }
+    else{ toast("提交失败，请检查网络后重试"); }
+  }
+}
+
+async function submitScore(endingId, seconds){
+  // 读当前成绩库，按 rankMode 去重，追加
+  const data = await loadScores();
+  let records = data.records || [];
+  const key = student.cls + "|" + student.name + "|" + storyId;
+  if(G.rankMode === "first"){
+    records = records.filter(r => !(r.cls===student.cls && r.name===student.name && r.storyId===storyId));
+  }else if(G.rankMode === "best"){
+    records = records.filter(r => !(r.cls===student.cls && r.name===student.name && r.storyId===storyId));
+  }
+  records.push({
+    storyId, cls: student.cls, name: student.name,
+    endingId,
+    endingName: STORY.endings[endingId].name,
+    seconds,
+    keyCorrect, keyTotal,
+    ts: new Date().toLocaleString("zh-CN", {hour12:false})
+  });
+  return saveScores(records);
+}
+
+function fmtTime(s){
+  const m = Math.floor(s/60), r = s%60;
+  return m>0 ? m+"分"+r+"秒" : r+"秒";
+}
+
+$("btn-leaderboard").addEventListener("click", ()=>{ location.href = "./index.html?id=" + storyId; });
+$("btn-again").addEventListener("click", ()=>{ location.reload(); });
+
+$("game").addEventListener("click", (ev)=>{
+  if(ev.target.closest(".choice")) return;
+  if(!curNode) return;
+  if(paraShown < curNode.text.length) showNextPara();
+});
+
+init();
+</script>
+</body>
+</html>
