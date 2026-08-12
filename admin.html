@@ -104,7 +104,7 @@
       <div class="scroll"><table>
         <thead><tr>
           <th>作品</th><th>班级</th><th>姓名</th><th>结局</th><th>档位</th><th>分数</th>
-          <th>关键选择</th><th>用时</th><th>提交时间</th>
+          <th>关键选择</th><th>用时</th><th>提交时间</th><th>答题明细</th>
         </tr></thead>
         <tbody id="rows"></tbody>
       </table></div>
@@ -337,6 +337,14 @@ function renderRows(){
       ? `<span style="${r.keyCorrect===r.keyTotal?'color:#2e7d4f;font-weight:700':'color:#a06a1f'}">${r.keyCorrect}/${r.keyTotal}</span>`
       : '<span style="color:var(--ink-soft)">—</span>';
     const st = stories.find(s=>s.id===r.storyId);
+    const log = (r.choices||[]).map((c,i)=>{
+      const mark = c.key
+        ? (c.correct ? '<span style="color:#2e7d4f;font-weight:700">✓</span>' : '<span style="color:#c0564b;font-weight:700">✗</span>')
+        : (c.correct ? '<span style="color:#2e7d4f">✓</span>' : '<span style="color:#c0564b">✗</span>');
+      const tag = c.key ? '<span style="color:#7a3fb0;font-size:11px">[关键]</span>' : '';
+      return `<div style="padding:3px 0;border-bottom:1px dashed var(--line);font-size:12.5px">
+        ${mark} ${tag} ${esc(c.title||("第"+(i+1)+"题"))}：<span style="color:var(--ink-soft)">${esc(c.text||"")}</span></div>`;
+    }).join("") || '<div style="color:var(--ink-soft);font-size:12px">无选择记录</div>';
     return `<tr>
       <td style="color:var(--ink-soft)">${st?esc(st.title):esc(r.storyId||"")}</td>
       <td>${esc(r.cls)}</td><td style="font-weight:600">${esc(r.name)}</td>
@@ -346,9 +354,10 @@ function renderRows(){
       <td>${kc}</td>
       <td>${fmt(r.seconds)}</td>
       <td style="color:var(--ink-soft)">${esc(r.ts||"")}</td>
+      <td style="max-width:260px"><details><summary style="cursor:pointer;color:var(--accent-dark);font-size:12.5px">查看${(r.choices||[]).length||0}题</summary>${log}</details></td>
     </tr>`;
-  }).join("") || '<tr><td colspan="9" style="text-align:center;color:var(--ink-soft)">暂无记录</td></tr>';
-  $("foot").textContent = `共 ${rows.length} 条记录 · 成绩口径：每人${G.rankMode==="best"?"最佳":"首次"}成绩 · 关键选择全对=💎隐藏结局线索`;
+  }).join("") || '<tr><td colspan="10" style="text-align:center;color:var(--ink-soft)">暂无记录</td></tr>';
+  $("foot").textContent = `共 ${rows.length} 条记录 · 成绩口径：每人${G.rankMode==="best"?"最佳":"首次"}成绩 · 关键选择全对=💎隐藏结局线索 · 点"查看N题"看每题选择对错`;
 }
 
 $("storyFilter").addEventListener("change", ()=>{ curStoryFilter = $("storyFilter").value; refreshScores(); });
@@ -360,11 +369,16 @@ $("btn-export").addEventListener("click", ()=>{
   if(curStoryFilter) rows = rows.filter(r=>r.storyId===curStoryFilter);
   const cls = $("clsFilter").value;
   if(cls) rows = rows.filter(r=>r.cls===cls);
-  const head = ["作品","班级","姓名","结局","档位","分数","关键选择","用时(秒)","提交时间"];
+  const head = ["作品","班级","姓名","结局","档位","分数","关键选择","用时(秒)","提交时间","答题明细"];
   const lines = rows.map(r=>{
     const st = stories.find(s=>s.id===r.storyId);
+    const detail = (r.choices||[]).map((c,i)=>{
+      const mk = c.correct ? "✓" : "✗";
+      const ktag = c.key ? "[关键]" : "";
+      return `${i+1}.${ktag}${c.title||""}→${mk}${c.text||""}`;
+    }).join(" | ");
     return [st?st.title:r.storyId, r.cls, r.name, r.endingName||r.endingId||"", TIER_CN[tierOf(r)]||tierOf(r),
-      scoreOf(r), (r.keyTotal||0)?(r.keyCorrect+"/"+r.keyTotal):"", r.seconds||0, r.ts||""]
+      scoreOf(r), (r.keyTotal||0)?(r.keyCorrect+"/"+r.keyTotal):"", r.seconds||0, r.ts||"", detail]
       .map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(",");
   });
   const csv = "\uFEFF" + [head.join(","), ...lines].join("\n");
