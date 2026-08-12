@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>互动文游 · 阅读乐园</title>
+<style>
+  :root{
+    --bg:#f5faf7; --card:#ffffff; --accent:#7db892; --accent-dark:#5c9e73;
+    --ink:#2b3a30; --ink-soft:#6b7f72; --line:#e2efe6;
+    --glow:0 4px 14px rgba(125,184,146,.35);
+    --gold:#e8b45a; --silver:#a9b8b0; --bronze:#c98d5e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 20px 40px}
+  header{text-align:center;padding:26px 0 6px}
+  .book{font-size:13px;color:var(--ink-soft);letter-spacing:2px}
+  h1{font-size:26px;font-weight:700;margin:4px 0 2px}
+  .sub{font-size:13px;color:var(--ink-soft);margin-bottom:18px}
+
+  /* 作品卡片 */
+  .section-title{font-size:15px;font-weight:700;color:var(--accent-dark);margin:20px 0 10px;
+    display:flex;align-items:center;gap:8px}
+  .section-title::after{content:"";flex:1;height:1px;background:var(--line)}
+  .story-list{display:flex;flex-direction:column;gap:12px}
+  .story-card{
+    display:flex;align-items:center;gap:14px;padding:16px 18px;
+    background:var(--card);border:1.5px solid var(--line);border-radius:16px;
+    cursor:pointer;text-decoration:none;color:inherit;transition:.2s;
+  }
+  .story-card:hover{transform:translateY(-2px);box-shadow:var(--glow);border-color:var(--accent)}
+  .story-card.closed{opacity:.55;cursor:not-allowed}
+  .story-card.closed:hover{transform:none;box-shadow:none;border-color:var(--line)}
+  .story-ico{font-size:26px;width:46px;height:46px;border-radius:12px;background:var(--bg);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .story-info{flex:1}
+  .story-title{font-size:17px;font-weight:700}
+  .story-ch{font-size:12px;color:var(--ink-soft);margin-top:2px}
+  .story-status{font-size:12px;padding:3px 10px;border-radius:12px;font-weight:600;flex-shrink:0}
+  .story-status.open{background:#e3f3e8;color:#2e7d4f}
+  .story-status.closed{background:var(--line);color:var(--ink-soft)}
+
+  /* 排行榜 */
+  .board{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:14px}
+  .board-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 10px;
+    font-size:15px;font-weight:700;color:var(--accent-dark)}
+  .live{font-size:12px;font-weight:400;color:var(--ink-soft)}
+  .live i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#5ec27e;margin-right:5px;
+    animation:pulse 1.6s infinite}
+  @keyframes pulse{50%{opacity:.35}}
+  table{width:100%;border-collapse:collapse}
+  th{font-size:12px;color:var(--ink-soft);font-weight:500;text-align:left;padding:8px 12px;border-bottom:1px solid var(--line)}
+  td{padding:11px 12px;border-bottom:1px solid var(--line);font-size:15px}
+  tr:last-child td{border-bottom:none}
+  .rank{font-weight:800;width:44px;text-align:center}
+  .rank.r1{color:var(--gold)} .rank.r2{color:var(--silver)} .rank.r3{color:var(--bronze)}
+  .who{font-weight:600}
+  .cls{font-size:12px;color:var(--ink-soft)}
+  .end{color:var(--accent-dark);font-weight:600}
+  .time{font-size:12px;color:var(--ink-soft);white-space:nowrap}
+  .empty{text-align:center;color:var(--ink-soft);padding:36px 16px;font-size:14px}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 10px}
+  .tab{padding:6px 14px;font-size:13px;border:1.5px solid var(--line);border-radius:20px;
+    background:var(--card);color:var(--ink-soft);cursor:pointer;transition:.15s}
+  .tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .note{font-size:12px;color:var(--ink-soft);text-align:center;margin-top:18px}
+  .refresh{text-align:center;font-size:12px;color:var(--ink-soft);padding:10px 0 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="book">互动文游 · 阅读乐园</div>
+    <h1>📚 阅读乐园</h1>
+    <div class="sub">读完书，来玩一局吧</div>
+  </header>
+
+  <!-- 作品列表 -->
+  <div class="section-title">📖 可玩作品</div>
+  <div class="story-list" id="stories"><div class="empty">加载中…</div></div>
+
+  <!-- 排行榜 -->
+  <div class="section-title">🏆 排行榜</div>
+  <div class="tabs" id="tabs"></div>
+  <div class="board">
+    <div class="board-head">
+      <span id="board-title">阅读排行榜</span>
+      <span class="live"><i></i>实时更新</span>
+    </div>
+    <table>
+      <thead><tr><th style="text-align:center">名次</th><th>学生</th><th>结局</th><th>用时</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty" id="empty" style="display:none">还没有人完成游戏，快来当第一名！</div>
+  </div>
+  <div class="refresh" id="refresh"></div>
+  <p class="note">每个结局都是认真阅读的证明 · 排行榜自动更新</p>
+</div>
+
+<script src="config.js"></script>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const G = window.NG || {owner:"WICKYWEN",repo:"novel-game",branch:"main"};
+let allRows = [], curCls = "all", curStory = "";
+
+function esc(s){ return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+const LIB_URL = `https://raw.githubusercontent.com/${G.owner}/${G.repo}/${G.branch}/library.json`;
+const SCORES_URL = `https://raw.githubusercontent.com/${G.owner}/${G.repo}/${G.branch}/scores.json`;
+
+async function loadStories(){
+  try{
+    const lib = await (await fetch(LIB_URL, {cache:"no-store"})).json();
+    renderStories(lib.stories || []);
+  }catch(e){
+    $("stories").innerHTML = '<div class="empty">作品列表加载失败</div>';
+  }
+}
+
+function renderStories(stories){
+  if(!stories.length){ $("stories").innerHTML = '<div class="empty">暂无作品</div>'; return; }
+  stories.sort((a,b)=>(a.order||99)-(b.order||99));
+  $("stories").innerHTML = stories.map(s=>{
+    const open = !!s.open;
+    return `<a class="story-card ${open?"":"closed"}" href="${open?"game.html?id="+encodeURIComponent(s.id):"javascript:void(0)"}">
+      <div class="story-ico">📖</div>
+      <div class="story-info">
+        <div class="story-title">${esc(s.title)}</div>
+        <div class="story-ch">${esc(s.chapters||"")}${s.desc?" · "+esc(s.desc):""}</div>
+      </div>
+      <span class="story-status ${open?"open":"closed"}">${open?"可玩":"未开放"}</span>
+    </a>`;
+  }).join("");
+}
+
+async function loadBoard(){
+  let rows = [];
+  try{
+    const data = await (await fetch(SCORES_URL, {cache:"no-store"})).json();
+    const records = data.records || [];
+    // 当前作品 = URL 参数或第一个开放作品
+    const params = new URLSearchParams(location.search);
+    let storyId = params.get("id");
+    if(!storyId){
+      try{
+        const lib = await (await fetch(LIB_URL, {cache:"no-store"})).json();
+        const first = (lib.stories||[]).filter(s=>s.open).sort((a,b)=>(a.order||99)-(b.order||99))[0];
+        storyId = first ? first.id : "";
+      }catch(e){}
+    }
+    curStory = storyId || "";
+    // 按故事筛选 + 每人首成绩 + 排序（时间在前者优先）
+    const seen = new Set();
+    const filtered = records
+      .filter(r=>!curStory || r.storyId===curStory)
+      .sort((a,b)=> (b.ts||"").localeCompare(a.ts||""))
+      .filter(r=>{
+        const k = r.cls+"|"+r.name;
+        if(seen.has(k)) return false;
+        seen.add(k);
+        return true;
+      })
+      .sort((a,b)=> scoreOf(a)-scoreOf(b) || (b.seconds||0)-(a.seconds||0));
+    rows = filtered.map((r,i)=>({rank:i+1, cls:r.cls, name:r.name, ending:r.endingName||r.endingId, seconds:r.seconds||0}));
+  }catch(e){}
+  allRows = rows;
+  const classes = [...new Set(rows.map(r=>r.cls))].sort();
+  renderTabs(classes);
+  renderRows();
+  const d = new Date();
+  $("refresh").textContent = "更新于 " + d.toLocaleTimeString("zh-CN",{hour12:false});
+}
+
+/* 结局分值（与 server 端一致，仅用于排名） */
+function scoreOf(r){
+  const map = {hidden:100, insight:85, understand:60, surface:35, absurd:10};
+  if(r.score !== undefined) return r.score;
+  // 用 endingId 或 endingName 推断
+  const id = r.endingId || "";
+  if(id.includes("light")) return 100;
+  if(id.includes("spark")) return 85;
+  if(id.includes("echo")) return 60;
+  if(id.includes("dust")) return 35;
+  if(id.includes("cloud")) return 10;
+  // 按名字兜底
+  const name = r.endingName || "";
+  if(name==="天光") return 100;
+  if(name==="星火") return 85;
+  if(name==="回响") return 60;
+  if(name==="尘路") return 35;
+  if(name==="浮云") return 10;
+  return 0;
+}
+
+function renderTabs(classes){
+  const tabs = $("tabs");
+  if(classes.length <= 1){ tabs.innerHTML = ""; return; }
+  let html = `<button class="tab ${curCls==="all"?"on":""}" data-c="all">全部</button>`;
+  classes.forEach(c=>{ html += `<button class="tab ${curCls===c?"on":""}" data-c="${esc(c)}">${esc(c)}</button>`; });
+  tabs.innerHTML = html;
+  tabs.querySelectorAll(".tab").forEach(t=>{
+    t.addEventListener("click", ()=>{ curCls = t.dataset.c; renderTabs(classes); renderRows(); });
+  });
+}
+
+function renderRows(){
+  const rows = curCls==="all" ? allRows : allRows.filter(r=>r.cls===curCls);
+  const tbody = $("rows");
+  $("empty").style.display = rows.length ? "none" : "block";
+  if(!rows.length){ tbody.innerHTML = ""; return; }
+  tbody.innerHTML = rows.map(r=>{
+    const rankCls = r.rank===1?"r1":r.rank===2?"r2":r.rank===3?"r3":"";
+    const clsTag = curCls==="all" ? `<div class="cls">${esc(r.cls)}</div>` : "";
+    return `<tr>
+      <td class="rank ${rankCls}">${r.rank}</td>
+      <td><div class="who">${esc(r.name)}</div>${clsTag}</td>
+      <td class="end">${esc(r.ending)}</td>
+      <td class="time">${fmt(r.seconds)}</td>
+    </tr>`;
+  }).join("");
+}
+
+function fmt(s){
+  const m = Math.floor(s/60), r = s%60;
+  return m>0 ? m+"分"+r+"秒" : r+"秒";
+}
+
+loadStories();
+loadBoard();
+setInterval(loadBoard, 5000);
+</script>
+</body>
+</html>
