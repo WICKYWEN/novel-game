@@ -90,14 +90,25 @@
 <body>
 <div class="wrap">
 
-  <!-- 登录 -->
+  <!-- 登录/注册 -->
   <div class="login-box" id="loginBox">
     <h2>📚 文游管理台</h2>
-    <p class="tip">请输入老师账号登录</p>
-    <input type="text" id="lg-user" placeholder="用户名">
-    <input type="password" id="lg-pwd" placeholder="密码">
-    <button class="btn" id="btn-login" style="width:100%">登录</button>
-    <p class="stats-line">账号由管理员分配 · 忘记密码请联系管理员</p>
+    <div id="login-form">
+      <p class="tip">请输入老师账号登录</p>
+      <input type="text" id="lg-user" placeholder="用户名">
+      <input type="password" id="lg-pwd" placeholder="密码">
+      <button class="btn" id="btn-login" style="width:100%">登录</button>
+      <p class="stats-line"><a href="javascript:void(0)" id="link-reg" style="color:var(--accent-dark);text-decoration:underline">没有账号？注册老师账号</a></p>
+    </div>
+    <div id="reg-form" class="hidden">
+      <p class="tip">注册老师账号（注册后立即可用）</p>
+      <input type="text" id="rg-user" placeholder="用户名（英文或拼音，如 wang）">
+      <input type="text" id="rg-name" placeholder="姓名（显示在作品上，如：王老师）">
+      <input type="password" id="rg-pwd" placeholder="密码（至少6位）">
+      <input type="password" id="rg-pwd2" placeholder="重复密码">
+      <button class="btn" id="btn-reg" style="width:100%">注册</button>
+      <p class="stats-line"><a href="javascript:void(0)" id="link-back" style="color:var(--accent-dark);text-decoration:underline">← 返回登录</a></p>
+    </div>
   </div>
 
   <!-- 主面板（登录后显示） -->
@@ -119,6 +130,13 @@
       </div>
       <div class="gen-tip">发布后作品立即出现在下方"作品管理"列表，可在其中【启动】给学生玩。所有老师共享作品库，任何老师的作品都可被其他老师使用。</div>
       <div class="preview" id="gen-preview"></div>
+    </div>
+
+    <!-- 账号管理（仅管理员） -->
+    <div class="panel" id="adminPanel" style="display:none">
+      <h2>👥 账号管理（管理员）</h2>
+      <div class="gen-tip" style="margin-bottom:10px">所有已注册的老师账号。删除后该账号立即无法登录，其作品保留在作品库中。</div>
+      <div id="teacherList"></div>
     </div>
 
     <!-- 作品管理 -->
@@ -449,23 +467,76 @@ function fmt(s){
   return m>0 ? m+"分"+r+"秒" : r+"秒";
 }
 
-/* ---------- 登录 ---------- */
+/* ---------- 登录/注册 ---------- */
+const TEACHERS_API = `https://api.github.com/repos/${G.owner}/${G.repo}/contents/teachers.json`;
+
 async function sha256(text){
   const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
   return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
 }
+
+async function loadTeachers(){
+  const f = await ghGet(TEACHERS_API);
+  if(!f) return [];
+  return JSON.parse(decodeURIComponent(escape(atob(f.content.replace(/\n/g,""))))).teachers || [];
+}
+
+async function saveTeachers(teachers){
+  const content = JSON.stringify({version:1, teachers}, null, 1);
+  const exist = await ghGet(TEACHERS_API);
+  await ghPut(TEACHERS_API, content, exist ? exist.sha : null, "更新教师账号");
+}
+
+$("link-reg").addEventListener("click", ()=>{
+  $("login-form").classList.add("hidden");
+  $("reg-form").classList.remove("hidden");
+});
+$("link-back").addEventListener("click", ()=>{
+  $("reg-form").classList.add("hidden");
+  $("login-form").classList.remove("hidden");
+});
+
+$("btn-reg").addEventListener("click", async ()=>{
+  const user = $("rg-user").value.trim();
+  const name = $("rg-name").value.trim();
+  const pwd = $("rg-pwd").value;
+  const pwd2 = $("rg-pwd2").value;
+  if(!user || !name){ toast("请填写用户名和姓名"); return; }
+  if(!/^[a-zA-Z0-9_]{2,20}$/.test(user)){ toast("用户名限英文/数字/下划线，2~20位"); return; }
+  if(pwd.length < 6){ toast("密码至少6位"); return; }
+  if(pwd !== pwd2){ toast("两次密码不一致"); return; }
+  // 内置 admin 与已有账号查重
+  if(user === (G.teachers||[])[0]?.user || (G.teachers||[]).some(t=>t.user===user)){ toast("该用户名已被注册"); return; }
+  try{
+    const teachers = await loadTeachers();
+    if(teachers.some(t=>t.user===user)){ toast("该用户名已被注册"); return; }
+    teachers.push({user, name, pwdHash: await sha256(pwd), ts: new Date().toLocaleString("zh-CN",{hour12:false})});
+    await saveTeachers(teachers);
+    toast("🎉 注册成功！请用新账号登录");
+    $("reg-form").classList.add("hidden");
+    $("login-form").classList.remove("hidden");
+    $("lg-user").value = user;
+  }catch(e){ toast("注册失败：" + e.message); }
+});
 
 $("btn-login").addEventListener("click", async ()=>{
   const user = $("lg-user").value.trim();
   const pwd = $("lg-pwd").value;
   if(!user || !pwd){ toast("请输入用户名和密码"); return; }
   const hash = await sha256(pwd);
-  const t = (G.teachers||[]).find(t=> t.user === user && t.pwdHash === hash);
-  if(!t){ toast("用户名或密码错误"); return; }
-  me = t;
-  sessionStorage.setItem("novel_admin_user", user);
-  sessionStorage.setItem("novel_admin_pwd", pwd);
-  enter();
+  // 内置管理员
+  const admin = (G.teachers||[]).find(t=> t.user === user && t.pwdHash === hash);
+  if(admin){ me = admin; me.isAdmin = true; sessionStorage.setItem("novel_admin_user", user); sessionStorage.setItem("novel_admin_pwd", pwd); enter(); return; }
+  // 注册老师（teachers.json）
+  try{
+    const teachers = await loadTeachers();
+    const t = teachers.find(t=> t.user === user && t.pwdHash === hash);
+    if(!t){ toast("用户名或密码错误"); return; }
+    me = t; me.isAdmin = false;
+    sessionStorage.setItem("novel_admin_user", user);
+    sessionStorage.setItem("novel_admin_pwd", pwd);
+    enter();
+  }catch(e){ toast("登录失败：" + e.message); }
 });
 
 $("btn-logout").addEventListener("click", ()=>{
@@ -479,7 +550,52 @@ async function enter(){
   $("loginBox").classList.add("hidden");
   $("main").classList.remove("hidden");
   $("sub").textContent = "欢迎，" + (me?.name || me?.user) + " · 管理平台 · " + G.owner + "/" + G.repo;
+  // 管理员显示账号管理
+  if(me?.isAdmin){
+    $("adminPanel").style.display = "";
+    renderTeacherList();
+  }
   await refreshAll();
+}
+
+/* ---------- 账号管理（管理员） ---------- */
+async function renderTeacherList(){
+  const box = $("teacherList");
+  let html = "";
+  // 内置管理员
+  (G.teachers||[]).forEach(t=>{
+    html += `<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line)">
+      <div><strong>${esc(t.name||t.user)}</strong> <span style="font-size:12px;color:var(--ink-soft)">@${esc(t.user)}</span>
+        <span style="font-size:11px;color:var(--accent-dark);background:#eef7f0;border-radius:8px;padding:1px 8px;margin-left:6px">管理员</span></div>
+      <span style="font-size:12px;color:var(--ink-soft)">不可删除</span>
+    </div>`;
+  });
+  // 注册老师
+  try{
+    const teachers = await loadTeachers();
+    teachers.forEach(t=>{
+      html += `<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line)">
+        <div><strong>${esc(t.name||t.user)}</strong> <span style="font-size:12px;color:var(--ink-soft)">@${esc(t.user)}</span>
+          <span style="font-size:11px;color:var(--ink-soft)">注册于 ${esc(t.ts||"")}</span></div>
+        <button class="btn warn" style="padding:3px 12px;font-size:12px" data-del-user="${esc(t.user)}">删除</button>
+      </div>`;
+    });
+    if(!teachers.length) html += `<div style="color:var(--ink-soft);font-size:13px;padding:8px 0">暂无注册老师</div>`;
+  }catch(e){ html += `<div style="color:var(--ink-soft);font-size:13px">加载账号失败：${esc(e.message)}</div>`; }
+  box.innerHTML = html;
+  box.querySelectorAll("[data-del-user]").forEach(b=>{
+    b.addEventListener("click", async ()=>{
+      const user = b.dataset.delUser;
+      if(!confirm("确定删除老师 @" + user + " 的账号吗？删除后该老师无法登录。")) return;
+      try{
+        const teachers = await loadTeachers();
+        const rest = teachers.filter(t=>t.user!==user);
+        await saveTeachers(rest);
+        toast("已删除 @" + user);
+        renderTeacherList();
+      }catch(e){ toast("删除失败：" + e.message); }
+    });
+  });
 }
 
 /* ---------- 自动恢复登录 ---------- */
@@ -488,8 +604,13 @@ async function enter(){
   const p = sessionStorage.getItem("novel_admin_pwd");
   if(!u || !p) return;
   const hash = await sha256(p);
-  const t = (G.teachers||[]).find(t=> t.user === u && t.pwdHash === hash);
-  if(t){ me = t; enter().catch(e=>toast("加载失败："+e.message)); }
+  const admin = (G.teachers||[]).find(t=> t.user === u && t.pwdHash === hash);
+  if(admin){ me = admin; me.isAdmin = true; enter().catch(e=>toast("加载失败："+e.message)); return; }
+  try{
+    const teachers = await loadTeachers();
+    const t = teachers.find(t=> t.user === u && t.pwdHash === hash);
+    if(t){ me = t; me.isAdmin = false; enter().catch(e=>toast("加载失败："+e.message)); }
+  }catch(e){}
 })();
 
 /* ---------- 新建作品（文本→自动生成→发布） ---------- */
