@@ -18,7 +18,7 @@
    "book": "《草船借箭》",
    "chapters": "全篇",
    "playMinutes": 15,
-   "open": false,
+   "open": true,
    "order": 2,
    "desc": "自动生成 · 17段 · 管理员",
    "author": "管理员"
