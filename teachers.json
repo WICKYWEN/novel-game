@@ -1,11 +1,4 @@
 {
  "version": 1,
- "teachers": [
-  {
-   "user": "wanglaoshi",
-   "name": "王老师",
-   "pwdHash": "0854e71321cac492c507370fc28d707ef08c2c9c5a4b21550ee5734bf4494a0e",
-   "ts": "2026/8/13 17:54:02"
-  }
- ]
+ "teachers": []
 }
