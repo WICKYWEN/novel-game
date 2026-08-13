@@ -1,16 +1,27 @@
 {
-  "version": 1,
-  "stories": [
-    {
-      "id": "xiyouji10",
-      "title": "《西游记》前十回",
-      "book": "西游记",
-      "chapters": "第一回~第十回",
-      "playMinutes": 25,
-      "open": true,
-      "order": 1,
-      "desc": "仙石出世 · 大闹天宫",
-      "author": "管理员"
-    }
-  ]
+ "version": 1,
+ "stories": [
+  {
+   "id": "xiyouji10",
+   "title": "《西游记》前十回",
+   "book": "西游记",
+   "chapters": "第一回~第十回",
+   "playMinutes": 25,
+   "open": true,
+   "order": 1,
+   "desc": "仙石出世 · 大闹天宫",
+   "author": "管理员"
+  },
+  {
+   "id": "gmsrbz94d",
+   "title": "《草船借箭》",
+   "book": "《草船借箭》",
+   "chapters": "全篇",
+   "playMinutes": 15,
+   "open": false,
+   "order": 2,
+   "desc": "自动生成 · 17段 · 管理员",
+   "author": "管理员"
+  }
+ ]
 }
