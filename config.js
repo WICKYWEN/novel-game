@@ -21,5 +21,13 @@ window.NG = {
   minSeconds: 45,
 
   // 默认作品（未指定 ?id= 时使用）
-  defaultStory: "xiyouji10"
+  defaultStory: "xiyouji10",
+
+  // ============ 老师账号体系 ============
+  // pwdHash = SHA-256(密码)，不存明文。
+  // 需要添加老师：把 {user, name, pwdHash} 加进数组即可（可让 Hermes 帮忙算哈希）
+  teachers: [
+    { user: "admin", name: "管理员", pwdHash: "d12961f5da5f4c0dda11709fbda5f8918a8ad19df7363f3907561678c640e722" }
+    // 示例：{ user: "wang", name: "王老师", pwdHash: "把密码用SHA256算好后填这里" }
+  ]
 };
