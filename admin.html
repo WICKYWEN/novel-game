@@ -182,6 +182,7 @@ const SCORES_RAW = `https://raw.githubusercontent.com/${G.owner}/${G.repo}/${G.b
 
 async function ghGet(apiUrl){
   const r = await fetch(apiUrl, {headers:{Authorization:"Bearer " + G.token}});
+  if(r.status === 404) return null;  // 文件不存在（新文件场景），返回 null 让调用方创建
   if(!r.ok) throw new Error("HTTP " + r.status);
   return r.json();
 }
@@ -501,7 +502,7 @@ $("btn-preview").addEventListener("click", ()=>{
     const gen = window.NGGen.generate({title, chapters:$("gen-chapters").value.trim(), text, author: me?.name || me?.user});
     const pv = $("gen-preview");
     pv.style.display = "block";
-    pv.innerHTML = `✅ 生成成功！<br>📖 ${gen.title}（${gen.chapters||"无章节"}}）<br>📄 ${Object.keys(gen.story.nodes).length} 个节点 · ${Object.keys(gen.story.endings).length} 个结局<br>${gen.desc}<br><span style="color:var(--ink-soft)">点「生成并发布」正式上传。</span>`;
+    pv.innerHTML = `✅ 生成成功！<br>📖 ${gen.title}（${gen.chapters||"无章节"}）<br>📄 ${Object.keys(gen.story.nodes).length} 个节点 · ${Object.keys(gen.story.endings).length} 个结局<br>${gen.desc}<br><span style="color:var(--ink-soft)">点「生成并发布」正式上传。</span>`;
   }catch(e){
     toast("生成失败：" + e.message);
   }
