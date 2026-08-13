@@ -138,7 +138,7 @@ function renderStories(stories){
     return `<a class="story-card ${open?"":"closed"}" href="${open?"game.html?id="+encodeURIComponent(s.id):"javascript:void(0)"}">
       <div class="story-ico">📖</div>
       <div class="story-info">
-        <div class="story-title">${esc(s.title)}</div>
+        <div class="story-title">${esc(s.title)} ${s.author?'<span style="font-size:11px;color:var(--accent-dark);background:#eef7f0;border-radius:8px;padding:1px 8px;margin-left:4px">👤 '+esc(s.author)+'</span>':''}</div>
         <div class="story-ch">${esc(s.chapters||"")}${s.desc?" · "+esc(s.desc):""}</div>
       </div>
       <span class="story-status ${open?"open":"closed"}">${open?"可玩":"未开放"}</span>
