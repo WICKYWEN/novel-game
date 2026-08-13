@@ -517,13 +517,14 @@ $("btn-publish").addEventListener("click", async ()=>{
   const btn = $("btn-publish");
   btn.disabled = true; btn.textContent = "发布中…";
   try{
+    const API = p => `https://api.github.com/repos/${G.owner}/${G.repo}/contents/${p}`;
     // 1. 上传 story.json
     const storyPath = "stories/" + gen.id + "/story.json";
     const storyContent = JSON.stringify(gen.story, null, 1);
     let sha = null;
-    const exist = await ghGet(storyPath);
+    const exist = await ghGet(API(storyPath));
     if(exist) sha = exist.sha;
-    await ghPut(storyPath, storyContent, sha, "新增作品: " + gen.title);
+    await ghPut(API(storyPath), storyContent, sha, "新增作品: " + gen.title);
 
     // 2. 更新 library.json（加入作品）
     const lib = await loadLibrary();
@@ -533,8 +534,8 @@ $("btn-publish").addEventListener("click", async ()=>{
       open: false, order: (lib.stories.length||0)+1,
       desc: gen.desc, author: gen.author||""
     });
-    const libF = await ghGet("library.json");
-    await ghPut("library.json", JSON.stringify(lib, null, 1), libF.sha, "作品入库: " + gen.title);
+    const libF = await ghGet(LIB_API);
+    await ghPut(LIB_API, JSON.stringify(lib, null, 1), libF.sha, "作品入库: " + gen.title);
 
     toast("🎉 发布成功！作品已在下方列表");
     $("gen-text").value = ""; $("gen-title").value = ""; $("gen-chapters").value = "";
