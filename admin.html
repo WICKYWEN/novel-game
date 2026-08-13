@@ -71,15 +71,55 @@
     opacity:0;pointer-events:none;transition:opacity .3s;max-width:80vw;text-align:center;
   }
   .toast.show{opacity:1}
+  /* 登录 */
+  .login-box{max-width:400px;margin:80px auto;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px}
+  .login-box h2{font-size:19px;margin-bottom:6px}
+  .login-box .tip{font-size:13px;color:var(--ink-soft);margin-bottom:16px}
+  .login-box input{margin-bottom:12px}
+  /* 新建作品 */
+  .gen-box{margin-bottom:20px}
+  .gen-box textarea{width:100%;min-height:220px;padding:14px;font-size:15px;line-height:1.8;border:1.5px solid var(--line);border-radius:12px;outline:none;font-family:inherit;resize:vertical}
+  .gen-box textarea:focus{border-color:var(--accent);box-shadow:var(--glow)}
+  .gen-row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+  .gen-row input{flex:1;min-width:150px;margin-bottom:0}
+  .gen-tip{font-size:12px;color:var(--ink-soft);margin-top:8px}
+  .preview{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:12px;display:none;font-size:13px;color:var(--ink-soft);max-height:220px;overflow:auto}
+  .logout{float:right;font-size:13px;color:var(--ink-soft);cursor:pointer;text-decoration:underline}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- 主面板（无密码，直接进入） -->
-  <div id="main">
-    <h1>📚 文游管理台</h1>
+  <!-- 登录 -->
+  <div class="login-box" id="loginBox">
+    <h2>📚 文游管理台</h2>
+    <p class="tip">请输入老师账号登录</p>
+    <input type="text" id="lg-user" placeholder="用户名">
+    <input type="password" id="lg-pwd" placeholder="密码">
+    <button class="btn" id="btn-login" style="width:100%">登录</button>
+    <p class="stats-line">账号由管理员分配 · 忘记密码请联系管理员</p>
+  </div>
+
+  <!-- 主面板（登录后显示） -->
+  <div id="main" class="hidden">
+    <h1>📚 文游管理台 <span class="logout" id="btn-logout">退出</span></h1>
     <div class="sub" id="sub"></div>
+
+    <!-- 新建作品 -->
+    <div class="panel gen-box">
+      <h2>➕ 新建作品（粘贴文本 → 自动生成游戏）</h2>
+      <div class="gen-row">
+        <input id="gen-title" placeholder="作品名（如：《红楼梦》第一回）">
+        <input id="gen-chapters" placeholder="章节（如：第一回）">
+      </div>
+      <textarea id="gen-text" placeholder="把小说/章节的文本粘贴到这里（建议整段粘贴，段落之间用空行分隔）&#10;&#10;系统会自动：切分段落 → 每段出一道阅读理解题（3选1）→ 按答对比例判定五档结局"></textarea>
+      <div class="gen-row">
+        <button class="btn ghost" id="btn-preview">① 预览生成效果</button>
+        <button class="btn" id="btn-publish">② 生成并发布</button>
+      </div>
+      <div class="gen-tip">发布后作品立即出现在下方"作品管理"列表，可在其中【启动】给学生玩。所有老师共享作品库，任何老师的作品都可被其他老师使用。</div>
+      <div class="preview" id="gen-preview"></div>
+    </div>
 
     <!-- 作品管理 -->
     <div class="panel">
@@ -115,10 +155,12 @@
 <div class="toast" id="toast"></div>
 
 <script src="config.js"></script>
+<script src="generator.js"></script>
 <script>
 "use strict";
 const $ = id => document.getElementById(id);
-const G = window.NG || {owner:"WICKYWEN",repo:"novel-game",branch:"main",token:""};
+const G = window.NG || {owner:"WICKYWEN",repo:"novel-game",branch:"main",token:"",teachers:[]};
+let me = null;  // 当前登录老师
 let records = [];
 let endings = {};
 let stories = [];
@@ -203,7 +245,7 @@ function renderStoryCards(){
     const open = !!s.open;
     const url = gameUrl(s.id);
     return `<div class="scard ${open?"on":""}" data-id="${esc(s.id)}">
-      <div class="t">${esc(s.title)}</div>
+      <div class="t">${esc(s.title)} ${s.author?'<span style="font-size:11px;color:var(--accent-dark);background:#eef7f0;border-radius:8px;padding:1px 8px;margin-left:4px">👤 '+esc(s.author)+'</span>':''}</div>
       <div class="ch">${esc(s.chapters||"")}${s.desc?" · "+esc(s.desc):""}</div>
       <div class="acts">
         <span class="stat ${open?"open":"closed"}">${open?"🟢 开放中":"⚪ 未开放"}</span>
@@ -406,13 +448,103 @@ function fmt(s){
   return m>0 ? m+"分"+r+"秒" : r+"秒";
 }
 
+/* ---------- 登录 ---------- */
+async function sha256(text){
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+
+$("btn-login").addEventListener("click", async ()=>{
+  const user = $("lg-user").value.trim();
+  const pwd = $("lg-pwd").value;
+  if(!user || !pwd){ toast("请输入用户名和密码"); return; }
+  const hash = await sha256(pwd);
+  const t = (G.teachers||[]).find(t=> t.user === user && t.pwdHash === hash);
+  if(!t){ toast("用户名或密码错误"); return; }
+  me = t;
+  sessionStorage.setItem("novel_admin_user", user);
+  sessionStorage.setItem("novel_admin_pwd", pwd);
+  enter();
+});
+
+$("btn-logout").addEventListener("click", ()=>{
+  sessionStorage.removeItem("novel_admin_user");
+  sessionStorage.removeItem("novel_admin_pwd");
+  location.reload();
+});
+
 /* ---------- 进入 ---------- */
 async function enter(){
-  $("sub").textContent = "管理平台 · " + G.owner + "/" + G.repo;
+  $("loginBox").classList.add("hidden");
+  $("main").classList.remove("hidden");
+  $("sub").textContent = "欢迎，" + (me?.name || me?.user) + " · 管理平台 · " + G.owner + "/" + G.repo;
   await refreshAll();
 }
 
-enter().catch(e=>toast("加载失败："+e.message));
+/* ---------- 自动恢复登录 ---------- */
+(async function autoLogin(){
+  const u = sessionStorage.getItem("novel_admin_user");
+  const p = sessionStorage.getItem("novel_admin_pwd");
+  if(!u || !p) return;
+  const hash = await sha256(p);
+  const t = (G.teachers||[]).find(t=> t.user === u && t.pwdHash === hash);
+  if(t){ me = t; enter().catch(e=>toast("加载失败："+e.message)); }
+})();
+
+/* ---------- 新建作品（文本→自动生成→发布） ---------- */
+$("btn-preview").addEventListener("click", ()=>{
+  const title = $("gen-title").value.trim();
+  const text = $("gen-text").value.trim();
+  if(!title){ toast("请填写作品名"); return; }
+  if(!text){ toast("请粘贴文本"); return; }
+  try{
+    const gen = window.NGGen.generate({title, chapters:$("gen-chapters").value.trim(), text, author: me?.name || me?.user});
+    const pv = $("gen-preview");
+    pv.style.display = "block";
+    pv.innerHTML = `✅ 生成成功！<br>📖 ${gen.title}（${gen.chapters||"无章节"}}）<br>📄 ${Object.keys(gen.story.nodes).length} 个节点 · ${Object.keys(gen.story.endings).length} 个结局<br>${gen.desc}<br><span style="color:var(--ink-soft)">点「生成并发布」正式上传。</span>`;
+  }catch(e){
+    toast("生成失败：" + e.message);
+  }
+});
+
+$("btn-publish").addEventListener("click", async ()=>{
+  const title = $("gen-title").value.trim();
+  const text = $("gen-text").value.trim();
+  if(!title){ toast("请填写作品名"); return; }
+  if(!text){ toast("请粘贴文本"); return; }
+  const gen = window.NGGen.generate({title, chapters:$("gen-chapters").value.trim(), text, author: me?.name || me?.user});
+  const btn = $("btn-publish");
+  btn.disabled = true; btn.textContent = "发布中…";
+  try{
+    // 1. 上传 story.json
+    const storyPath = "stories/" + gen.id + "/story.json";
+    const storyContent = JSON.stringify(gen.story, null, 1);
+    let sha = null;
+    const exist = await ghGet(storyPath);
+    if(exist) sha = exist.sha;
+    await ghPut(storyPath, storyContent, sha, "新增作品: " + gen.title);
+
+    // 2. 更新 library.json（加入作品）
+    const lib = await loadLibrary();
+    lib.stories.push({
+      id: gen.id, title: gen.title, book: gen.book||gen.title,
+      chapters: gen.chapters||"", playMinutes: gen.story.meta.playMinutes||15,
+      open: false, order: (lib.stories.length||0)+1,
+      desc: gen.desc, author: gen.author||""
+    });
+    const libF = await ghGet("library.json");
+    await ghPut("library.json", JSON.stringify(lib, null, 1), libF.sha, "作品入库: " + gen.title);
+
+    toast("🎉 发布成功！作品已在下方列表");
+    $("gen-text").value = ""; $("gen-title").value = ""; $("gen-chapters").value = "";
+    $("gen-preview").style.display = "none";
+    await refreshAll();
+  }catch(e){
+    toast("发布失败：" + e.message);
+  }finally{
+    btn.disabled = false; btn.textContent = "② 生成并发布";
+  }
+});
 </script>
 </body>
 </html>
