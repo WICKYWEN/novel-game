@@ -242,6 +242,67 @@
     }
    ],
    "ts": "2026/8/13 16:53:02"
+  },
+  {
+   "storyId": "redstar_p1",
+   "cls": "8F",
+   "name": "文二壮",
+   "endingId": "e_cloud",
+   "endingName": "浮云",
+   "seconds": 827,
+   "keyCorrect": 0,
+   "keyTotal": 1,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "未获解答的问题",
+     "text": "设法打听进入红区的办法，机会来了就动身",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "立即准备行装，踏上前往西安的火车",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "嘲笑这破旧的火车，后悔不该来",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "跟人吹牛说自己去过红区，讲得绘声绘色",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "买了一堆地图，在北平城里研究\"进红区的路线\"",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "爬起来收拾行李，收拾到一半又躺下了",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/18 09:42:55"
   }
  ]
 }
