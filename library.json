@@ -22,6 +22,17 @@
    "order": 2,
    "desc": "自动生成 · 17段 · 管理员",
    "author": "管理员"
+  },
+  {
+   "id": "redstar_p1",
+   "title": "《红星照耀中国》第一篇·探寻红色中国",
+   "book": "红星照耀中国",
+   "chapters": "第一篇 探寻红色中国",
+   "playMinutes": 20,
+   "open": false,
+   "order": 3,
+   "desc": "斯诺闯入红区 · 1936",
+   "author": "管理员"
   }
  ]
 }
