@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>互动文游</title>
+<title>书中行 · 读一本书，或成为书中人</title>
 <style>
   :root{
     --bg:#f5faf7; --card:#ffffff; --accent:#7db892; --accent-dark:#5c9e73;
@@ -98,7 +98,7 @@
   <section id="login" class="login" style="display:none">
     <header>
       <div class="book" id="lg-book">《〈书名〉》</div>
-      <h1 id="lg-title">互动文游</h1>
+      <h1 id="lg-title">书中行</h1>
       <div class="chapter" id="lg-chapter"></div>
     </header>
     <p class="welcome" id="lg-welcome"></p>
@@ -156,6 +156,7 @@ let nodeId = null, depth = 0, startedAt = 0, visited = 0, totalNodes = 0;
 let paraShown = 0, curNode = null;
 let keyTotal = 0, keyCorrect = 0;
 let choiceLog = [];  // 每题选择明细：{node, title, text, depth, key, correct}
+let textDone = false;  // 当前节点全部文本是否已显示完（等待点击进入选项/下一节点）
 let storyId = null;
 
 const LS_KEY = "novel_game_student";
@@ -267,7 +268,7 @@ async function init(){
   $("login").style.display = "flex";
   // 填充登录页
   $("lg-book").textContent = "《" + (META.book||"") + "》";
-  $("lg-title").textContent = META.title || "互动文游";
+  $("lg-title").textContent = META.title || "书中行";
   $("lg-chapter").textContent = META.chapters || "";
   $("lg-welcome").textContent = (STORY.meta && STORY.meta.welcome) || "";
   $("footer").textContent = (STORY.meta && STORY.meta.footer) || "";
@@ -318,24 +319,27 @@ function showNode(id){
   $("gm-story").innerHTML = "";
   $("gm-choices").innerHTML = "";
   paraShown = 0;
+  textDone = false;
   if(node.text && node.text.length){
     $("gm-hint").textContent = "轻触屏幕继续";
     $("gm-hint").style.visibility = "visible";
     showNextPara();
   }else{
+    // 无文本节点：直接进入选项/推进（如 route 判定、纯转场）
+    textDone = true;
     afterText();
   }
 }
 
 function showNextPara(){
-  if(paraShown >= curNode.text.length){ afterText(); return; }
+  if(paraShown >= curNode.text.length){ return; }
   const p = document.createElement("p");
   p.className = "para";
   p.textContent = curNode.text[paraShown++];
   $("gm-story").appendChild(p);
-  if(paraShown >= curNode.text.length){
-    setTimeout(afterText, 300);
-  }
+  // 每段显示后必须点击才继续（不自动推进）
+  $("gm-hint").textContent = "轻触屏幕继续";
+  $("gm-hint").style.visibility = "visible";
   window.scrollTo({top: document.body.scrollHeight, behavior:"smooth"});
 }
 
@@ -445,10 +449,20 @@ function fmtTime(s){
 $("btn-leaderboard").addEventListener("click", ()=>{ location.href = "./index.html?id=" + storyId; });
 $("btn-again").addEventListener("click", ()=>{ location.reload(); });
 
+// 点击文本区继续（每段一触；全部读完后再触一次进入选项/下一节点）
 $("game").addEventListener("click", (ev)=>{
   if(ev.target.closest(".choice")) return;
   if(!curNode) return;
-  if(paraShown < curNode.text.length) showNextPara();
+  if(paraShown < curNode.text.length){
+    showNextPara();
+    return;
+  }
+  // 全部段落已显示：本次点击才进入选项/推进（textDone 防重复）
+  if(!textDone){
+    textDone = true;
+    $("gm-hint").style.visibility = "hidden";
+    afterText();
+  }
 });
 
 init();
