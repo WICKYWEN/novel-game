@@ -315,7 +315,19 @@ function showNode(id){
   $("gm-progress-txt").textContent = visited + "/" + totalNodes;
   if(node.scene){
     const sc = $("gm-scene");
-    sc.textContent = node.scene; sc.style.display = "inline-block";
+    // 场景变化时淡入过渡（避免生硬切换）
+    if(sc.textContent !== node.scene){
+      sc.style.transition = "opacity .25s ease";
+      sc.style.opacity = "0";
+      setTimeout(()=>{
+        sc.textContent = node.scene;
+        sc.style.display = "inline-block";
+        sc.style.opacity = "1";
+      }, 120);
+    }else{
+      sc.style.display = "inline-block";
+      sc.style.opacity = "1";
+    }
   }
   $("gm-title").textContent = node.title || "";
   $("gm-story").innerHTML = "";
@@ -342,7 +354,11 @@ function showNextPara(){
   // 每段显示后必须点击才继续（不自动推进）
   $("gm-hint").textContent = "轻触屏幕继续";
   $("gm-hint").style.visibility = "visible";
-  window.scrollTo({top: document.body.scrollHeight, behavior:"smooth"});
+  // 滚动到新段落（instant，避免平滑长滚动的"视角跳变"感）
+  const target = $("gm-story").lastElementChild;
+  if(target && target.getBoundingClientRect().bottom > window.innerHeight - 60){
+    window.scrollTo({top: document.body.scrollHeight, behavior:"auto"});
+  }
 }
 
 function afterText(){
@@ -382,7 +398,6 @@ function renderChoices(choices){
         if(huRegret >= 2){
           nextId = c.returnTo;
           huRegret = 0;
-          toast("你终于清醒了，重新踏上正途");
         }
       }else if(isHuLine){
         huRegret = 0;  // 又选了离谱选项，醒悟计数清零
