@@ -156,6 +156,7 @@ let student = { cls:"", name:"", code:"" };
 let nodeId = null, depth = 0, startedAt = 0, visited = 0, totalNodes = 0;
 let paraShown = 0, curNode = null;
 let keyTotal = 0, keyCorrect = 0;
+let huRegret = 0;  // 糊涂线内连续"醒悟"计数（连续2次拉回主线）
 let choiceLog = [];  // 每题选择明细：{node, title, text, depth, key, correct}
 let textDone = false;  // 当前节点全部文本是否已显示完（等待点击进入选项/下一节点）
 let storyId = null;
@@ -301,7 +302,7 @@ function startGame(){
   $("game").style.display = "flex";
   $("gm-book").textContent = META.title || "";
   nodeId = STORY.startNodeId; depth = 0; visited = 0; startedAt = Date.now();
-  keyTotal = 0; keyCorrect = 0; choiceLog = [];
+  keyTotal = 0; keyCorrect = 0; choiceLog = []; huRegret = 0;
   showNode(nodeId);
 }
 
@@ -365,22 +366,37 @@ function renderChoices(choices){
     b.className = "choice";
     b.textContent = c.text;
     b.addEventListener("click", ()=>{
-      depth += (c.depth !== undefined ? c.depth : 1);
       const isKey = !!curNode.key;
+      const isHuLine = (curNode.id || nodeId || "").startsWith("nz");  // 是否在糊涂线
+      const rawDepth = (c.depth !== undefined ? c.depth : 1);
+      // key 节点权重 ×3（关键选择决定线路；普通节点权重 1）
+      depth += rawDepth * (isKey ? 3 : 1);
       if(isKey){
         keyTotal++;
-        if(c.depth === 2) keyCorrect++;
+        if(rawDepth === 2) keyCorrect++;
+      }
+      // 糊涂线醒悟机制：选醒悟选项（depth≥1）连续2次 → 拉回主线
+      let nextId = c.next;
+      if(isHuLine && rawDepth >= 1 && c.returnTo){
+        huRegret++;
+        if(huRegret >= 2){
+          nextId = c.returnTo;
+          huRegret = 0;
+          toast("你终于清醒了，重新踏上正途");
+        }
+      }else if(isHuLine){
+        huRegret = 0;  // 又选了离谱选项，醒悟计数清零
       }
       // 记录每题选择：key节点选depth=2为对；普通节点depth≥1为正常
       choiceLog.push({
         node: curNode.id || nodeId,
         title: curNode.title || "",
         text: c.text,
-        depth: c.depth !== undefined ? c.depth : 1,
+        depth: rawDepth,
         key: isKey,
-        correct: isKey ? (c.depth === 2) : (c.depth >= 1)
+        correct: isKey ? (rawDepth === 2) : (rawDepth >= 1)
       });
-      showNode(c.next);
+      showNode(nextId);
     });
     box.appendChild(b);
   });
