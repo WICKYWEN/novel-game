@@ -1,11 +1,1 @@
-{
- "version": 1,
- "entries": [
-  {
-   "user": "testteacher",
-   "iv": "d49ae0cb6a24447a89f81005",
-   "data": "8e48a143c2f0f6c900efa392bac8ded3c19454ab021ac6d7b0a3b208cb44054085db0db3bfad",
-   "ts": "2026/8/19 09:50:41"
-  }
- ]
-}
+{"version":1,"entries":[]}
