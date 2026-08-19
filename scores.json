@@ -303,6 +303,18 @@
     }
    ],
    "ts": "2026/8/18 09:42:55"
+  },
+  {
+   "storyId": "redstar_p1",
+   "cls": "",
+   "name": "",
+   "endingId": "e_light",
+   "endingName": "天光",
+   "seconds": 1787103029,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [],
+   "ts": "2026/8/19 09:30:29"
   }
  ]
 }
