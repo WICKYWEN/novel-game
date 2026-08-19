@@ -14,31 +14,36 @@
    "name": "天光",
    "tier": "hidden",
    "score": 100,
-   "text": "你记住了每一个细节：保甲的连坐、周恩来悬赏八万元的首级、贺龙那把菜刀、十七岁的\"老狗\"走了六千英里的长征。你不仅读完了这段路——你走过了它。"
+   "text": "你记住了每一个细节：保甲的连坐、周恩来悬赏八万元的首级、贺龙那把菜刀、十七岁的\"老狗\"走了六千英里的长征。你不仅读完了这段路——你走过了它。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p2/ending_light.jpg"
   },
   "e_spark": {
    "name": "星火",
    "tier": "insight",
    "score": 85,
-   "text": "你一路走到了保安。白匪的追捕、造反者的故事、少年红军的歌声——这一切让你看见，谣言背后是一个怎样真实而年轻的中国。"
+   "text": "你一路走到了保安。白匪的追捕、造反者的故事、少年红军的歌声——这一切让你看见，谣言背后是一个怎样真实而年轻的中国。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p2/ending_spark.jpg"
   },
   "e_echo": {
    "name": "回响",
    "tier": "understand",
    "score": 60,
-   "text": "你走完了去红都的道路，认识了一些人：周恩来、贺龙、老狗、老表。有些细节模糊了，但那些面孔和歌声，还在你心里回响。"
+   "text": "你走完了去红都的道路，认识了一些人：周恩来、贺龙、老狗、老表。有些细节模糊了，但那些面孔和歌声，还在你心里回响。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p2/ending_echo.jpg"
   },
   "e_dust": {
    "name": "尘路",
    "tier": "surface",
    "score": 35,
-   "text": "你赶了一路，风尘仆仆。谁是谁、做了什么，在你脑海里混成了一片。也许该回头再读一遍。"
+   "text": "你赶了一路，风尘仆仆。谁是谁、做了什么，在你脑海里混成了一片。也许该回头再读一遍。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p2/ending_dust.jpg"
   },
   "e_cloud": {
    "name": "浮云",
    "tier": "absurd",
    "score": 10,
-   "text": "去红都的道路？你好像走过，又好像没走过。一路上只顾着赶路，什么都没看清。风沙太大，你连方向都忘了。"
+   "text": "去红都的道路？你好像走过，又好像没走过。一路上只顾着赶路，什么都没看清。风沙太大，你连方向都忘了。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p2/ending_cloud.jpg"
   }
  },
  "nodes": {
