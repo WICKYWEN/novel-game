@@ -51,7 +51,7 @@
    "book": "红星照耀中国",
    "chapters": "第三篇 在保安",
    "playMinutes": 20,
-   "open": false,
+   "open": true,
    "order": 5,
    "desc": "毛泽东·红军大学·剧社",
    "author": "管理员"
@@ -62,7 +62,7 @@
    "book": "红星照耀中国",
    "chapters": "第四篇 一个共产党员的由来",
    "playMinutes": 20,
-   "open": true,
+   "open": false,
    "order": 6,
    "desc": "毛泽东自传: 童年·长沙·革命·井冈山",
    "author": "管理员"
