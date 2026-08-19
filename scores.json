@@ -448,6 +448,155 @@
     }
    ],
    "ts": "2026/8/19 11:06:51"
+  },
+  {
+   "storyId": "redstar_p2",
+   "cls": "388",
+   "name": "米",
+   "endingId": "e_spark",
+   "endingName": "星火",
+   "seconds": 413,
+   "keyCorrect": 2,
+   "keyTotal": 4,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "标语下的夜晚",
+     "text": "询问向导：我们离安塞还有多远？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "白匪警告",
+     "text": "问清楚：你说的土匪是什么人？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "白匪是什么",
+     "text": "追问：民团为什么这么恨红军？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "第一个红军战士",
+     "text": "问他：这匹漂亮的马是哪来的？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "废墟之城",
+     "text": "问他：居民们现在住在哪里？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "游击队的呐喊",
+     "text": "惊叹：这呐喊声用来恫吓敌人一定很有效",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "周恩来出场",
+     "text": "用英语回答：我是美国记者，来见毛泽东",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "书生出身的造反者",
+     "text": "感叹：悬赏八万，门前却只有一个哨兵",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n9",
+     "title": "李长林",
+     "text": "问他：你当红军多久了？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n10",
+     "title": "贺龙的传说",
+     "text": "追问：贺龙后来怎么参加了共产党？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n12",
+     "title": "菜刀",
+     "text": "惊叹：一把菜刀就能建立苏区？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n13",
+     "title": "一把菜刀",
+     "text": "继续问：贺龙和传教士的故事是真的吗？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "少年红军",
+     "text": "问他们：你们喜欢红军吗？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "喜欢红军吗",
+     "text": "记下这些，心里震动",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "考孩子们",
+     "text": "继续问：谁把这一切教给他们的？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n18",
+     "title": "老狗的故事",
+     "text": "问他：你家里人呢？",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n19",
+     "title": "六千里长征",
+     "text": "问他：红军教你们读书写字？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    }
+   ],
+   "ts": "2026/8/19 11:18:34"
   }
  ]
 }
