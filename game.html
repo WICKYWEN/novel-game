@@ -136,6 +136,7 @@
   <section id="ending" class="ending">
     <div class="end-label">终 章</div>
     <h2 id="en-name"></h2>
+    <img id="en-img" class="end-img" alt="结局画面" style="display:none;max-width:86%;max-height:38vh;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.14)">
     <p class="end-text" id="en-text"></p>
     <p class="end-meta" id="en-meta"></p>
     <button class="btn" id="btn-leaderboard">查看排行榜</button>
@@ -408,6 +409,14 @@ async function finish(endingId){
   $("en-name").textContent = e.name;
   $("en-text").textContent = e.text;
   $("en-meta").textContent = "用时 " + fmtTime(seconds);
+  // 结局配图（有 image 字段才显示）
+  const img = $("en-img");
+  if(e.image){
+    img.src = e.image;
+    img.style.display = "block";
+  }else{
+    img.style.display = "none";
+  }
 
   // 防秒提交
   if(G.minSeconds && seconds < G.minSeconds){
