@@ -15,31 +15,36 @@
    "name": "天光",
    "tier": "hidden",
    "score": 100,
-   "text": "红色大门在你身后缓缓合拢。你记得每一个细节：一九三六年的六月、董健吾的化名、邓发铁爪般的手、刘龙火端出的炒鸡蛋。你走进了别人只敢猜想的谜——而你带着真相走了出来。"
+   "text": "红色大门在你身后缓缓合拢。你记得每一个细节：一九三六年的六月、董健吾的化名、邓发铁爪般的手、刘龙火端出的炒鸡蛋。你走进了别人只敢猜想的谜——而你带着真相走了出来。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p1/ending_light.jpg"
   },
   "e_spark": {
    "name": "星火",
    "tier": "insight",
    "score": 85,
-   "text": "你跨过了那道门，看见了真正的中国。路上的险阻、黄土高原的窑洞、农民递来的苏区纸币——这一切都在告诉你：谣言和真相之间，隔着一次亲自的踏足。"
+   "text": "你跨过了那道门，看见了真正的中国。路上的险阻、黄土高原的窑洞、农民递来的苏区纸币——这一切都在告诉你：谣言和真相之间，隔着一次亲自的踏足。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p1/ending_spark.jpg"
   },
   "e_echo": {
    "name": "回响",
    "tier": "understand",
    "score": 60,
-   "text": "你走进了红区，认识了这里的人。有些细节你记得模糊，有些对话你已经想不起来——但你知道，自己看到的是一个真实的、与传说不同的中国。"
+   "text": "你走进了红区，认识了这里的人。有些细节你记得模糊，有些对话你已经想不起来——但你知道，自己看到的是一个真实的、与传说不同的中国。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p1/ending_echo.jpg"
   },
   "e_dust": {
    "name": "尘路",
    "tier": "surface",
    "score": 35,
-   "text": "你走完了这段路，却像是隔着雾看的风景。人名、年份、那些惊心动魄的对话，在你脑海里只剩下模糊的影子。也许该回头再翻一翻书。"
+   "text": "你走完了这段路，却像是隔着雾看的风景。人名、年份、那些惊心动魄的对话，在你脑海里只剩下模糊的影子。也许该回头再翻一翻书。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p1/ending_dust.jpg"
   },
   "e_cloud": {
    "name": "浮云",
    "tier": "absurd",
    "score": 10,
-   "text": "红色中国？你好像去过，又好像没去过。一路上你只顾着赶路，什么也没看清。风吹过黄土，你连自己为什么在这里都想不起来了。"
+   "text": "红色中国？你好像去过，又好像没去过。一路上你只顾着赶路，什么也没看清。风吹过黄土，你连自己为什么在这里都想不起来了。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p1/ending_cloud.jpg"
   }
  },
  "nodes": {
