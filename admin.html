@@ -98,16 +98,26 @@
       <input type="text" id="lg-user" placeholder="用户名">
       <input type="password" id="lg-pwd" placeholder="密码">
       <button class="btn" id="btn-login" style="width:100%">登录</button>
-      <p class="stats-line"><a href="javascript:void(0)" id="link-reg" style="color:var(--accent-dark);text-decoration:underline">没有账号？注册老师账号</a></p>
+      <p class="stats-line"><a href="javascript:void(0)" id="link-reg" style="color:var(--accent-dark);text-decoration:underline">没有账号？注册老师账号</a> · <a href="javascript:void(0)" id="link-forgot" style="color:var(--accent-dark);text-decoration:underline">忘记密码？</a></p>
     </div>
     <div id="reg-form" class="hidden">
-      <p class="tip">注册老师账号（注册后立即可用）</p>
+      <p class="tip">注册老师账号（需注册口令，可问管理员要）</p>
       <input type="text" id="rg-user" placeholder="用户名（英文或拼音，如 wang）">
       <input type="text" id="rg-name" placeholder="姓名（显示在作品上，如：王老师）">
       <input type="password" id="rg-pwd" placeholder="密码（至少6位）">
       <input type="password" id="rg-pwd2" placeholder="重复密码">
+      <input type="password" id="rg-code" placeholder="注册口令（数字请用英文输入法）">
       <button class="btn" id="btn-reg" style="width:100%">注册</button>
       <p class="stats-line"><a href="javascript:void(0)" id="link-back" style="color:var(--accent-dark);text-decoration:underline">← 返回登录</a></p>
+    </div>
+    <div id="forgot-form" class="hidden">
+      <p class="tip">重置密码（输入用户名 + 注册口令，可设新密码。作品和成绩不受影响）</p>
+      <input type="text" id="fg-user" placeholder="用户名">
+      <input type="password" id="fg-code" placeholder="注册口令">
+      <input type="password" id="fg-pwd" placeholder="新密码（至少6位）">
+      <input type="password" id="fg-pwd2" placeholder="重复新密码">
+      <button class="btn" id="btn-forgot" style="width:100%">重置密码</button>
+      <p class="stats-line"><a href="javascript:void(0)" id="link-back2" style="color:var(--accent-dark);text-decoration:underline">← 返回登录</a></p>
     </div>
   </div>
 
@@ -495,16 +505,53 @@ $("link-back").addEventListener("click", ()=>{
   $("reg-form").classList.add("hidden");
   $("login-form").classList.remove("hidden");
 });
+$("link-forgot").addEventListener("click", ()=>{
+  $("login-form").classList.add("hidden");
+  $("forgot-form").classList.remove("hidden");
+});
+$("link-back2").addEventListener("click", ()=>{
+  $("forgot-form").classList.add("hidden");
+  $("login-form").classList.remove("hidden");
+});
+
+$("btn-forgot").addEventListener("click", async ()=>{
+  const user = $("fg-user").value.trim();
+  const code = $("fg-code").value.trim();
+  const pwd = $("fg-pwd").value;
+  const pwd2 = $("fg-pwd2").value;
+  if(!user){ toast("请输入用户名"); return; }
+  const codeNorm = code.replace(/[\uFF01-\uFF5E]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0xFEE0)).replace(/\u3000/g, " ");
+  if(!codeNorm){ toast("请输入注册口令"); return; }
+  if((await sha256(codeNorm)) !== G.regCode){ toast("注册口令不正确"); return; }
+  if(pwd.length < 6){ toast("新密码至少6位"); return; }
+  if(pwd !== pwd2){ toast("两次新密码不一致"); return; }
+  try{
+    const teachers = await loadTeachers();
+    const t = teachers.find(x=>x.user===user);
+    if(!t){ toast("找不到该用户名（老师账号才能自助重置）"); return; }
+    t.pwdHash = await sha256(pwd);
+    await saveTeachers(teachers);
+    toast("✅ 密码已重置，请用新密码登录");
+    $("forgot-form").classList.add("hidden");
+    $("login-form").classList.remove("hidden");
+    $("lg-user").value = user;
+  }catch(e){ toast("重置失败：" + e.message); }
+});
 
 $("btn-reg").addEventListener("click", async ()=>{
   const user = $("rg-user").value.trim();
   const name = $("rg-name").value.trim();
   const pwd = $("rg-pwd").value;
   const pwd2 = $("rg-pwd2").value;
+  const code = $("rg-code").value.trim();
   if(!user || !name){ toast("请填写用户名和姓名"); return; }
   if(!/^[a-zA-Z0-9_]{2,20}$/.test(user)){ toast("用户名限英文/数字/下划线，2~20位"); return; }
   if(pwd.length < 6){ toast("密码至少6位"); return; }
   if(pwd !== pwd2){ toast("两次密码不一致"); return; }
+  // 注册口令校验（全角转半角）
+  const codeNorm = code.replace(/[\uFF01-\uFF5E]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0xFEE0)).replace(/\u3000/g, " ");
+  if(!codeNorm){ toast("请输入注册口令"); return; }
+  if((await sha256(codeNorm)) !== G.regCode){ toast("注册口令不正确，请向管理员确认"); return; }
   // 内置 admin 与已有账号查重
   if(user === (G.teachers||[])[0]?.user || (G.teachers||[]).some(t=>t.user===user)){ toast("该用户名已被注册"); return; }
   try{
@@ -512,12 +559,68 @@ $("btn-reg").addEventListener("click", async ()=>{
     if(teachers.some(t=>t.user===user)){ toast("该用户名已被注册"); return; }
     teachers.push({user, name, pwdHash: await sha256(pwd), ts: new Date().toLocaleString("zh-CN",{hour12:false})});
     await saveTeachers(teachers);
+    // 加密保险库：用口令派生密钥加密 {用户名+明文密码}，供管理员查看
+    await saveVaultEntry(user, pwd, codeNorm);
     toast("🎉 注册成功！请用新账号登录");
     $("reg-form").classList.add("hidden");
     $("login-form").classList.remove("hidden");
     $("lg-user").value = user;
   }catch(e){ toast("注册失败：" + e.message); }
 });
+
+/* ---------- 加密保险库（管理员可查看老师密码） ---------- */
+const VAULT_API = `https://api.github.com/repos/${G.owner}/${G.repo}/contents/teacher_vault.json`;
+
+async function vaultKey(code){
+  // 用注册口令派生 AES-GCM 密钥（PBKDF2）
+  const enc = new TextEncoder();
+  const base = await crypto.subtle.importKey("raw", enc.encode("vault-salt-olive-" + code),
+    "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey(
+    {name: "PBKDF2", salt: enc.encode("novel-vault-2026"), iterations: 10000, hash: "SHA-256"},
+    base, {name: "AES-GCM", length: 256}, false, ["encrypt", "decrypt"]);
+}
+
+async function loadVault(){
+  const f = await ghGet(VAULT_API);
+  if(!f) return {version:1, entries:[]};
+  return JSON.parse(decodeURIComponent(escape(atob(f.content.replace(/\n/g,"")))));
+}
+
+async function saveVaultEntry(user, plainPwd, code){
+  const key = await vaultKey(code);
+  const enc = new TextEncoder();
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const cipher = await crypto.subtle.encrypt({name:"AES-GCM", iv},
+    key, enc.encode(user + "\n" + plainPwd));
+  const vault = await loadVault();
+  vault.entries = (vault.entries||[]).filter(e=>e.user!==user);
+  vault.entries.push({
+    user, iv: Array.from(iv).map(b=>b.toString(16).padStart(2,"0")).join(""),
+    data: Array.from(new Uint8Array(cipher)).map(b=>b.toString(16).padStart(2,"0")).join(""),
+    ts: new Date().toLocaleString("zh-CN",{hour12:false})
+  });
+  const content = JSON.stringify(vault, null, 1);
+  const exist = await ghGet(VAULT_API);
+  await ghPut(VAULT_API, content, exist ? exist.sha : null, "保险库更新");
+}
+
+async function decryptVault(code){
+  const key = await vaultKey(code);
+  const vault = await loadVault();
+  const dec = new TextDecoder();
+  const out = [];
+  for(const e of (vault.entries||[])){
+    try{
+      const iv = new Uint8Array(e.iv.match(/.{2}/g).map(h=>parseInt(h,16)));
+      const data = new Uint8Array(e.data.match(/.{2}/g).map(h=>parseInt(h,16)));
+      const plain = dec.decode(await crypto.subtle.decrypt({name:"AES-GCM", iv}, key, data));
+      const [u, p] = plain.split("\n");
+      out.push({user:u, pwd:p, ts:e.ts});
+    }catch(err){ /* 口令错误时解密失败 */ }
+  }
+  return out;
+}
 
 $("btn-login").addEventListener("click", async ()=>{
   const user = $("lg-user").value.trim();
@@ -577,10 +680,21 @@ async function renderTeacherList(){
       html += `<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line)">
         <div><strong>${esc(t.name||t.user)}</strong> <span style="font-size:12px;color:var(--ink-soft)">@${esc(t.user)}</span>
           <span style="font-size:11px;color:var(--ink-soft)">注册于 ${esc(t.ts||"")}</span></div>
-        <button class="btn warn" style="padding:3px 12px;font-size:12px" data-del-user="${esc(t.user)}">删除</button>
+        <div>
+          <button class="btn" style="padding:3px 10px;font-size:12px;margin-right:6px" data-reset-user="${esc(t.user)}">重置密码</button>
+          <button class="btn warn" style="padding:3px 12px;font-size:12px" data-del-user="${esc(t.user)}">删除</button>
+        </div>
       </div>`;
     });
     if(!teachers.length) html += `<div style="color:var(--ink-soft);font-size:13px;padding:8px 0">暂无注册老师</div>`;
+    html += `<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--line)">
+      <button class="btn" id="btn-view-vault" style="width:100%">🔐 查看所有老师密码（需输入注册口令）</button>
+      <div id="vault-box" style="display:none;margin-top:10px">
+        <input type="password" id="vault-code" placeholder="输入注册口令查看密码" style="margin-bottom:8px">
+        <button class="btn" id="btn-vault-ok" style="width:100%">解锁查看</button>
+        <div id="vault-list" style="margin-top:10px;font-size:13px"></div>
+      </div>
+    </div>`;
   }catch(e){ html += `<div style="color:var(--ink-soft);font-size:13px">加载账号失败：${esc(e.message)}</div>`; }
   box.innerHTML = html;
   box.querySelectorAll("[data-del-user]").forEach(b=>{
@@ -596,6 +710,48 @@ async function renderTeacherList(){
       }catch(e){ toast("删除失败：" + e.message); }
     });
   });
+  box.querySelectorAll("[data-reset-user]").forEach(b=>{
+    b.addEventListener("click", async ()=>{
+      const user = b.dataset.resetUser;
+      const np = prompt("为 @" + user + " 设置新密码（至少6位）：");
+      if(!np || np.length < 6){ toast("密码至少6位，已取消"); return; }
+      if(!confirm("确认将 @" + user + " 的密码重置为新密码？其作品和成绩不受影响。")) return;
+      try{
+        const teachers = await loadTeachers();
+        const t = teachers.find(x=>x.user===user);
+        if(!t){ toast("找不到该账号"); return; }
+        t.pwdHash = await sha256(np);
+        t.ts = t.ts || "";
+        await saveTeachers(teachers);
+        toast("✅ @" + user + " 密码已重置");
+        renderTeacherList();
+      }catch(e){ toast("重置失败：" + e.message); }
+    });
+  });
+  const btnVault = box.querySelector("#btn-view-vault");
+  if(btnVault){
+    btnVault.addEventListener("click", ()=>{
+      const vb = box.querySelector("#vault-box");
+      vb.style.display = vb.style.display === "none" ? "" : "none";
+    });
+    box.querySelector("#btn-vault-ok").addEventListener("click", async ()=>{
+      const code = box.querySelector("#vault-code").value.trim();
+      if(!code){ toast("请输入注册口令"); return; }
+      try{
+        const list = await decryptVault(code);
+        const vl = box.querySelector("#vault-list");
+        if(!list.length){
+          vl.innerHTML = `<div style="color:#c0392b">口令不正确，或暂无老师密码记录</div>`;
+        }else{
+          vl.innerHTML = list.map(e=>
+            `<div style="padding:6px 0;border-bottom:1px dashed var(--line)">
+              <strong>${esc(e.user)}</strong> · 密码：<code style="background:#eef7f0;padding:2px 8px;border-radius:6px">${esc(e.pwd)}</code>
+              <span style="font-size:11px;color:var(--ink-soft)">（${esc(e.ts||"")}）</span>
+            </div>`).join("");
+        }
+      }catch(e){ toast("解锁失败：" + e.message); }
+    });
+  }
 }
 
 /* ---------- 自动恢复登录 ---------- */
