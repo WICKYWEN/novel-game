@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>书中行 · 读一本书，或成为书中人</title>
+<title>字里·行间 · 字里藏路，行间有戏</title>
 <style>
   :root{
     --bg:#f5faf7; --card:#ffffff; --accent:#7db892; --accent-dark:#5c9e73;
@@ -98,7 +98,7 @@
   <section id="login" class="login" style="display:none">
     <header>
       <div class="book" id="lg-book">《〈书名〉》</div>
-      <h1 id="lg-title">书中行</h1>
+      <h1 id="lg-title">字里·行间</h1>
       <div class="chapter" id="lg-chapter"></div>
     </header>
     <p class="welcome" id="lg-welcome"></p>
@@ -270,7 +270,7 @@ async function init(){
   $("login").style.display = "flex";
   // 填充登录页
   $("lg-book").textContent = "《" + (META.book||"") + "》";
-  $("lg-title").textContent = META.title || "书中行";
+  $("lg-title").textContent = META.title || "字里·行间";
   $("lg-chapter").textContent = META.chapters || "";
   $("lg-welcome").textContent = (STORY.meta && STORY.meta.welcome) || "";
   $("footer").textContent = (STORY.meta && STORY.meta.footer) || "";
