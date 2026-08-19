@@ -916,6 +916,51 @@
     }
    ],
    "ts": "2026/8/19 22:36:26"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "paradise",
+   "name": "kiminoamaiwa",
+   "endingId": "e_cloud",
+   "endingName": "梦",
+   "seconds": 348,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "吃饱了就睡，睡醒了再吃",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "听说山下有集市，想下山买串糖葫芦尝尝",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "迷迷糊糊爬起来，对着空气喊：俺老孙天下第一！",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/19 22:50:07"
   }
  ]
 }
