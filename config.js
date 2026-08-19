@@ -29,5 +29,10 @@ window.NG = {
   teachers: [
     { user: "admin", name: "管理员", pwdHash: "d12961f5da5f4c0dda11709fbda5f8918a8ad19df7363f3907561678c640e722" }
     // 示例：{ user: "wang", name: "王老师", pwdHash: "把密码用SHA256算好后填这里" }
-  ]
+  ],
+
+  // ============ 注册口令体系 ============
+  // 老师自助注册需输入注册口令（SHA-256，防明文）。当前口令：橄榄树2026
+  // 口令用途：① 挡住学生乱注册 ② 加密保险库密钥派生 ③ 忘记密码时的身份验证
+  regCode: "3f30ad35d35eb5253a2659bd74c18d50e1e0c0cef5e8ebdeb80bb7d0923f4a22"
 };
