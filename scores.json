@@ -1163,6 +1163,147 @@
     }
    ],
    "ts": "2026/8/19 22:59:46"
+  },
+  {
+   "storyId": "redstar_p1",
+   "cls": "701",
+   "name": "测试",
+   "endingId": "e_cloud",
+   "endingName": "雾",
+   "seconds": 371,
+   "keyCorrect": 2,
+   "keyTotal": 3,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "未获解答的问题",
+     "text": "设法打听进入红区的办法，机会来了就动身",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "立即准备行装，踏上前往西安的火车",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "与青年攀谈，听听他对红军的看法",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "杀得不够",
+     "text": "追问老人：您为什么这么说？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "两个大人物",
+     "text": "追问邵力子：中国应不应该同日本打仗？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "等一个姓王的人",
+     "text": "继续等待，相信组织不会忘记我",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "王牧师来访",
+     "text": "问他：王先生，您到底是什么人？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "王牧师的身份",
+     "text": "问他：你真实的名字是什么？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "汉代青铜 · 邓发",
+     "text": "诚实地说：对不起，我不认识您",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n12",
+     "title": "邓发！",
+     "text": "认为他在吹牛，根本不是什么邓发",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "把介绍信随手夹进书里，转头就忘了放在哪",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "买了一堆地图，在北平城里研究\"进红区的路线\"",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "跟人吹牛说自己去过红区，讲得绘声绘色",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "买了一堆地图，在北平城里研究\"进红区的路线\"",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "翻了个身，继续睡",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/21 14:47:44"
   }
  ]
 }
