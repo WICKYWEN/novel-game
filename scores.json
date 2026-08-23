@@ -1304,6 +1304,51 @@
     }
    ],
    "ts": "2026/8/21 14:47:44"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8F",
+   "name": "文二壮",
+   "endingId": "e_cloud",
+   "endingName": "梦",
+   "seconds": 95,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "吃饱了就睡，睡醒了再吃",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "把水帘洞改名叫“逍遥宫”，整天对猴孙们吹牛说自己见过神仙",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "把山里的石头都捡来堆成“金箍棒”，说要拿去打天兵",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "梦里的声音太吵，气得把枕头扔出去",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/23 13:32:50"
   }
  ]
 }
