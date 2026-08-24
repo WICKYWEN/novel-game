@@ -846,6 +846,51 @@
     }
    ],
    "ts": "2026/8/24 13:29:53"
+  },
+  {
+   "storyId": "redstar_p3",
+   "cls": "8E",
+   "name": "王思远（刘津瑜家长）",
+   "endingId": "e_cloud",
+   "endingName": "沙",
+   "seconds": 92,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "红色首都",
+     "text": "放下行李，请求尽快见到毛泽东",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "第一次见面",
+     "text": "觉得他其貌不扬，不像个领袖",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "偷拍红军的\"机密\"照片",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/24 13:32:18"
   }
  ]
 }
