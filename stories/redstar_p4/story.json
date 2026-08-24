@@ -14,31 +14,36 @@
    "name": "燎原",
    "tier": "hidden",
    "score": 100,
-   "text": "你记住了毛泽东人生的每一个关键：一八九三年的韶山冲、三本建立信仰的书、十六字诀、三大纪律。你不仅听完了一个人的故事——你看见了一部历史。"
+   "text": "你记住了毛泽东人生的每一个关键：一八九三年的韶山冲、三本建立信仰的书、十六字诀、三大纪律。你不仅听完了一个人的故事——你看见了一部历史。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p4/ending_light.jpg"
   },
   "e_spark": {
    "name": "求索",
    "tier": "insight",
    "score": 85,
-   "text": "你跟随毛泽东走过了他的一生：从农民的儿子到革命的领袖。那些书、那些战斗、那些牺牲——你看见了一个人如何成为一段历史。"
+   "text": "你跟随毛泽东走过了他的一生：从农民的儿子到革命的领袖。那些书、那些战斗、那些牺牲——你看见了一个人如何成为一段历史。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p4/ending_spark.jpg"
   },
   "e_echo": {
    "name": "追寻",
    "tier": "understand",
    "score": 60,
-   "text": "你听完了毛泽东的故事。有些细节记不清了，但那种从乡村走向革命的力量，还在你心里回响。"
+   "text": "你听完了毛泽东的故事。有些细节记不清了，但那种从乡村走向革命的力量，还在你心里回响。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p4/ending_echo.jpg"
   },
   "e_dust": {
    "name": "彷徨",
    "tier": "surface",
    "score": 35,
-   "text": "你听了一路，却像是隔着雾看的。年份、名字、那些事件，在你脑海里混成了一片。也许该回头再读一遍。"
+   "text": "你听了一路，却像是隔着雾看的。年份、名字、那些事件，在你脑海里混成了一片。也许该回头再读一遍。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p4/ending_dust.jpg"
   },
   "e_cloud": {
    "name": "惘",
    "tier": "absurd",
    "score": 10,
-   "text": "毛泽东的由来？你好像听过，又好像没听过。只记得窑洞里的蜡烛和漫天的黄沙。你连自己为什么坐在这里都想不起来了。"
+   "text": "毛泽东的由来？你好像听过，又好像没听过。只记得窑洞里的蜡烛和漫天的黄沙。你连自己为什么坐在这里都想不起来了。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p4/ending_cloud.jpg"
   }
  },
  "nodes": {
