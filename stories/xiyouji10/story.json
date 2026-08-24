@@ -15,31 +15,36 @@
    "name": "正果",
    "tier": "hidden",
    "score": 100,
-   "text": "五行山下，你等来了东土取经人。他揭下山顶的帖子，山崩地裂，你纵身跃出，金箍棒在手中嗡嗡作响。你回头望了一眼压了你五百年的山，忽然笑了：这一路，才刚刚开始。"
+   "text": "五行山下，你等来了东土取经人。他揭下山顶的帖子，山崩地裂，你纵身跃出，金箍棒在手中嗡嗡作响。你回头望了一眼压了你五百年的山，忽然笑了：这一路，才刚刚开始。",
+   "image": "https://wickywen.github.io/novel-game/images/xiyouji10/ending_light.jpg"
   },
   "e_spark": {
    "name": "悟",
    "tier": "insight",
    "score": 85,
-   "text": "五行山下五百年，风霜雪雨，你都记着。你记得自己为何而来，为何而斗，为何而败。山上的草枯了又青，你眼中的光却从未熄灭。直到有一天，一个和尚走到了山前。"
+   "text": "五行山下五百年，风霜雪雨，你都记着。你记得自己为何而来，为何而斗，为何而败。山上的草枯了又青，你眼中的光却从未熄灭。直到有一天，一个和尚走到了山前。",
+   "image": "https://wickywen.github.io/novel-game/images/xiyouji10/ending_spark.jpg"
   },
   "e_echo": {
    "name": "禅",
    "tier": "understand",
    "score": 60,
-   "text": "五行山下，你渐渐听懂了风声。当年那些热闹——龙宫夺宝、蟠桃盛会、丹炉烈焰，都成了你讲给牧童听的故事。他们听得入神，你却知道，有些事，说得出，说不清。"
+   "text": "五行山下，你渐渐听懂了风声。当年那些热闹——龙宫夺宝、蟠桃盛会、丹炉烈焰，都成了你讲给牧童听的故事。他们听得入神，你却知道，有些事，说得出，说不清。",
+   "image": "https://wickywen.github.io/novel-game/images/xiyouji10/ending_echo.jpg"
   },
   "e_dust": {
    "name": "痴",
    "tier": "surface",
    "score": 35,
-   "text": "五行山下，你数着蚂蚁过日子。天上神仙换了几茬，人间朝代更了几度，你只知道一件事：自己是被压在这里的妖猴。至于为什么压在这里，你已懒得去想。"
+   "text": "五行山下，你数着蚂蚁过日子。天上神仙换了几茬，人间朝代更了几度，你只知道一件事：自己是被压在这里的妖猴。至于为什么压在这里，你已懒得去想。",
+   "image": "https://wickywen.github.io/novel-game/images/xiyouji10/ending_dust.jpg"
   },
   "e_cloud": {
    "name": "梦",
    "tier": "absurd",
    "score": 10,
-   "text": "五行山下，你睡睡醒醒。梦里有水帘洞，有蟠桃，有金箍棒。可梦醒之后，你连自己叫什么名字都想不起来了。山风过处，你翻了个身，又睡了过去。"
+   "text": "五行山下，你睡睡醒醒。梦里有水帘洞，有蟠桃，有金箍棒。可梦醒之后，你连自己叫什么名字都想不起来了。山风过处，你翻了个身，又睡了过去。",
+   "image": "https://wickywen.github.io/novel-game/images/xiyouji10/ending_cloud.jpg"
   }
  },
  "nodes": {
