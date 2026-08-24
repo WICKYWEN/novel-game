@@ -1266,6 +1266,123 @@
     }
    ],
    "ts": "2026/8/24 13:33:44"
+  },
+  {
+   "storyId": "redstar_p3",
+   "cls": "8E",
+   "name": "徐昊驰",
+   "endingId": "e_cloud",
+   "endingName": "沙",
+   "seconds": 190,
+   "keyCorrect": 1,
+   "keyTotal": 2,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "红色首都",
+     "text": "放下行李，请求尽快见到毛泽东",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "第一次见面",
+     "text": "仔细打量他，记下他的外貌特征",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "两间窑洞",
+     "text": "问他：您为什么过着这样简朴的生活？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "辣椒与革命",
+     "text": "问他：您对世界局势怎么看？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "谈世界",
+     "text": "问他：您认为抗日战争要打多久？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "三个条件",
+     "text": "追问：红军和国民党军队怎样才能合作抗日？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "运动战",
+     "text": "问他：除了运动战，还需要什么？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "飞蛾",
+     "text": "心想：这样的人会真的认真考虑战争吗？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "两百万元的首级",
+     "text": "感叹：每月不到十五元银洋的教育费用",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n10",
+     "title": "林彪",
+     "text": "问他：红大招生有什么条件？",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n11",
+     "title": "讲课",
+     "text": "觉得这些问题太专业，敷衍了事",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "觉得太无聊，躺在窑洞外晒太阳",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "打包行李，连夜溜回西安",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/24 13:34:00"
   }
  ]
 }
