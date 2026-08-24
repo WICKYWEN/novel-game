@@ -2357,6 +2357,331 @@
     }
    ],
    "ts": "2026/8/24 13:40:29"
+  },
+  {
+   "storyId": "redstar_p1",
+   "cls": "8E",
+   "name": "应子栩 王一朔 pok",
+   "endingId": "e_cloud",
+   "endingName": "雾",
+   "seconds": 612,
+   "keyCorrect": 2,
+   "keyTotal": 7,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "未获解答的问题",
+     "text": "把这些疑问写成文章发表，让读者自己判断",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "立即准备行装，踏上前往西安的火车",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "与青年攀谈，听听他对红军的看法",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "杀得不够",
+     "text": "追问老人：您为什么这么说？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "两个大人物",
+     "text": "相信邵力子的话，着手安排去前线的计划",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "等一个姓王的人",
+     "text": "继续等待，相信组织不会忘记我",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "王牧师来访",
+     "text": "听他说说张学良和红军的秘密接触",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "王牧师的身份",
+     "text": "问他：你做这些，是为了钱吧？",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "立即准备行装，踏上前往西安的火车",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "闭目养神，不想惹麻烦",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n4",
+     "title": "杀得不够",
+     "text": "追问老人：您为什么这么说？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "两个大人物",
+     "text": "认为邵力子在撒谎，拂袖而去",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "先发电报征求家人的意见",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "与青年攀谈，听听他对红军的看法",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "杀得不够",
+     "text": "觉得老人可怕，悄悄离开座位",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "两个大人物",
+     "text": "认为邵力子在撒谎，拂袖而去",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "先发电报征求家人的意见",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "闭目养神，不想惹麻烦",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n4",
+     "title": "杀得不够",
+     "text": "追问老人：您为什么这么说？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "两个大人物",
+     "text": "认为邵力子在撒谎，拂袖而去",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "立即准备行装，踏上前往西安的火车",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "闭目养神，不想惹麻烦",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n4",
+     "title": "杀得不够",
+     "text": "追问老人：您为什么这么说？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "两个大人物",
+     "text": "认为邵力子在撒谎，拂袖而去",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "先发电报征求家人的意见",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "嘲笑这破旧的火车，后悔不该来",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "逢人便说自己是\"中国通\"，其实连陕西在哪都要翻地图",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "爬起来收拾行李，收拾到一半又躺下了",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/24 13:40:32"
   }
  ]
 }
