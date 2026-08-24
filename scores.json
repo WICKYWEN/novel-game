@@ -2823,6 +2823,139 @@
     }
    ],
    "ts": "2026/8/24 13:40:37"
+  },
+  {
+   "storyId": "redstar_p3",
+   "cls": "8E",
+   "name": "周雨欣，王喆悦",
+   "endingId": "e_cloud",
+   "endingName": "沙",
+   "seconds": 78,
+   "keyCorrect": 1,
+   "keyTotal": 2,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "红色首都",
+     "text": "放下行李，请求尽快见到毛泽东",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "第一次见面",
+     "text": "仔细打量他，记下他的外貌特征",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "两间窑洞",
+     "text": "感叹：做了十年领袖，财物只有一卷铺盖",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n4",
+     "title": "辣椒与革命",
+     "text": "问他：听说您博览群书，都读什么书？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "谈世界",
+     "text": "问他：如果日本被打败了，帝国主义的问题就解决了吗？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "三个条件",
+     "text": "觉得他在空谈，中国打不过日本",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "觉得太无聊，躺在窑洞外晒太阳",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "第一次见面",
+     "text": "仔细打量他，记下他的外貌特征",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "两间窑洞",
+     "text": "问他：您为什么过着这样简朴的生活？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "辣椒与革命",
+     "text": "问他：您对世界局势怎么看？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "谈世界",
+     "text": "觉得他的世界知识不过是道听途说",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "打包行李，连夜溜回西安",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/24 13:40:45"
   }
  ]
 }
