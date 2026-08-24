@@ -14,31 +14,36 @@
    "name": "天光",
    "tier": "hidden",
    "score": 100,
-   "text": "你读得细致，记得牢靠，每个关键之处都了然于心。这道光，是你认真阅读挣来的。"
+   "text": "你读得细致，记得牢靠，每个关键之处都了然于心。这道光，是你认真阅读挣来的。",
+   "image": "https://wickywen.github.io/novel-game/images/gmsrbz94d/ending_e1.jpg"
   },
   "e2": {
    "name": "星火",
    "tier": "insight",
    "score": 85,
-   "text": "大部分内容你都读懂了，只有个别细节记得模糊。星星之火，已足以照亮这本书。"
+   "text": "大部分内容你都读懂了，只有个别细节记得模糊。星星之火，已足以照亮这本书。",
+   "image": "https://wickywen.github.io/novel-game/images/gmsrbz94d/ending_e2.jpg"
   },
   "e3": {
    "name": "回响",
    "tier": "understand",
    "score": 60,
-   "text": "故事的大致脉络你抓住了，但一些关键细节还需要再读一遍。书页翻过，余音仍在。"
+   "text": "故事的大致脉络你抓住了，但一些关键细节还需要再读一遍。书页翻过，余音仍在。",
+   "image": "https://wickywen.github.io/novel-game/images/gmsrbz94d/ending_e3.jpg"
   },
   "e4": {
    "name": "尘路",
    "tier": "surface",
    "score": 35,
-   "text": "你读得有些匆忙，不少内容只剩模糊的影子。再翻一遍，会看到更多风景。"
+   "text": "你读得有些匆忙，不少内容只剩模糊的影子。再翻一遍，会看到更多风景。",
+   "image": "https://wickywen.github.io/novel-game/images/gmsrbz94d/ending_e4.jpg"
   },
   "e5": {
    "name": "浮云",
    "tier": "absurd",
    "score": 10,
-   "text": "书页在眼前飘过，像云一样散开了。建议你静下心来，从头再读一次。"
+   "text": "书页在眼前飘过，像云一样散开了。建议你静下心来，从头再读一次。",
+   "image": "https://wickywen.github.io/novel-game/images/gmsrbz94d/ending_e5.jpg"
   }
  },
  "nodes": {
