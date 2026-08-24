@@ -2157,155 +2157,6 @@
    "ts": "2026/8/24 13:37:45"
   },
   {
-   "storyId": "redstar_p2",
-   "cls": "9-1 E",
-   "name": "宋起明 俞杰睿 1145146761pokpokpok",
-   "endingId": "e_light",
-   "endingName": "抵达",
-   "seconds": 53,
-   "keyCorrect": 4,
-   "keyTotal": 4,
-   "choices": [
-    {
-     "node": "n1",
-     "title": "标语下的夜晚",
-     "text": "询问向导：我们离安塞还有多远？",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n2",
-     "title": "白匪警告",
-     "text": "问清楚：你说的土匪是什么人？",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n3",
-     "title": "白匪是什么",
-     "text": "追问：民团为什么这么恨红军？",
-     "depth": 2,
-     "key": true,
-     "correct": true
-    },
-    {
-     "node": "n4",
-     "title": "第一个红军战士",
-     "text": "问他：你在这边做什么工作？",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n5",
-     "title": "废墟之城",
-     "text": "感叹：原来如此，我差点误会了红军",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n6",
-     "title": "游击队的呐喊",
-     "text": "惊叹：这呐喊声用来恫吓敌人一定很有效",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n7",
-     "title": "周恩来出场",
-     "text": "用英语回答：我是美国记者，来见毛泽东",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n8",
-     "title": "书生出身的造反者",
-     "text": "问他：你参加革命前是什么出身？",
-     "depth": 2,
-     "key": true,
-     "correct": true
-    },
-    {
-     "node": "n9",
-     "title": "李长林",
-     "text": "问他：李长林，你自己怎么不在前线？",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n10",
-     "title": "贺龙的传说",
-     "text": "追问：贺龙后来怎么参加了共产党？",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n12",
-     "title": "菜刀",
-     "text": "惊叹：一把菜刀就能建立苏区？",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n13",
-     "title": "一把菜刀",
-     "text": "继续问：贺龙和传教士的故事是真的吗？",
-     "depth": 2,
-     "key": true,
-     "correct": true
-    },
-    {
-     "node": "n15",
-     "title": "少年红军",
-     "text": "问他们：你们喜欢红军吗？",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n16",
-     "title": "喜欢红军吗",
-     "text": "记下这些，心里震动",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n17",
-     "title": "考孩子们",
-     "text": "震撼：一个农村孩子说\"他的\"军队？",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n18",
-     "title": "老狗的故事",
-     "text": "问他：你走了这么远，不累吗？",
-     "depth": 2,
-     "key": true,
-     "correct": true
-    },
-    {
-     "node": "n19",
-     "title": "六千里长征",
-     "text": "问他：红军教你们读书写字？",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    }
-   ],
-   "ts": "2026/8/24 13:37:59"
-  },
-  {
    "storyId": "redstar_p1",
    "cls": "8E",
    "name": "周雨欣，王喆悦",
@@ -2429,6 +2280,147 @@
     }
    ],
    "ts": "2026/8/24 13:38:09"
+  },
+  {
+   "storyId": "redstar_p2",
+   "cls": "9-1 E",
+   "name": "宋起明 俞杰睿 1145146761pokpokpok",
+   "endingId": "e_spark",
+   "endingName": "同行",
+   "seconds": 51,
+   "keyCorrect": 2,
+   "keyTotal": 3,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "标语下的夜晚",
+     "text": "询问向导：我们离安塞还有多远？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "白匪警告",
+     "text": "立刻起身，相信他的警告",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "第一个红军战士",
+     "text": "问他：你在这边做什么工作？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "废墟之城",
+     "text": "感叹：原来如此，我差点误会了红军",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "游击队的呐喊",
+     "text": "惊叹：这呐喊声用来恫吓敌人一定很有效",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "周恩来出场",
+     "text": "惊讶：您会说英语！",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "书生出身的造反者",
+     "text": "问他：你参加革命前是什么出身？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "李长林",
+     "text": "问他：李长林，你自己怎么不在前线？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n10",
+     "title": "贺龙的传说",
+     "text": "追问：贺龙后来怎么参加了共产党？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n12",
+     "title": "菜刀",
+     "text": "惊叹：一把菜刀就能建立苏区？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n13",
+     "title": "一把菜刀",
+     "text": "继续问：贺龙和传教士的故事是真的吗？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "少年红军",
+     "text": "问他们：你们为什么参加红军？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "喜欢红军吗",
+     "text": "跟着他们一起唱起来",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "考孩子们",
+     "text": "震撼：一个农村孩子说\"他的\"军队？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n18",
+     "title": "老狗的故事",
+     "text": "问他：你家里人呢？",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n19",
+     "title": "六千里长征",
+     "text": "问他：红军教你们读书写字？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    }
+   ],
+   "ts": "2026/8/24 13:39:56"
   }
  ]
 }
