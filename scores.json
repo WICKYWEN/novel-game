@@ -1221,6 +1221,51 @@
     }
    ],
    "ts": "2026/8/24 13:33:06"
+  },
+  {
+   "storyId": "redstar_p1",
+   "cls": "8E",
+   "name": "劳蓝（反ch）美利坚不要赵婕妤和吴怡萱😕",
+   "endingId": "e_cloud",
+   "endingName": "雾",
+   "seconds": 52,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "未获解答的问题",
+     "text": "继续等待，也许有一天封锁会解除",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "给西安的旅馆拍电报，说\"我来了\"，却忘了说名字",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "爬起来收拾行李，收拾到一半又躺下了",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/24 13:33:44"
   }
  ]
 }
