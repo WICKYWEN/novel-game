@@ -1349,6 +1349,67 @@
     }
    ],
    "ts": "2026/8/23 13:32:50"
+  },
+  {
+   "storyId": "redstar_p2",
+   "cls": "8F",
+   "name": "文二壮",
+   "endingId": "e_cloud",
+   "endingName": "迷",
+   "seconds": 111,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "标语下的夜晚",
+     "text": "觉得这些标语吓人，想赶紧离开",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "白匪警告",
+     "text": "不以为然：我正要找红军，怕什么土匪？",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "觉得太累，躺在路边睡着了",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "编一本\"红区见闻录\"，回去交差",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/24 10:29:25"
   }
  ]
 }
