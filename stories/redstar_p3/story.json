@@ -14,31 +14,36 @@
    "name": "见证",
    "tier": "hidden",
    "score": 100,
-   "text": "你记住了毛泽东像林肯的面孔、那顶蚊帐、爱辣的理论、红军大学两百万元的首级赏格、林彪的短促突击战、剧社里那个东北少年喊出的口号。你不仅读完了保安——你住进了保安。"
+   "text": "你记住了毛泽东像林肯的面孔、那顶蚊帐、爱辣的理论、红军大学两百万元的首级赏格、林彪的短促突击战、剧社里那个东北少年喊出的口号。你不仅读完了保安——你住进了保安。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p3/ending_light.jpg"
   },
   "e_spark": {
    "name": "守望",
    "tier": "insight",
    "score": 85,
-   "text": "你在保安看见了真正的苏维埃。毛泽东的简朴、红大的战备、剧社的歌声——这一切告诉你，这个运动为何能赢得千万人的心。"
+   "text": "你在保安看见了真正的苏维埃。毛泽东的简朴、红大的战备、剧社的歌声——这一切告诉你，这个运动为何能赢得千万人的心。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p3/ending_spark.jpg"
   },
   "e_echo": {
    "name": "回望",
    "tier": "understand",
    "score": 60,
-   "text": "你参观了保安，认识了毛泽东、林彪和那些演员。有些细节模糊了，但那个地方给人的感觉——紧张、朴素而充满希望——你还记得。"
+   "text": "你参观了保安，认识了毛泽东、林彪和那些演员。有些细节模糊了，但那个地方给人的感觉——紧张、朴素而充满希望——你还记得。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p3/ending_echo.jpg"
   },
   "e_dust": {
    "name": "路过",
    "tier": "surface",
    "score": 35,
-   "text": "你走过保安，却像是隔着雾看的。谁是谁、演了什么、政策是什么——都混在一起了。也许该回头再读一遍。"
+   "text": "你走过保安，却像是隔着雾看的。谁是谁、演了什么、政策是什么——都混在一起了。也许该回头再读一遍。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p3/ending_dust.jpg"
   },
   "e_cloud": {
    "name": "沙",
    "tier": "absurd",
    "score": 10,
-   "text": "保安？红都？你好像去过，又好像没去过。只记得黄土地上的窑洞，和漫天的风沙。你连自己来干什么的都忘了。"
+   "text": "保安？红都？你好像去过，又好像没去过。只记得黄土地上的窑洞，和漫天的风沙。你连自己来干什么的都忘了。",
+   "image": "https://wickywen.github.io/novel-game/images/redstar_p3/ending_cloud.jpg"
   }
  },
  "nodes": {
