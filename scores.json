@@ -12644,6 +12644,43 @@
     }
    ],
    "ts": "2026/8/25 12:57:40"
+  },
+  {
+   "storyId": "redstar_p3",
+   "cls": "8A",
+   "name": "蒋弈辰",
+   "endingId": "e_cloud",
+   "endingName": "沙",
+   "seconds": 48,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "红色首都",
+     "text": "觉得这地方太破旧，后悔来这里",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "听说毛泽东在街上走，跑去要签名",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "写一本胡编乱造的\"红都内幕\"",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/25 12:57:46"
   }
  ]
 }
