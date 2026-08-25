@@ -9335,150 +9335,158 @@
    "ts": "2026/8/25 12:47:10"
   },
   {
-   "storyId": "gmsrbz94d",
+   "storyId": "redstar_p1",
    "cls": "8A",
-   "name": "郑佳乐",
-   "endingId": "e5",
-   "endingName": "浮云",
-   "seconds": 47,
-   "keyCorrect": 0,
-   "keyTotal": 0,
+   "name": "徐沁萱",
+   "endingId": "e_light",
+   "endingName": "进入",
+   "seconds": 203,
+   "keyCorrect": 4,
+   "keyTotal": 4,
    "choices": [
     {
      "node": "n1",
-     "title": "第1段 · 周瑜看到诸葛亮挺有才干，心里…",
-     "text": "水上交战，用什么兵器最好",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "n2",
-     "title": "第2段 · 有一天，周瑜请诸葛亮商议军事…",
-     "text": "周瑜问：十天造得好吗",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "n3",
-     "title": "第3段 · 周瑜说：对，先生跟我想的一样…",
-     "text": "周瑜说：对，先生跟我想的一样",
+     "title": "未获解答的问题",
+     "text": "设法打听进入红区的办法，机会来了就动身",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
-     "node": "n4",
-     "title": "第4段 · 周瑜很高兴，叫诸葛亮当面立下…",
-     "text": "一万多名弓弩手一齐朝江中放箭，箭好像下雨一样",
-     "depth": 0,
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "立即准备行装，踏上前往西安的火车",
+     "depth": 2,
      "key": false,
-     "correct": false
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "与青年攀谈，听听他对红军的看法",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "杀得不够",
+     "text": "追问老人：您为什么这么说？",
+     "depth": 2,
+     "key": false,
+     "correct": true
     },
     {
      "node": "n5",
-     "title": "第5段 · 诸葛亮喝了几杯酒就走了。鲁肃…",
-     "text": "水上交战，用什么兵器最好",
-     "depth": 0,
+     "title": "两个大人物",
+     "text": "追问邵力子：中国应不应该同日本打仗？",
+     "depth": 2,
      "key": false,
-     "correct": false
-    },
-    {
-     "node": "n6",
-     "title": "第6段 · 鲁肃见了诸葛亮。诸葛亮说：三…",
-     "text": "他派人去旱寨调来六千名弓弩手，到江边支援水军",
-     "depth": 0,
-     "key": false,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n7",
-     "title": "第7段 · 鲁肃答应了。他不知道诸葛亮借…",
-     "text": "他不知道诸葛亮借了船有什么用，回来报告周瑜，果然不提…",
+     "title": "等一个姓王的人",
+     "text": "继续等待，相信组织不会忘记我",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n8",
-     "title": "第8段 · 鲁肃私自拨了二十条快船，每条…",
-     "text": "第一天，不见诸葛亮有什么动静",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "n9",
-     "title": "第9段 · 第一天，不见诸葛亮有什么动静…",
-     "text": "有一天，周瑜请诸葛亮商议军事，说：我们就要跟曹军交战",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "n10",
-     "title": "第10段 · 诸葛亮吩咐把二十条船用绳索连…",
-     "text": "诸葛亮吩咐把二十条船用绳索连接起来，朝北岸开去",
+     "title": "王牧师来访",
+     "text": "问他：王先生，您到底是什么人？",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
+     "node": "n9",
+     "title": "王牧师的身份",
+     "text": "问他：你真实的名字是什么？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
      "node": "n11",
-     "title": "第11段 · 诸葛亮下令把船头朝西，船尾朝…",
-     "text": "第二天，仍然不见诸葛亮有什么动静",
-     "depth": 0,
+     "title": "汉代青铜 · 邓发",
+     "text": "诚实地说：对不起，我不认识您",
+     "depth": 2,
      "key": false,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n12",
-     "title": "第12段 · 曹操听到鼓声和呐喊声，就下令…",
-     "text": "周瑜看到诸葛亮挺有才干，心里很妒忌",
-     "depth": 0,
-     "key": false,
-     "correct": false
+     "title": "邓发！",
+     "text": "问他：你不怕丢掉你的脑袋吗？",
+     "depth": 2,
+     "key": true,
+     "correct": true
     },
     {
      "node": "n13",
-     "title": "第13段 · 他派人去旱寨调来六千名弓弩手…",
-     "text": "他派人去旱寨调来六千名弓弩手，到江边支援水军",
+     "title": "安排",
+     "text": "同意搭卡车方案，准备出发",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n14",
-     "title": "第14段 · 诸葛亮又下令把船掉过来，船头…",
-     "text": "诸葛亮又下令把船掉过来，船头朝东，船尾朝西，仍旧擂鼓…",
-     "depth": 2,
+     "title": "卡车北上",
+     "text": "和同车的东北军军官聊聊天",
+     "depth": 1,
      "key": false,
      "correct": true
     },
     {
      "node": "n15",
-     "title": "第15段 · 诸葛亮吩咐军士们齐声高喊：谢…",
-     "text": "鲁肃对周瑜说：十万支箭，三天怎么造得成呢",
-     "depth": 0,
+     "title": "奇特的土地",
+     "text": "打听窑洞人的生活细节",
+     "depth": 1,
      "key": false,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n16",
-     "title": "第16段 · 二十条船靠岸的时候，周瑜派来…",
-     "text": "现在军中缺箭，想请先生负责赶造十万支",
-     "depth": 0,
+     "title": "围城之城",
+     "text": "准备证件，计划第二天一早出发去前线",
+     "depth": 2,
      "key": false,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n17",
-     "title": "第17段 · 鲁肃见了周瑜，告诉他借箭的经…",
-     "text": "鲁肃吃惊地说：如果曹兵出来，怎么办",
-     "depth": 0,
+     "title": "骡夫与山道",
+     "text": "乖乖跟着他走，希望一切顺利",
+     "depth": 2,
      "key": false,
-     "correct": false
+     "correct": true
+    },
+    {
+     "node": "n18",
+     "title": "刘龙火",
+     "text": "心想：他说“我害怕”？但看他神色泰然，不像害怕的样子",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "贫民会主席",
+     "text": "问他：你真的是贫民会主席？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n20",
+     "title": "跨进红区",
+     "text": "收下苏区纸币，郑重道谢后上路",
+     "depth": 2,
+     "key": false,
+     "correct": true
     }
    ],
    "ts": "2026/8/25 12:47:17"
