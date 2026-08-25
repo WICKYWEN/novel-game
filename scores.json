@@ -6706,6 +6706,115 @@
     }
    ],
    "ts": "2026/8/25 11:21:22"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8A",
+   "name": "m y c",
+   "endingId": "e_cloud",
+   "endingName": "梦",
+   "seconds": 77,
+   "keyCorrect": 0,
+   "keyTotal": 2,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "与众猴嬉戏打闹，享受这无拘无束的日子",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2a",
+     "title": "水帘洞称王",
+     "text": "先在里面转一圈，看看有什么宝贝再出去",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "学艺七载",
+     "text": "挨了打，心里委屈，躲在房里生闷气",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "梦见自己当了玉皇大帝，醒来后要猴孙们天天跪拜",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "不理会，继续呼呼大睡",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/25 12:38:01"
   }
  ]
 }
