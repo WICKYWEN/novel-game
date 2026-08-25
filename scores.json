@@ -4119,12 +4119,12 @@
   {
    "storyId": "xiyouji10",
    "cls": "8F",
-   "name": "JiChengZe",
-   "endingId": "e_cloud",
-   "endingName": "梦",
-   "seconds": 271,
-   "keyCorrect": 3,
-   "keyTotal": 3,
+   "name": "毛晨浩",
+   "endingId": "e_light",
+   "endingName": "正果",
+   "seconds": 361,
+   "keyCorrect": 4,
+   "keyTotal": 4,
    "choices": [
     {
      "node": "n1",
@@ -4193,37 +4193,37 @@
     {
      "node": "n23",
      "title": "二郎神",
-     "text": "被识破后心慌意乱，转身就逃",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "nz1",
-     "title": "糊里糊涂",
-     "text": "忽然清醒，想起自己原本要做什么",
+     "text": "现出本相，与二郎神再斗一场",
      "depth": 1,
      "key": false,
      "correct": true
     },
     {
-     "node": "nz3",
-     "title": "荒唐念头",
-     "text": "听说“齐天大圣”的名号很响，决定自己封自己一个",
-     "depth": 0,
-     "key": false,
-     "correct": false
+     "node": "n24",
+     "title": "老君炉",
+     "text": "往炉子角落一蹲，咬着牙硬扛，让火慢慢烧",
+     "depth": 2,
+     "key": true,
+     "correct": true
     },
     {
-     "node": "nz5",
-     "title": "最后的荒唐",
-     "text": "迷迷糊糊爬起来，对着空气喊：俺老孙天下第一！",
-     "depth": 0,
+     "node": "n25",
+     "title": "如来赌约",
+     "text": "在柱下撒了泡尿，留个记号，再翻回来",
+     "depth": 2,
      "key": false,
-     "correct": false
+     "correct": true
+    },
+    {
+     "node": "n29",
+     "title": "观音东行",
+     "text": "流沙河收沙悟净，福陵山收猪悟能，又度了西海龙王的玉龙三太子",
+     "depth": 2,
+     "key": false,
+     "correct": true
     }
    ],
-   "ts": "2026/8/25 11:03:59"
+   "ts": "2026/8/25 11:03:57"
   }
  ]
 }
