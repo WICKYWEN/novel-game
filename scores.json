@@ -6182,6 +6182,155 @@
     }
    ],
    "ts": "2026/8/25 11:17:32"
+  },
+  {
+   "storyId": "gmsrbz94d",
+   "cls": "8F",
+   "name": "w y y",
+   "endingId": "e2",
+   "endingName": "星火",
+   "seconds": 133,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "第1段 · 周瑜看到诸葛亮挺有才干，心里…",
+     "text": "周瑜看到诸葛亮挺有才干，心里很妒忌",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "第2段 · 有一天，周瑜请诸葛亮商议军事…",
+     "text": "有一天，周瑜请诸葛亮商议军事，说：我们就要跟曹军交战",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "第3段 · 周瑜说：对，先生跟我想的一样…",
+     "text": "周瑜说：对，先生跟我想的一样",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "第4段 · 周瑜很高兴，叫诸葛亮当面立下…",
+     "text": "周瑜很高兴，叫诸葛亮当面立下军令状，又摆了酒席招待他",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "第5段 · 诸葛亮喝了几杯酒就走了。鲁肃…",
+     "text": "诸葛亮喝了几杯酒就走了",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "第6段 · 鲁肃见了诸葛亮。诸葛亮说：三…",
+     "text": "鲁肃见了诸葛亮",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "第7段 · 鲁肃答应了。他不知道诸葛亮借…",
+     "text": "他不知道诸葛亮借了船有什么用，回来报告周瑜，果然不提…",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "第8段 · 鲁肃私自拨了二十条快船，每条…",
+     "text": "鲁肃私自拨了二十条快船，每条船上配三十名军士，照诸葛…",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "第9段 · 第一天，不见诸葛亮有什么动静…",
+     "text": "接着叫二十条船驶回南岸",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "n10",
+     "title": "第10段 · 诸葛亮吩咐把二十条船用绳索连…",
+     "text": "一万多名弓弩手一齐朝江中放箭，箭好像下雨一样",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "n11",
+     "title": "第11段 · 诸葛亮下令把船头朝西，船尾朝…",
+     "text": "一万多名弓弩手一齐朝江中放箭，箭好像下雨一样",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "n12",
+     "title": "第12段 · 曹操听到鼓声和呐喊声，就下令…",
+     "text": "曹操听到鼓声和呐喊声，就下令说：江上雾很大，敌人忽然…",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n13",
+     "title": "第13段 · 他派人去旱寨调来六千名弓弩手…",
+     "text": "周瑜看到诸葛亮挺有才干，心里很妒忌",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "n14",
+     "title": "第14段 · 诸葛亮又下令把船掉过来，船头…",
+     "text": "诸葛亮又下令把船掉过来，船头朝东，船尾朝西，仍旧擂鼓…",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "第15段 · 诸葛亮吩咐军士们齐声高喊：谢…",
+     "text": "诸葛亮吩咐军士们齐声高喊：谢谢曹丞相的箭",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "第16段 · 二十条船靠岸的时候，周瑜派来…",
+     "text": "二十条船靠岸的时候，周瑜派来的五百个军士正好来到江边…",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "第17段 · 鲁肃见了周瑜，告诉他借箭的经…",
+     "text": "鲁肃见了周瑜，告诉他借箭的经过",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    }
+   ],
+   "ts": "2026/8/25 11:17:39"
   }
  ]
 }
