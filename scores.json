@@ -8611,26 +8611,18 @@
   {
    "storyId": "xiyouji10",
    "cls": "8A",
-   "name": "cmy",
-   "endingId": "e_echo",
-   "endingName": "禅",
-   "seconds": 494,
-   "keyCorrect": 1,
-   "keyTotal": 2,
+   "name": "jyy",
+   "endingId": "e_light",
+   "endingName": "正果",
+   "seconds": 396,
+   "keyCorrect": 4,
+   "keyTotal": 4,
    "choices": [
     {
      "node": "n1",
      "title": "仙石崩裂",
-     "text": "与众猴嬉戏打闹，享受这无拘无束的日子",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n2a",
-     "title": "水帘洞称王",
-     "text": "先在里面转一圈，看看有什么宝贝再出去",
-     "depth": 1,
+     "text": "望着远方的云海，心里想着：这天地间，到底还有什么",
+     "depth": 2,
      "key": false,
      "correct": true
     },
@@ -8661,10 +8653,58 @@
     {
      "node": "n16",
      "title": "弼马温",
-     "text": "罢了，有口饭吃就行，继续养马",
-     "depth": 0,
+     "text": "怒不可遏，扯出金箍棒，打出南天门",
+     "depth": 2,
      "key": true,
-     "correct": false
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "齐天大圣",
+     "text": "要上天可以，但名号须响亮，地位须够格",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "蟠桃会",
+     "text": "想起被哄被骗的种种，怒火中烧：不请我，我便搅了这场会",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n23",
+     "title": "二郎神",
+     "text": "趁他说话，变作一只花鸨，混入雀群里溜走",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n24",
+     "title": "老君炉",
+     "text": "往炉子角落一蹲，咬着牙硬扛，让火慢慢烧",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n25",
+     "title": "如来赌约",
+     "text": "在柱下撒了泡尿，留个记号，再翻回来",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n29",
+     "title": "观音东行",
+     "text": "流沙河收沙悟净，福陵山收猪悟能，又度了西海龙王的玉龙三太子",
+     "depth": 2,
+     "key": false,
+     "correct": true
     }
    ],
    "ts": "2026/8/25 12:44:15"
