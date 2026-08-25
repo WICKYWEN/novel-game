@@ -12311,6 +12311,339 @@
     }
    ],
    "ts": "2026/8/25 12:57:25"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8A",
+   "name": "躺躺躺躺躺躺躺躺躺躺躺躺躺躺躺躺躺",
+   "endingId": "e_cloud",
+   "endingName": "梦",
+   "seconds": 147,
+   "keyCorrect": 0,
+   "keyTotal": 10,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "吃饱了就睡，睡醒了再吃",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "听说山下有集市，想下山买串糖葫芦尝尝",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "听说山下有集市，想下山买串糖葫芦尝尝",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "看见云彩就大喊“俺老孙来也！”，结果踩空摔进山沟",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "听说“齐天大圣”的名号很响，决定自己封自己一个",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "听说“齐天大圣”的名号很响，决定自己封自己一个",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "迷迷糊糊爬起来，对着空气喊：俺老孙天下第一！",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/25 12:57:40"
   }
  ]
 }
