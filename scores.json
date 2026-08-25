@@ -10886,163 +10886,6 @@
   {
    "storyId": "redstar_p1",
    "cls": "8A",
-   "name": "石婉睿",
-   "endingId": "e_spark",
-   "endingName": "红都",
-   "seconds": 215,
-   "keyCorrect": 2,
-   "keyTotal": 4,
-   "choices": [
-    {
-     "node": "n1",
-     "title": "未获解答的问题",
-     "text": "把这些疑问写成文章发表，让读者自己判断",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n2",
-     "title": "千载难逢的机会",
-     "text": "立即准备行装，踏上前往西安的火车",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n3",
-     "title": "注射了五种疫苗",
-     "text": "与青年攀谈，听听他对红军的看法",
-     "depth": 2,
-     "key": true,
-     "correct": true
-    },
-    {
-     "node": "n4",
-     "title": "杀得不够",
-     "text": "追问老人：您为什么这么说？",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n5",
-     "title": "两个大人物",
-     "text": "追问邵力子：中国应不应该同日本打仗？",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n7",
-     "title": "等一个姓王的人",
-     "text": "到街上转转，打听打听消息",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n8",
-     "title": "王牧师来访",
-     "text": "问他：王先生，您到底是什么人？",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n9",
-     "title": "王牧师的身份",
-     "text": "问他：张学良真的答应借飞机了？",
-     "depth": 1,
-     "key": true,
-     "correct": false
-    },
-    {
-     "node": "n11",
-     "title": "汉代青铜 · 邓发",
-     "text": "诚实地说：对不起，我不认识您",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n12",
-     "title": "邓发！",
-     "text": "问他：我的马呢？是红色中国最好的马吗？",
-     "depth": 1,
-     "key": true,
-     "correct": false
-    },
-    {
-     "node": "n13",
-     "title": "安排",
-     "text": "同意搭卡车方案，准备出发",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n14",
-     "title": "卡车北上",
-     "text": "观察车外的黄土高原，记下所见所闻",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n15",
-     "title": "奇特的土地",
-     "text": "惊叹这奇特的地貌，一路仔细观察",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n16",
-     "title": "围城之城",
-     "text": "准备证件，计划第二天一早出发去前线",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n17",
-     "title": "骡夫与山道",
-     "text": "乖乖跟着他走，希望一切顺利",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n18",
-     "title": "刘龙火",
-     "text": "心想：他说“我害怕”？但看他神色泰然，不像害怕的样子",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n19",
-     "title": "贫民会主席",
-     "text": "问他：你真的是贫民会主席？",
-     "depth": 2,
-     "key": true,
-     "correct": true
-    },
-    {
-     "node": "n20",
-     "title": "跨进红区",
-     "text": "收下苏区纸币，郑重道谢后上路",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    }
-   ],
-   "ts": "2026/8/25 12:52:58"
-  },
-  {
-   "storyId": "redstar_p1",
-   "cls": "8A",
    "name": "wjy",
    "endingId": "e_light",
    "endingName": "进入",
@@ -12683,169 +12526,161 @@
    "ts": "2026/8/25 12:57:46"
   },
   {
-   "storyId": "redstar_p2",
+   "storyId": "redstar_p1",
    "cls": "8A",
-   "name": "董宇浩",
+   "name": "石婉睿",
    "endingId": "e_spark",
-   "endingName": "同行",
-   "seconds": 399,
-   "keyCorrect": 1,
-   "keyTotal": 3,
+   "endingName": "红都",
+   "seconds": 80,
+   "keyCorrect": 2,
+   "keyTotal": 4,
    "choices": [
     {
      "node": "n1",
-     "title": "标语下的夜晚",
-     "text": "询问向导：我们离安塞还有多远？",
-     "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n2",
-     "title": "白匪警告",
-     "text": "不以为然：我正要找红军，怕什么土匪？",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "nz1",
-     "title": "糊里糊涂",
-     "text": "忽然清醒，想起自己原本要做什么",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "nz3",
-     "title": "荒唐念头",
-     "text": "忽然清醒，想起自己原本要做什么",
+     "title": "未获解答的问题",
+     "text": "把这些疑问写成文章发表，让读者自己判断",
      "depth": 1,
      "key": false,
      "correct": true
     },
     {
      "node": "n2",
-     "title": "白匪警告",
-     "text": "问清楚：你说的土匪是什么人？",
+     "title": "千载难逢的机会",
+     "text": "立即准备行装，踏上前往西安的火车",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n3",
-     "title": "白匪是什么",
-     "text": "追问：民团为什么这么恨红军？",
+     "title": "注射了五种疫苗",
+     "text": "与青年攀谈，听听他对红军的看法",
      "depth": 2,
      "key": true,
      "correct": true
     },
     {
      "node": "n4",
-     "title": "第一个红军战士",
-     "text": "问他：你在这边做什么工作？",
+     "title": "杀得不够",
+     "text": "追问老人：您为什么这么说？",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n5",
-     "title": "废墟之城",
-     "text": "感叹：原来如此，我差点误会了红军",
+     "title": "两个大人物",
+     "text": "追问邵力子：中国应不应该同日本打仗？",
      "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n6",
-     "title": "游击队的呐喊",
-     "text": "松一口气：原来是操练，虚惊一场",
-     "depth": 1,
      "key": false,
      "correct": true
     },
     {
      "node": "n7",
-     "title": "周恩来出场",
-     "text": "惊讶：您会说英语！",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n8",
-     "title": "书生出身的造反者",
-     "text": "感叹：悬赏八万，门前却只有一个哨兵",
-     "depth": 1,
-     "key": true,
-     "correct": false
-    },
-    {
-     "node": "n9",
-     "title": "李长林",
-     "text": "问他：李长林，你自己怎么不在前线？",
+     "title": "等一个姓王的人",
+     "text": "继续等待，相信组织不会忘记我",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
-     "node": "n10",
-     "title": "贺龙的传说",
-     "text": "追问：贺龙后来怎么参加了共产党？",
+     "node": "n8",
+     "title": "王牧师来访",
+     "text": "问他：王先生，您到底是什么人？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "王牧师的身份",
+     "text": "问他：张学良真的答应借飞机了？",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n11",
+     "title": "汉代青铜 · 邓发",
+     "text": "诚实地说：对不起，我不认识您",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n12",
-     "title": "菜刀",
-     "text": "追问：贺龙的红二方面军后来怎么样了？",
+     "title": "邓发！",
+     "text": "问他：我的马呢？是红色中国最好的马吗？",
      "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n13",
+     "title": "安排",
+     "text": "同意搭卡车方案，准备出发",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n14",
+     "title": "卡车北上",
+     "text": "观察车外的黄土高原，记下所见所闻",
+     "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n15",
-     "title": "少年红军",
-     "text": "问他们：你们为什么参加红军？",
-     "depth": 1,
+     "title": "奇特的土地",
+     "text": "惊叹这奇特的地貌，一路仔细观察",
+     "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n16",
-     "title": "喜欢红军吗",
-     "text": "记下这些，心里震动",
+     "title": "围城之城",
+     "text": "准备证件，计划第二天一早出发去前线",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n17",
-     "title": "考孩子们",
-     "text": "继续问：谁把这一切教给他们的？",
+     "title": "骡夫与山道",
+     "text": "试探着和他聊几句，套套近乎",
      "depth": 1,
      "key": false,
      "correct": true
     },
     {
      "node": "n18",
-     "title": "老狗的故事",
-     "text": "问他：你家里人呢？",
-     "depth": 1,
-     "key": true,
-     "correct": false
+     "title": "刘龙火",
+     "text": "心想：他说“我害怕”？但看他神色泰然，不像害怕的样子",
+     "depth": 2,
+     "key": false,
+     "correct": true
     },
     {
      "node": "n19",
-     "title": "六千里长征",
-     "text": "深有感触：这个国家不会亡",
+     "title": "贫民会主席",
+     "text": "问他：你真的是贫民会主席？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n20",
+     "title": "跨进红区",
+     "text": "收下苏区纸币，郑重道谢后上路",
      "depth": 2,
      "key": false,
      "correct": true
     }
    ],
-   "ts": "2026/8/25 12:58:00"
+   "ts": "2026/8/25 12:58:03"
   }
  ]
 }
