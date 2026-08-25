@@ -11518,6 +11518,171 @@
     }
    ],
    "ts": "2026/8/25 12:55:32"
+  },
+  {
+   "storyId": "redstar_p3",
+   "cls": "8A",
+   "name": "老牧师",
+   "endingId": "e_light",
+   "endingName": "见证",
+   "seconds": 56,
+   "keyCorrect": 4,
+   "keyTotal": 4,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "红色首都",
+     "text": "放下行李，请求尽快见到毛泽东",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "第一次见面",
+     "text": "仔细打量他，记下他的外貌特征",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "两间窑洞",
+     "text": "问他：您为什么过着这样简朴的生活？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "辣椒与革命",
+     "text": "问他：您对世界局势怎么看？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "谈世界",
+     "text": "问他：如果日本被打败了，帝国主义的问题就解决了吗？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "三个条件",
+     "text": "追问：红军和国民党军队怎样才能合作抗日？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "运动战",
+     "text": "问他：除了运动战，还需要什么？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "飞蛾",
+     "text": "心想：这样的人会真的认真考虑战争吗？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "两百万元的首级",
+     "text": "惊叹：这两百万元的首级赏格，都是谁的？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n10",
+     "title": "林彪",
+     "text": "问他：你打仗为什么从不打败仗？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "讲课",
+     "text": "认真回答学员们提出的尖锐问题",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n12",
+     "title": "尖锐的问题",
+     "text": "尽力回答每一个问题，直到口干舌燥",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n13",
+     "title": "短促突击战",
+     "text": "问他：红军真的准备好打日本了吗？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n14",
+     "title": "古庙剧场",
+     "text": "找个位置坐下，认真看演出",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "《侵略》",
+     "text": "震撼：这短剧的每个细节都来自真实",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "《丰收舞》与《统一战线舞》",
+     "text": "被演出打动，认真看完每个节目",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "独唱",
+     "text": "感叹：这些演员是世界上最快乐的演员",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n18",
+     "title": "危拱之",
+     "text": "问她：红军剧社是怎么组织起来的？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "剧社的历史",
+     "text": "问他：您认为剧社最大的价值是什么？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    }
+   ],
+   "ts": "2026/8/25 12:56:09"
   }
  ]
 }
