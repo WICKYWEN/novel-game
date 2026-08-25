@@ -3400,6 +3400,59 @@
     }
    ],
    "ts": "2026/8/25 10:59:31"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8F",
+   "name": "蒋予函",
+   "endingId": "e_echo",
+   "endingName": "禅",
+   "seconds": 124,
+   "keyCorrect": 0,
+   "keyTotal": 2,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "望着远方的云海，心里想着：这天地间，到底还有什么",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "学艺七载",
+     "text": "三更时分，从后门进祖师房中求道",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "见龙王为难，取那方天画戟将就着用",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n15",
+     "title": "勾销生死簿",
+     "text": "把所有猴属的名字一概勾掉，从此不归阎王管",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "弼马温",
+     "text": "罢了，有口饭吃就行，继续养马",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/25 10:59:51"
   }
  ]
 }
