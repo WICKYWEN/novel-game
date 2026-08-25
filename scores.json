@@ -5054,6 +5054,123 @@
     }
    ],
    "ts": "2026/8/25 11:08:48"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8F",
+   "name": "JiChengZe",
+   "endingId": "e_spark",
+   "endingName": "悟",
+   "seconds": 102,
+   "keyCorrect": 3,
+   "keyTotal": 4,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "与众猴嬉戏打闹，享受这无拘无束的日子",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2a",
+     "title": "水帘洞称王",
+     "text": "跳出瀑布，高声宣布：我进去了，我出来了！",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3a",
+     "title": "意气称王",
+     "text": "享乐之余，想到生死无常，决意下山寻仙",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "学艺七载",
+     "text": "三更时分，从后门进祖师房中求道",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "一听神珍铁，立刻催龙王带我去看",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "勾销生死簿",
+     "text": "把所有猴属的名字一概勾掉，从此不归阎王管",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "弼马温",
+     "text": "先按下怒火，问清官阶，再作计较",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n17",
+     "title": "齐天大圣",
+     "text": "要上天可以，但名号须响亮，地位须够格",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "蟠桃会",
+     "text": "想起被哄被骗的种种，怒火中烧：不请我，我便搅了这场会",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n23",
+     "title": "二郎神",
+     "text": "现出本相，与二郎神再斗一场",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n24",
+     "title": "老君炉",
+     "text": "往炉子角落一蹲，咬着牙硬扛，让火慢慢烧",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n25",
+     "title": "如来赌约",
+     "text": "在柱下撒了泡尿，留个记号，再翻回来",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n29",
+     "title": "观音东行",
+     "text": "流沙河收沙悟净，福陵山收猪悟能，又度了西海龙王的玉龙三太子",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    }
+   ],
+   "ts": "2026/8/25 11:09:10"
   }
  ]
 }
