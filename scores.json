@@ -6541,6 +6541,171 @@
     }
    ],
    "ts": "2026/8/25 11:20:15"
+  },
+  {
+   "storyId": "redstar_p4",
+   "cls": "8F",
+   "name": "蒋予函",
+   "endingId": "e_spark",
+   "endingName": "求索",
+   "seconds": 117,
+   "keyCorrect": 1,
+   "keyTotal": 5,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "个人历史",
+     "text": "\"我要的就是这个！\"我兴奋地叫道",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "韶山冲",
+     "text": "问他：你父亲是个什么样的人？",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n3",
+     "title": "读书与反抗",
+     "text": "问他：您小时候喜欢读什么书？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "《盛世危言》",
+     "text": "问他：您离开家以后去了哪里？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "湘乡学堂",
+     "text": "问他：那些看不起您的学生，后来怎么样了？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "长沙",
+     "text": "问他：那篇文章写了什么？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "当兵与自学",
+     "text": "感叹：您换学堂可真频繁",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "新民学会",
+     "text": "问他：你们平时都做些什么？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "北京",
+     "text": "问他：您在北大认识了什么人？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n10",
+     "title": "去上海",
+     "text": "感叹：您这一路可真够曲折的",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "三本书",
+     "text": "记下这三本书的名字",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n12",
+     "title": "建党",
+     "text": "问他：一九二一年以后党发展得怎么样？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n13",
+     "title": "农民运动",
+     "text": "问他：一九二七年发生了什么？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n14",
+     "title": "秋收起义",
+     "text": "问他：您是怎么逃出来的？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "井冈山",
+     "text": "问他：红军是怎么打胜仗的？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "游击战术",
+     "text": "问他：红军还有哪些纪律？",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n17",
+     "title": "十六字诀",
+     "text": "问他：这些战术在实践中效果如何？",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n18",
+     "title": "三大纪律",
+     "text": "问他：农民们支持红军吗？",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n19",
+     "title": "五次围剿",
+     "text": "问他：红军后来是怎么突围的？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    }
+   ],
+   "ts": "2026/8/25 11:21:22"
   }
  ]
 }
