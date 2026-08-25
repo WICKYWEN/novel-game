@@ -8232,6 +8232,211 @@
     }
    ],
    "ts": "2026/8/25 12:42:26"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8A",
+   "name": "董宇浩",
+   "endingId": "e_spark",
+   "endingName": "悟",
+   "seconds": 394,
+   "keyCorrect": 8,
+   "keyTotal": 9,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "与众猴嬉戏打闹，享受这无拘无束的日子",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2a",
+     "title": "水帘洞称王",
+     "text": "先在里面转一圈，看看有什么宝贝再出去",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "学艺七载",
+     "text": "三更时分，从后门进祖师房中求道",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "一听神珍铁，立刻催龙王带我去看",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "勾销生死簿",
+     "text": "把所有猴属的名字一概勾掉，从此不归阎王管",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "弼马温",
+     "text": "怒不可遏，扯出金箍棒，打出南天门",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "齐天大圣",
+     "text": "要上天可以，但名号须响亮，地位须够格",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "蟠桃会",
+     "text": "想起被哄被骗的种种，怒火中烧：不请我，我便搅了这场会",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n23",
+     "title": "二郎神",
+     "text": "被识破后心慌意乱，转身就逃",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "一听神珍铁，立刻催龙王带我去看",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "勾销生死簿",
+     "text": "把所有猴属的名字一概勾掉，从此不归阎王管",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "弼马温",
+     "text": "怒不可遏，扯出金箍棒，打出南天门",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "齐天大圣",
+     "text": "应下这桩差事，且看天庭耍什么花样",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "蟠桃会",
+     "text": "想起被哄被骗的种种，怒火中烧：不请我，我便搅了这场会",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n23",
+     "title": "二郎神",
+     "text": "被识破后心慌意乱，转身就逃",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "一听神珍铁，立刻催龙王带我去看",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "勾销生死簿",
+     "text": "把所有猴属的名字一概勾掉，从此不归阎王管",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "弼马温",
+     "text": "怒不可遏，扯出金箍棒，打出南天门",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "齐天大圣",
+     "text": "应下这桩差事，且看天庭耍什么花样",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "蟠桃会",
+     "text": "摇头叹口气，权当自己没看见",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/25 12:43:01"
   }
  ]
 }
