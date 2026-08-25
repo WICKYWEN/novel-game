@@ -7227,6 +7227,51 @@
     }
    ],
    "ts": "2026/8/25 12:39:43"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8A",
+   "name": "蒋弈辰",
+   "endingId": "e_cloud",
+   "endingName": "梦",
+   "seconds": 178,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "吃饱了就睡，睡醒了再吃",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "把水帘洞改名叫“逍遥宫”，整天对猴孙们吹牛说自己见过神仙",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "看见云彩就大喊“俺老孙来也！”，结果踩空摔进山沟",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "不理会，继续呼呼大睡",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/25 12:40:16"
   }
  ]
 }
