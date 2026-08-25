@@ -10083,6 +10083,331 @@
     }
    ],
    "ts": "2026/8/25 12:50:15"
+  },
+  {
+   "storyId": "redstar_p1",
+   "cls": "8A",
+   "name": "老牧师",
+   "endingId": "e_spark",
+   "endingName": "红都",
+   "seconds": 403,
+   "keyCorrect": 6,
+   "keyTotal": 8,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "未获解答的问题",
+     "text": "设法打听进入红区的办法，机会来了就动身",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "立即准备行装，踏上前往西安的火车",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "与青年攀谈，听听他对红军的看法",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "杀得不够",
+     "text": "追问老人：您为什么这么说？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "两个大人物",
+     "text": "相信邵力子的话，着手安排去前线的计划",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "等一个姓王的人",
+     "text": "继续等待，相信组织不会忘记我",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "王牧师来访",
+     "text": "问他：王先生，您到底是什么人？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "王牧师的身份",
+     "text": "问他：你真实的名字是什么？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "汉代青铜 · 邓发",
+     "text": "挣脱他的手，警惕地后退",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "立即准备行装，踏上前往西安的火车",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "与青年攀谈，听听他对红军的看法",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "杀得不够",
+     "text": "觉得老人可怕，悄悄离开座位",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "两个大人物",
+     "text": "相信邵力子的话，着手安排去前线的计划",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "等一个姓王的人",
+     "text": "到街上转转，打听打听消息",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "王牧师来访",
+     "text": "听他说说张学良和红军的秘密接触",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "王牧师的身份",
+     "text": "问他：你做这些，是为了钱吧？",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "跟人吹牛说自己去过红区，讲得绘声绘色",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "逢人便说自己是\"中国通\"，其实连陕西在哪都要翻地图",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "先发电报征求家人的意见",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "闭目养神，不想惹麻烦",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n4",
+     "title": "杀得不够",
+     "text": "追问老人：您为什么这么说？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "两个大人物",
+     "text": "追问邵力子：中国应不应该同日本打仗？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "等一个姓王的人",
+     "text": "继续等待，相信组织不会忘记我",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "王牧师来访",
+     "text": "问他：王先生，您到底是什么人？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "王牧师的身份",
+     "text": "问他：你真实的名字是什么？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "汉代青铜 · 邓发",
+     "text": "诚实地说：对不起，我不认识您",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n12",
+     "title": "邓发！",
+     "text": "问他：你不怕丢掉你的脑袋吗？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n13",
+     "title": "安排",
+     "text": "同意搭卡车方案，准备出发",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n14",
+     "title": "卡车北上",
+     "text": "观察车外的黄土高原，记下所见所闻",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "奇特的土地",
+     "text": "惊叹这奇特的地貌，一路仔细观察",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "围城之城",
+     "text": "准备证件，计划第二天一早出发去前线",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "骡夫与山道",
+     "text": "乖乖跟着他走，希望一切顺利",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n18",
+     "title": "刘龙火",
+     "text": "心想：他说“我害怕”？但看他神色泰然，不像害怕的样子",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "贫民会主席",
+     "text": "问他：你真的是贫民会主席？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n20",
+     "title": "跨进红区",
+     "text": "收下苏区纸币，郑重道谢后上路",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    }
+   ],
+   "ts": "2026/8/25 12:51:18"
   }
  ]
 }
