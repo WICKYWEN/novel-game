@@ -8607,6 +8607,67 @@
     }
    ],
    "ts": "2026/8/25 12:43:59"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8A",
+   "name": "cmy",
+   "endingId": "e_echo",
+   "endingName": "禅",
+   "seconds": 494,
+   "keyCorrect": 1,
+   "keyTotal": 2,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "与众猴嬉戏打闹，享受这无拘无束的日子",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2a",
+     "title": "水帘洞称王",
+     "text": "先在里面转一圈，看看有什么宝贝再出去",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "学艺七载",
+     "text": "三更时分，从后门进祖师房中求道",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "一听神珍铁，立刻催龙王带我去看",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "勾销生死簿",
+     "text": "把所有猴属的名字一概勾掉，从此不归阎王管",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "弼马温",
+     "text": "罢了，有口饭吃就行，继续养马",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/25 12:44:15"
   }
  ]
 }
