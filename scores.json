@@ -9280,6 +9280,59 @@
     }
    ],
    "ts": "2026/8/25 12:46:13"
+  },
+  {
+   "storyId": "redstar_p1",
+   "cls": "8A",
+   "name": "蒋弈辰",
+   "endingId": "e_cloud",
+   "endingName": "雾",
+   "seconds": 72,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "未获解答的问题",
+     "text": "把这些疑问写成文章发表，让读者自己判断",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "犹豫再三，决定先观望两个月再说",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "听说西北很乱，决定改去上海度假",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "逢人便说自己是\"中国通\"，其实连陕西在哪都要翻地图",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "翻了个身，继续睡",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/25 12:47:10"
   }
  ]
 }
