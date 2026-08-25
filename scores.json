@@ -7780,6 +7780,75 @@
     }
    ],
    "ts": "2026/8/25 12:40:49"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8A",
+   "name": "Lisa(^^)",
+   "endingId": "e_cloud",
+   "endingName": "梦",
+   "seconds": 84,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "与众猴嬉戏打闹，享受这无拘无束的日子",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2a",
+     "title": "水帘洞称王",
+     "text": "跳出瀑布，高声宣布：我进去了，我出来了！",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3a",
+     "title": "意气称王",
+     "text": "当王多好，想那些有的没的做什么",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "n5",
+     "title": "生死之问",
+     "text": "惊觉生死无常，决意下山寻仙访道",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "把水帘洞改名叫“逍遥宫”，整天对猴孙们吹牛说自己见过神仙",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "看见云彩就大喊“俺老孙来也！”，结果踩空摔进山沟",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "迷迷糊糊爬起来，对着空气喊：俺老孙天下第一！",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/25 12:40:55"
   }
  ]
 }
