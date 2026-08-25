@@ -9833,6 +9833,155 @@
     }
    ],
    "ts": "2026/8/25 12:49:38"
+  },
+  {
+   "storyId": "redstar_p1",
+   "cls": "8A",
+   "name": "董宇浩",
+   "endingId": "e_spark",
+   "endingName": "红都",
+   "seconds": 349,
+   "keyCorrect": 1,
+   "keyTotal": 3,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "未获解答的问题",
+     "text": "设法打听进入红区的办法，机会来了就动身",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "千载难逢的机会",
+     "text": "立即准备行装，踏上前往西安的火车",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "注射了五种疫苗",
+     "text": "与青年攀谈，听听他对红军的看法",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "杀得不够",
+     "text": "追问老人：您为什么这么说？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "两个大人物",
+     "text": "相信邵力子的话，着手安排去前线的计划",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "等一个姓王的人",
+     "text": "到街上转转，打听打听消息",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "王牧师来访",
+     "text": "问他：王先生，您到底是什么人？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "王牧师的身份",
+     "text": "问他：张学良真的答应借飞机了？",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n11",
+     "title": "汉代青铜 · 邓发",
+     "text": "猜测他是东北军的高级军官",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n13",
+     "title": "安排",
+     "text": "同意搭卡车方案，准备出发",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n14",
+     "title": "卡车北上",
+     "text": "观察车外的黄土高原，记下所见所闻",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "奇特的土地",
+     "text": "惊叹这奇特的地貌，一路仔细观察",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "围城之城",
+     "text": "准备证件，计划第二天一早出发去前线",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "骡夫与山道",
+     "text": "试探着和他聊几句，套套近乎",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n18",
+     "title": "刘龙火",
+     "text": "心想：他说“我害怕”？但看他神色泰然，不像害怕的样子",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "贫民会主席",
+     "text": "掏出纸币想付饭钱，他却拒绝了",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n20",
+     "title": "跨进红区",
+     "text": "收下苏区纸币，郑重道谢后上路",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    }
+   ],
+   "ts": "2026/8/25 12:49:53"
   }
  ]
 }
