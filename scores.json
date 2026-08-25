@@ -3404,12 +3404,12 @@
   {
    "storyId": "xiyouji10",
    "cls": "8F",
-   "name": "蒋予函",
-   "endingId": "e_echo",
-   "endingName": "禅",
-   "seconds": 124,
-   "keyCorrect": 0,
-   "keyTotal": 2,
+   "name": "zzx",
+   "endingId": "e_spark",
+   "endingName": "悟",
+   "seconds": 176,
+   "keyCorrect": 2,
+   "keyTotal": 4,
    "choices": [
     {
      "node": "n1",
@@ -3430,10 +3430,10 @@
     {
      "node": "n11",
      "title": "龙宫借宝",
-     "text": "见龙王为难，取那方天画戟将就着用",
-     "depth": 1,
+     "text": "一听神珍铁，立刻催龙王带我去看",
+     "depth": 2,
      "key": true,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n15",
@@ -3446,13 +3446,61 @@
     {
      "node": "n16",
      "title": "弼马温",
-     "text": "罢了，有口饭吃就行，继续养马",
-     "depth": 0,
+     "text": "先按下怒火，问清官阶，再作计较",
+     "depth": 1,
      "key": true,
      "correct": false
+    },
+    {
+     "node": "n17",
+     "title": "齐天大圣",
+     "text": "应下这桩差事，且看天庭耍什么花样",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "蟠桃会",
+     "text": "想起被哄被骗的种种，怒火中烧：不请我，我便搅了这场会",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n23",
+     "title": "二郎神",
+     "text": "现出本相，与二郎神再斗一场",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n24",
+     "title": "老君炉",
+     "text": "在炉中左躲右闪，寻那火势弱的地方",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n25",
+     "title": "如来赌约",
+     "text": "在柱下撒了泡尿，留个记号，再翻回来",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n29",
+     "title": "观音东行",
+     "text": "流沙河收沙悟净，福陵山收猪悟能，又度了西海龙王的玉龙三太子",
+     "depth": 2,
+     "key": false,
+     "correct": true
     }
    ],
-   "ts": "2026/8/25 10:59:51"
+   "ts": "2026/8/25 10:59:54"
   }
  ]
 }
