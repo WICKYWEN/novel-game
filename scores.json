@@ -17531,6 +17531,75 @@
     }
    ],
    "ts": "2026/8/26 14:34:50"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8C",
+   "name": "zzn",
+   "endingId": "e_cloud",
+   "endingName": "梦",
+   "seconds": 63,
+   "keyCorrect": 1,
+   "keyTotal": 1,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "望着远方的云海，心里想着：这天地间，到底还有什么",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "学艺七载",
+     "text": "祖师生气了，还是先避避风头",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "一听神珍铁，立刻催龙王带我去看",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "勾销生死簿",
+     "text": "阎王求饶，你心一软，把笔放下了",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "把山里的石头都捡来堆成“金箍棒”，说要拿去打天兵",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "不理会，继续呼呼大睡",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/26 14:36:04"
   }
  ]
 }
