@@ -17063,11 +17063,11 @@
   },
   {
    "storyId": "redstar_p4",
-   "cls": "8C",
-   "name": "少女心",
+   "cls": "8T",
+   "name": "正太文樱凯",
    "endingId": "e_spark",
    "endingName": "求索",
-   "seconds": 141,
+   "seconds": 47,
    "keyCorrect": 3,
    "keyTotal": 5,
    "choices": [
@@ -17090,8 +17090,8 @@
     {
      "node": "n3",
      "title": "读书与反抗",
-     "text": "问他：您小时候喜欢读什么书？",
-     "depth": 2,
+     "text": "感叹：十岁就敢逃学反抗",
+     "depth": 1,
      "key": false,
      "correct": true
     },
@@ -17106,8 +17106,8 @@
     {
      "node": "n5",
      "title": "湘乡学堂",
-     "text": "问他：那些看不起您的学生，后来怎么样了？",
-     "depth": 1,
+     "text": "问他：您在学堂里学到了什么？",
+     "depth": 2,
      "key": false,
      "correct": true
     },
@@ -17130,8 +17130,8 @@
     {
      "node": "n8",
      "title": "新民学会",
-     "text": "问他：你们平时都做些什么？",
-     "depth": 1,
+     "text": "问他：新民学会的会员们后来怎样了？",
+     "depth": 2,
      "key": false,
      "correct": true
     },
@@ -17154,16 +17154,16 @@
     {
      "node": "n11",
      "title": "三本书",
-     "text": "问他：陈独秀对您影响有多大？",
-     "depth": 1,
+     "text": "记下这三本书的名字",
+     "depth": 2,
      "key": true,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n12",
      "title": "建党",
-     "text": "问他：一九二一年以后党发展得怎么样？",
-     "depth": 1,
+     "text": "问他：您当时在湖南做了什么工作？",
+     "depth": 2,
      "key": false,
      "correct": true
     },
@@ -17194,37 +17194,37 @@
     {
      "node": "n16",
      "title": "游击战术",
-     "text": "问他：红军还有哪些纪律？",
+     "text": "记下这十六个字",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "十六字诀",
+     "text": "问他：这些战术在实践中效果如何？",
      "depth": 1,
      "key": true,
      "correct": false
     },
     {
-     "node": "n17",
-     "title": "十六字诀",
-     "text": "问他：李立三路线后来怎么样了？",
-     "depth": 2,
-     "key": true,
-     "correct": true
-    },
-    {
      "node": "n18",
      "title": "三大纪律",
-     "text": "问他：这些纪律执行得怎么样？",
-     "depth": 2,
+     "text": "问他：农民们支持红军吗？",
+     "depth": 1,
      "key": true,
-     "correct": true
+     "correct": false
     },
     {
      "node": "n19",
      "title": "五次围剿",
-     "text": "问他：前三次围剿是怎么赢的？",
-     "depth": 1,
+     "text": "问他：红军后来是怎么突围的？",
+     "depth": 2,
      "key": false,
      "correct": true
     }
    ],
-   "ts": "2026/8/26 14:33:27"
+   "ts": "2026/8/26 14:33:29"
   }
  ]
 }
