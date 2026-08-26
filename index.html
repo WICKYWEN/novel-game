@@ -63,7 +63,10 @@
   .end{color:var(--accent-dark);font-weight:600}
   .time{font-size:12px;color:var(--ink-soft);white-space:nowrap}
   .empty{text-align:center;color:var(--ink-soft);padding:36px 16px;font-size:14px}
-  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 10px}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .story-select{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .story-select button{flex:1;min-width:110px;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:9px 12px;font-size:13px;cursor:pointer;transition:.2s}
+  .story-select button.on{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}
   .tab{padding:6px 14px;font-size:13px;border:1.5px solid var(--line);border-radius:20px;
     background:var(--card);color:var(--ink-soft);cursor:pointer;transition:.15s}
   .tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -86,6 +89,7 @@
 
   <!-- 排行榜 -->
   <div class="section-title">🏆 排行榜</div>
+  <div class="story-select" id="boardStories"></div>
   <div class="tabs" id="tabs"></div>
   <div class="board">
     <div class="board-head">
@@ -155,26 +159,29 @@ async function loadBoard(){
     // 当前作品 = URL 参数或第一个开放作品
     const params = new URLSearchParams(location.search);
     let storyId = params.get("id");
-    if(!storyId){
-      try{
-        const lib = await ghReadJSON("library.json");
+    let lib = {stories:[]};
+    try{
+      lib = await ghReadJSON("library.json");
+      if(!storyId){
         const first = (lib.stories||[]).filter(s=>s.open).sort((a,b)=>(a.order||99)-(b.order||99))[0];
         storyId = first ? first.id : "";
-      }catch(e){}
-    }
+      }
+    }catch(e){}
     curStory = storyId || "";
-    // 按故事筛选 + 每人首成绩 + 排序（时间在前者优先）
+    renderBoardStories(lib.stories || []);
+    // 按故事筛选 + 每人首成绩 + 排序（好结局优先，同分用时短者前）
     const seen = new Set();
     const filtered = records
       .filter(r=>!curStory || r.storyId===curStory)
       .sort((a,b)=> (b.ts||"").localeCompare(a.ts||""))
       .filter(r=>{
-        const k = r.cls+"|"+r.name;
+        // 班级/姓名大小写归一（7A=7a）
+        const k = (r.cls||"").toLowerCase()+"|"+(r.name||"").toLowerCase();
         if(seen.has(k)) return false;
         seen.add(k);
         return true;
       })
-      .sort((a,b)=> scoreOf(a)-scoreOf(b) || (b.seconds||0)-(a.seconds||0));
+      .sort((a,b)=> scoreOf(b)-scoreOf(a) || (a.seconds||0)-(b.seconds||0));
     rows = filtered.map((r,i)=>({rank:i+1, cls:r.cls, name:r.name, ending:r.endingName||r.endingId, seconds:r.seconds||0}));
   }catch(e){}
   allRows = rows;
@@ -204,6 +211,25 @@ function scoreOf(r){
   if(name==="尘路") return 35;
   if(name==="浮云") return 10;
   return 0;
+}
+
+function renderBoardStories(stories){
+  const box = $("boardStories");
+  const open = stories.filter(s=>s.open);
+  if(!open.length){ box.innerHTML = ""; return; }
+  // 当前作品按钮 + 全部
+  const all = open.map(s=>s.id);
+  let html = `<button class="${!curStory||!all.includes(curStory)?"on":""}" data-sid="">全部作品</button>`;
+  open.forEach(s=>{
+    html += `<button class="${curStory===s.id?"on":""}" data-sid="${esc(s.id)}">${esc(s.title.replace(/《|》/g,""))}</button>`;
+  });
+  box.innerHTML = html;
+  box.querySelectorAll("button").forEach(b=>{
+    b.addEventListener("click", ()=>{
+      curStory = b.dataset.sid || "";
+      loadBoard();
+    });
+  });
 }
 
 function renderTabs(classes){
