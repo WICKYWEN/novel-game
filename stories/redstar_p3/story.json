@@ -1037,7 +1037,7 @@
      "depth": 0
     },
     {
-     "text": "忽然清醒，想起自己原本要做什么",
+     "text": "想起自己是来采访的记者",
      "next": "nz3",
      "depth": 1,
      "returnTo": "nzR"
@@ -1100,7 +1100,7 @@
      "depth": 0
     },
     {
-     "text": "忽然清醒，想起自己原本要做什么",
+     "text": "摸了摸兜里的记者证",
      "next": "nz1",
      "depth": 1,
      "returnTo": "nzR"
