@@ -14423,6 +14423,83 @@
     }
    ],
    "ts": "2026/8/26 14:22:39"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8c",
+   "name": "不嘻嘻",
+   "endingId": "e_cloud",
+   "endingName": "梦",
+   "seconds": 65,
+   "keyCorrect": 0,
+   "keyTotal": 1,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "与众猴嬉戏打闹，享受这无拘无束的日子",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2a",
+     "title": "水帘洞称王",
+     "text": "跳出瀑布，高声宣布：我进去了，我出来了！",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3a",
+     "title": "意气称王",
+     "text": "先享受几年王位，寻仙的事以后再说",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "学艺七载",
+     "text": "祖师生气了，还是先避避风头",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "被龙王说得发虚，空手告辞",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "把水帘洞改名叫“逍遥宫”，整天对猴孙们吹牛说自己见过神仙",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "把山里的石头都捡来堆成“金箍棒”，说要拿去打天兵",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "迷迷糊糊爬起来，对着空气喊：俺老孙天下第一！",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/26 14:22:44"
   }
  ]
 }
