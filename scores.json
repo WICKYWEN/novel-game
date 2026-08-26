@@ -13479,6 +13479,139 @@
     }
    ],
    "ts": "2026/8/26 14:17:31"
+  },
+  {
+   "storyId": "redstar_p2",
+   "cls": "8A",
+   "name": "小正太",
+   "endingId": "e_spark",
+   "endingName": "同行",
+   "seconds": 77,
+   "keyCorrect": 0,
+   "keyTotal": 2,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "标语下的夜晚",
+     "text": "询问向导：我们离安塞还有多远？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "白匪警告",
+     "text": "立刻起身，相信他的警告",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "第一个红军战士",
+     "text": "问他：你在这边做什么工作？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "废墟之城",
+     "text": "问他：居民们现在住在哪里？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "游击队的呐喊",
+     "text": "惊叹：这呐喊声用来恫吓敌人一定很有效",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "周恩来出场",
+     "text": "惊讶：您会说英语！",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "书生出身的造反者",
+     "text": "感叹：悬赏八万，门前却只有一个哨兵",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n9",
+     "title": "李长林",
+     "text": "问他：李长林，你自己怎么不在前线？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n10",
+     "title": "贺龙的传说",
+     "text": "追问：贺龙后来怎么参加了共产党？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n12",
+     "title": "菜刀",
+     "text": "追问：贺龙的红二方面军后来怎么样了？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "少年红军",
+     "text": "问他们：你们为什么参加红军？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "喜欢红军吗",
+     "text": "记下这些，心里震动",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "考孩子们",
+     "text": "震撼：一个农村孩子说\"他的\"军队？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n18",
+     "title": "老狗的故事",
+     "text": "问他：你家里人呢？",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n19",
+     "title": "六千里长征",
+     "text": "问他：红军教你们读书写字？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    }
+   ],
+   "ts": "2026/8/26 14:18:14"
   }
  ]
 }
