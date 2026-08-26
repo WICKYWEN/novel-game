@@ -14072,6 +14072,123 @@
     }
    ],
    "ts": "2026/8/26 14:21:27"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8C",
+   "name": "土豆",
+   "endingId": "e_cloud",
+   "endingName": "梦",
+   "seconds": 118,
+   "keyCorrect": 2,
+   "keyTotal": 4,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "望着远方的云海，心里想着：这天地间，到底还有什么",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "学艺七载",
+     "text": "祖师生气了，还是先避避风头",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "一听神珍铁，立刻催龙王带我去看",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "勾销生死簿",
+     "text": "只勾掉自己一人的名字，速速离开",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "弼马温",
+     "text": "先按下怒火，问清官阶，再作计较",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n17",
+     "title": "齐天大圣",
+     "text": "要上天可以，但名号须响亮，地位须够格",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "蟠桃会",
+     "text": "悄悄摘几个九千年的大桃尝尝鲜，不与她们计较",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n23",
+     "title": "二郎神",
+     "text": "现出本相，与二郎神再斗一场",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n24",
+     "title": "老君炉",
+     "text": "往炉子角落一蹲，咬着牙硬扛，让火慢慢烧",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n25",
+     "title": "如来赌约",
+     "text": "这柱子定是天尽头，我赢了！得意地大笑",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "把水帘洞改名叫“逍遥宫”，整天对猴孙们吹牛说自己见过神仙",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "看见云彩就大喊“俺老孙来也！”，结果踩空摔进山沟",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "梦里的声音太吵，气得把枕头扔出去",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/26 14:22:13"
   }
  ]
 }
