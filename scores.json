@@ -14076,11 +14076,11 @@
   {
    "storyId": "xiyouji10",
    "cls": "8C",
-   "name": "土豆",
-   "endingId": "e_cloud",
-   "endingName": "梦",
-   "seconds": 118,
-   "keyCorrect": 2,
+   "name": "111",
+   "endingId": "e_light",
+   "endingName": "正果",
+   "seconds": 161,
+   "keyCorrect": 4,
    "keyTotal": 4,
    "choices": [
     {
@@ -14118,10 +14118,10 @@
     {
      "node": "n16",
      "title": "弼马温",
-     "text": "先按下怒火，问清官阶，再作计较",
-     "depth": 1,
+     "text": "怒不可遏，扯出金箍棒，打出南天门",
+     "depth": 2,
      "key": true,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n17",
@@ -14134,16 +14134,16 @@
     {
      "node": "n19",
      "title": "蟠桃会",
-     "text": "悄悄摘几个九千年的大桃尝尝鲜，不与她们计较",
-     "depth": 1,
+     "text": "想起被哄被骗的种种，怒火中烧：不请我，我便搅了这场会",
+     "depth": 2,
      "key": true,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n23",
      "title": "二郎神",
-     "text": "现出本相，与二郎神再斗一场",
-     "depth": 1,
+     "text": "趁他说话，变作一只花鸨，混入雀群里溜走",
+     "depth": 2,
      "key": false,
      "correct": true
     },
@@ -14158,37 +14158,21 @@
     {
      "node": "n25",
      "title": "如来赌约",
-     "text": "这柱子定是天尽头，我赢了！得意地大笑",
-     "depth": 0,
+     "text": "在柱下撒了泡尿，留个记号，再翻回来",
+     "depth": 2,
      "key": false,
-     "correct": false
+     "correct": true
     },
     {
-     "node": "nz1",
-     "title": "糊里糊涂",
-     "text": "把水帘洞改名叫“逍遥宫”，整天对猴孙们吹牛说自己见过神仙",
-     "depth": 0,
+     "node": "n29",
+     "title": "观音东行",
+     "text": "只收了流沙河的沙悟净，其余的先看看再说",
+     "depth": 1,
      "key": false,
-     "correct": false
-    },
-    {
-     "node": "nz3",
-     "title": "荒唐念头",
-     "text": "看见云彩就大喊“俺老孙来也！”，结果踩空摔进山沟",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "nz5",
-     "title": "最后的荒唐",
-     "text": "梦里的声音太吵，气得把枕头扔出去",
-     "depth": 0,
-     "key": false,
-     "correct": false
+     "correct": true
     }
    ],
-   "ts": "2026/8/26 14:22:13"
+   "ts": "2026/8/26 14:22:14"
   }
  ]
 }
