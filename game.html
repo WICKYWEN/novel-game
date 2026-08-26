@@ -157,6 +157,7 @@ let nodeId = null, depth = 0, startedAt = 0, visited = 0, totalNodes = 0;
 let paraShown = 0, curNode = null;
 let keyTotal = 0, keyCorrect = 0;
 let huRegret = 0;  // 糊涂线内连续"醒悟"计数（连续2次拉回主线）
+let huTry = 0;     // 糊涂线内醒悟尝试总次数（>3次强制离谱线，防无限循环）
 let choiceLog = [];  // 每题选择明细：{node, title, text, depth, key, correct}
 let textDone = false;  // 当前节点全部文本是否已显示完（等待点击进入选项/下一节点）
 let storyId = null;
@@ -202,7 +203,7 @@ async function loadStory(id){
   const clean = JSON.parse(JSON.stringify(s));
   if(clean.endings){
     for(const k in clean.endings){
-      delete clean.endings[k].tier;
+      // 保留 tier（结局页显示"隐藏结局：正果"），只删分数
       delete clean.endings[k].score;
     }
   }
@@ -302,7 +303,7 @@ function startGame(){
   $("game").style.display = "flex";
   $("gm-book").textContent = META.title || "";
   nodeId = STORY.startNodeId; depth = 0; visited = 0; startedAt = Date.now();
-  keyTotal = 0; keyCorrect = 0; choiceLog = []; huRegret = 0;
+  keyTotal = 0; keyCorrect = 0; choiceLog = []; huRegret = 0; huTry = 0;
   showNode(nodeId);
 }
 
@@ -377,7 +378,9 @@ function afterText(){
 function renderChoices(choices){
   const box = $("gm-choices");
   box.innerHTML = "";
-  choices.forEach((c,i)=>{
+  // 选项随机打乱（避免正解固定在第一项；next/depth 跟随选项不受影响）
+  const shuffled = choices.slice().sort(()=>Math.random()-0.5);
+  shuffled.forEach((c,i)=>{
     const b = document.createElement("button");
     b.className = "choice";
     b.textContent = c.text;
@@ -392,15 +395,29 @@ function renderChoices(choices){
         if(rawDepth === 2) keyCorrect++;
       }
       // 糊涂线醒悟机制：选醒悟选项（depth≥1）连续2次 → 拉回主线
+      // 循环控制：醒悟尝试总次数 huTry 超过3次（≤3次机会）→ 强制离谱线（防 离谱↔醒悟 无限循环）
       let nextId = c.next;
       if(isHuLine && rawDepth >= 1 && c.returnTo){
         huRegret++;
+        huTry++;
+        if(huTry > 3){
+          // 尝试太多次仍反复，强制进入离谱结局（找糊涂线终点）
+          huRegret = 0; huTry = 0;
+          let cloudEnd = "nzE";
+          for(const k in STORY.nodes){
+            if(k.startsWith("nz") && STORY.nodes[k].ending){
+              cloudEnd = k; break;
+            }
+          }
+          showNode(cloudEnd);
+          return;
+        }
         if(huRegret >= 2){
           nextId = c.returnTo;
           huRegret = 0;
         }
       }else if(isHuLine){
-        huRegret = 0;  // 又选了离谱选项，醒悟计数清零
+        huRegret = 0;  // 又选了离谱选项，连续计数清零（但 huTry 累计保留）
       }
       // 记录每题选择：key节点选depth=2为对；普通节点depth≥1为正常
       choiceLog.push({
@@ -431,13 +448,16 @@ function pickRoute(route){
 }
 
 /* ---------- 结局 & 提交 ---------- */
+// 结局等级中文名（学生端显示 "等级：诗意名"，如 隐藏结局：正果）
+const TIER_NAMES = {hidden:"隐藏结局", insight:"洞察结局", understand:"理解结局", surface:"表层结局", absurd:"离谱结局"};
 async function finish(endingId){
   const e = STORY.endings[endingId];
   if(!e){ toast("结局丢失"); return; }
   const seconds = Math.round((Date.now()-startedAt)/1000);
   $("game").style.display = "none";
   $("ending").style.display = "flex";
-  $("en-name").textContent = e.name;
+  const tierName = TIER_NAMES[e.tier] || "";
+  $("en-name").textContent = tierName ? (tierName + "：" + e.name) : e.name;
   $("en-text").textContent = e.text;
   $("en-meta").textContent = "用时 " + fmtTime(seconds);
   // 结局配图（有 image 字段才显示）
