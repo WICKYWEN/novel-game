@@ -14428,64 +14428,56 @@
    "storyId": "xiyouji10",
    "cls": "8c",
    "name": "不嘻嘻",
-   "endingId": "e_cloud",
-   "endingName": "梦",
-   "seconds": 65,
-   "keyCorrect": 0,
-   "keyTotal": 1,
+   "endingId": "e_spark",
+   "endingName": "悟",
+   "seconds": 92,
+   "keyCorrect": 1,
+   "keyTotal": 3,
    "choices": [
     {
      "node": "n1",
      "title": "仙石崩裂",
-     "text": "与众猴嬉戏打闹，享受这无拘无束的日子",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n2a",
-     "title": "水帘洞称王",
-     "text": "跳出瀑布，高声宣布：我进去了，我出来了！",
+     "text": "望着远方的云海，心里想着：这天地间，到底还有什么",
      "depth": 2,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n3a",
-     "title": "意气称王",
-     "text": "先享受几年王位，寻仙的事以后再说",
-     "depth": 1,
      "key": false,
      "correct": true
     },
     {
      "node": "n6",
      "title": "学艺七载",
-     "text": "祖师生气了，还是先避避风头",
-     "depth": 1,
+     "text": "三更时分，从后门进祖师房中求道",
+     "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n11",
      "title": "龙宫借宝",
-     "text": "被龙王说得发虚，空手告辞",
-     "depth": 0,
+     "text": "一听神珍铁，立刻催龙王带我去看",
+     "depth": 2,
      "key": true,
-     "correct": false
+     "correct": true
     },
     {
-     "node": "nz1",
-     "title": "糊里糊涂",
-     "text": "把水帘洞改名叫“逍遥宫”，整天对猴孙们吹牛说自己见过神仙",
+     "node": "n15",
+     "title": "勾销生死簿",
+     "text": "阎王求饶，你心一软，把笔放下了",
      "depth": 0,
      "key": false,
      "correct": false
     },
     {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
      "node": "nz3",
      "title": "荒唐念头",
-     "text": "把山里的石头都捡来堆成“金箍棒”，说要拿去打天兵",
+     "text": "看见云彩就大喊“俺老孙来也！”，结果踩空摔进山沟",
      "depth": 0,
      "key": false,
      "correct": false
@@ -14493,13 +14485,69 @@
     {
      "node": "nz5",
      "title": "最后的荒唐",
-     "text": "迷迷糊糊爬起来，对着空气喊：俺老孙天下第一！",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "梦见自己当了玉皇大帝，醒来后要猴孙们天天跪拜",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "龙宫借宝",
+     "text": "见龙王为难，取那方天画戟将就着用",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n15",
+     "title": "勾销生死簿",
+     "text": "只勾掉自己一人的名字，速速离开",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "弼马温",
+     "text": "先按下怒火，问清官阶，再作计较",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n17",
+     "title": "齐天大圣",
+     "text": "推说身子不适，拒绝再上天",
      "depth": 0,
      "key": false,
      "correct": false
     }
    ],
-   "ts": "2026/8/26 14:22:44"
+   "ts": "2026/8/26 14:24:23"
   }
  ]
 }
