@@ -16227,6 +16227,195 @@
     }
    ],
    "ts": "2026/8/26 14:29:31"
+  },
+  {
+   "storyId": "redstar_p4",
+   "cls": "8c",
+   "name": "agony",
+   "endingId": "e_cloud",
+   "endingName": "惘",
+   "seconds": 84,
+   "keyCorrect": 3,
+   "keyTotal": 5,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "个人历史",
+     "text": "觉得他太谨慎，不愿透露真实想法",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "忽然清醒，想起自己原本要做什么",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "韶山冲",
+     "text": "记下这些细节，追问他的童年",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "读书与反抗",
+     "text": "感叹：十岁就敢逃学反抗",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "《盛世危言》",
+     "text": "问他：您离开家以后去了哪里？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "湘乡学堂",
+     "text": "问他：那些看不起您的学生，后来怎么样了？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "长沙",
+     "text": "问他：那篇文章写了什么？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "当兵与自学",
+     "text": "问他：您在图书馆读了些什么书？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "新民学会",
+     "text": "问他：新民学会的会员们后来怎样了？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "北京",
+     "text": "问他：您在北大认识了什么人？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n10",
+     "title": "去上海",
+     "text": "问他：您在上海见到了谁？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "三本书",
+     "text": "记下这三本书的名字",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n12",
+     "title": "建党",
+     "text": "问他：您当时在湖南做了什么工作？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n13",
+     "title": "农民运动",
+     "text": "问他：一九二七年发生了什么？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n14",
+     "title": "秋收起义",
+     "text": "问他：您是怎么逃出来的？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "井冈山",
+     "text": "问他：红军是怎么打胜仗的？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "游击战术",
+     "text": "记下这十六个字",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "十六字诀",
+     "text": "问他：这些战术在实践中效果如何？",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n18",
+     "title": "三大纪律",
+     "text": "觉得这些纪律不过是说说而已",
+     "depth": 0,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "觉得采访太无聊，跑去逛集市",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "打包行李，连夜离开保安",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/26 14:30:40"
   }
  ]
 }
