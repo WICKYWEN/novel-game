@@ -13673,6 +13673,51 @@
     }
    ],
    "ts": "2026/8/26 14:18:29"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8c",
+   "name": "金帅旭",
+   "endingId": "e_cloud",
+   "endingName": "梦",
+   "seconds": 69,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "吃饱了就睡，睡醒了再吃",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "听说山下有集市，想下山买串糖葫芦尝尝",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "听说“齐天大圣”的名号很响，决定自己封自己一个",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "不理会，继续呼呼大睡",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/26 14:18:41"
   }
  ]
 }
