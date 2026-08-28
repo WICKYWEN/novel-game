@@ -18455,75 +18455,6 @@
    "ts": "2026/8/28 15:22:58"
   },
   {
-   "storyId": "redstar_p3",
-   "cls": "8G",
-   "name": "不知道",
-   "endingId": "e_cloud",
-   "endingName": "沙",
-   "seconds": 89,
-   "keyCorrect": 0,
-   "keyTotal": 0,
-   "choices": [
-    {
-     "node": "n1",
-     "title": "红色首都",
-     "text": "觉得这地方太破旧，后悔来这里",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "nz1",
-     "title": "糊里糊涂",
-     "text": "听说毛泽东在街上走，跑去要签名",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "nz3",
-     "title": "荒唐念头",
-     "text": "摸了摸兜里的记者证",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "nz1",
-     "title": "糊里糊涂",
-     "text": "听说毛泽东在街上走，跑去要签名",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "nz3",
-     "title": "荒唐念头",
-     "text": "摸了摸兜里的记者证",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "nz1",
-     "title": "糊里糊涂",
-     "text": "听说毛泽东在街上走，跑去要签名",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "nz3",
-     "title": "荒唐念头",
-     "text": "摸了摸兜里的记者证",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    }
-   ],
-   "ts": "2026/8/28 15:23:09"
-  },
-  {
    "storyId": "redstar_p2",
    "cls": "8G",
    "name": "刘雨昕",
@@ -18974,6 +18905,171 @@
     }
    ],
    "ts": "2026/8/28 15:25:48"
+  },
+  {
+   "storyId": "redstar_p3",
+   "cls": "8G",
+   "name": "不知道",
+   "endingId": "e_spark",
+   "endingName": "守望",
+   "seconds": 191,
+   "keyCorrect": 3,
+   "keyTotal": 4,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "红色首都",
+     "text": "放下行李，请求尽快见到毛泽东",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "第一次见面",
+     "text": "仔细打量他，记下他的外貌特征",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "两间窑洞",
+     "text": "感叹：做了十年领袖，财物只有一卷铺盖",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n4",
+     "title": "辣椒与革命",
+     "text": "问他：听说您博览群书，都读什么书？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "谈世界",
+     "text": "问他：您认为抗日战争要打多久？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "三个条件",
+     "text": "追问：红军为什么能节节获胜？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "运动战",
+     "text": "问他：你们会怎么对待俘虏的日本兵？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "飞蛾",
+     "text": "感叹：凌晨两点，你们还不休息？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "两百万元的首级",
+     "text": "惊叹：这两百万元的首级赏格，都是谁的？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n10",
+     "title": "林彪",
+     "text": "问他：你打仗为什么从不打败仗？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n11",
+     "title": "讲课",
+     "text": "认真回答学员们提出的尖锐问题",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n12",
+     "title": "尖锐的问题",
+     "text": "承认自己知识有限，请他们指教",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n13",
+     "title": "短促突击战",
+     "text": "问他：红大毕业后，学员们去哪里？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n14",
+     "title": "古庙剧场",
+     "text": "找个位置坐下，认真看演出",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n15",
+     "title": "《侵略》",
+     "text": "震撼：这短剧的每个细节都来自真实",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n16",
+     "title": "《丰收舞》与《统一战线舞》",
+     "text": "被演出打动，认真看完每个节目",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n17",
+     "title": "独唱",
+     "text": "感叹：这些演员是世界上最快乐的演员",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n18",
+     "title": "危拱之",
+     "text": "问她：红军剧社是怎么组织起来的？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "剧社的历史",
+     "text": "感叹：设备这么简陋，却能满足真正的社会需要",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    }
+   ],
+   "ts": "2026/8/28 15:26:30"
   }
  ]
 }
