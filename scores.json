@@ -19491,13 +19491,13 @@
   },
   {
    "storyId": "redstar_p1",
-   "cls": "8C",
-   "name": "77777777^",
-   "endingId": "e_spark",
-   "endingName": "红都",
-   "seconds": 733,
+   "cls": "8G",
+   "name": "k k",
+   "endingId": "e_cloud",
+   "endingName": "雾",
+   "seconds": 72,
    "keyCorrect": 2,
-   "keyTotal": 4,
+   "keyTotal": 2,
    "choices": [
     {
      "node": "n1",
@@ -19534,8 +19534,8 @@
     {
      "node": "n5",
      "title": "两个大人物",
-     "text": "相信邵力子的话，着手安排去前线的计划",
-     "depth": 1,
+     "text": "追问邵力子：中国应不应该同日本打仗？",
+     "depth": 2,
      "key": false,
      "correct": true
     },
@@ -19558,93 +19558,69 @@
     {
      "node": "n9",
      "title": "王牧师的身份",
-     "text": "问他：张学良真的答应借飞机了？",
-     "depth": 1,
+     "text": "问他：你真实的名字是什么？",
+     "depth": 2,
      "key": true,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n11",
      "title": "汉代青铜 · 邓发",
-     "text": "诚实地说：对不起，我不认识您",
-     "depth": 2,
+     "text": "猜测他是东北军的高级军官",
+     "depth": 1,
      "key": false,
-     "correct": true
-    },
-    {
-     "node": "n12",
-     "title": "邓发！",
-     "text": "问他：你不怕丢掉你的脑袋吗？",
-     "depth": 2,
-     "key": true,
      "correct": true
     },
     {
      "node": "n13",
      "title": "安排",
-     "text": "同意搭卡车方案，准备出发",
-     "depth": 2,
+     "text": "坚持要坐飞机，觉得更安全",
+     "depth": 1,
      "key": false,
      "correct": true
     },
     {
      "node": "n14",
      "title": "卡车北上",
-     "text": "和同车的东北军军官聊聊天",
-     "depth": 1,
+     "text": "观察车外的黄土高原，记下所见所闻",
+     "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n15",
      "title": "奇特的土地",
-     "text": "惊叹这奇特的地貌，一路仔细观察",
-     "depth": 2,
+     "text": "觉得这地方荒凉可怕，后悔深入",
+     "depth": 0,
      "key": false,
-     "correct": true
-    },
-    {
-     "node": "n16",
-     "title": "围城之城",
-     "text": "在城里走走，观察围城的痕迹",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n17",
-     "title": "骡夫与山道",
-     "text": "试探着和他聊几句，套套近乎",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n18",
-     "title": "刘龙火",
-     "text": "以为他害怕，赶紧后退几步",
-     "depth": 1,
-     "key": false,
-     "correct": true
-    },
-    {
-     "node": "n19",
-     "title": "贫民会主席",
-     "text": "掏出纸币想付饭钱，他却拒绝了",
-     "depth": 1,
-     "key": true,
      "correct": false
     },
     {
-     "node": "n20",
-     "title": "跨进红区",
-     "text": "收下苏区纸币，郑重道谢后上路",
-     "depth": 2,
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "跟人吹牛说自己去过红区，讲得绘声绘色",
+     "depth": 0,
      "key": false,
-     "correct": true
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "买了一堆地图，在北平城里研究\"进红区的路线\"",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "被梦惊醒，却想不起梦里的话",
+     "depth": 0,
+     "key": false,
+     "correct": false
     }
    ],
-   "ts": "2026/8/28 15:30:25"
+   "ts": "2026/8/28 15:30:29"
   }
  ]
 }
