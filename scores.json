@@ -18772,6 +18772,59 @@
     }
    ],
    "ts": "2026/8/28 15:24:32"
+  },
+  {
+   "storyId": "xiyouji10",
+   "cls": "8G",
+   "name": "霸道8块腹肌身高188倒三角青受音顶级颜值正太爱上陈亿铭的di ck",
+   "endingId": "e_cloud",
+   "endingName": "梦",
+   "seconds": 70,
+   "keyCorrect": 0,
+   "keyTotal": 0,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "仙石崩裂",
+     "text": "望着远方的云海，心里想着：这天地间，到底还有什么",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "学艺七载",
+     "text": "挨了打，心里委屈，躲在房里生闷气",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "梦见自己当了玉皇大帝，醒来后要猴孙们天天跪拜",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "听说“齐天大圣”的名号很响，决定自己封自己一个",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz5",
+     "title": "最后的荒唐",
+     "text": "迷迷糊糊爬起来，对着空气喊：俺老孙天下第一！",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/28 15:25:07"
   }
  ]
 }
