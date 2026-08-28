@@ -18455,105 +18455,153 @@
    "ts": "2026/8/28 15:22:58"
   },
   {
-   "storyId": "redstar_p2",
-   "cls": "8G",
-   "name": "刘雨昕",
-   "endingId": "e_cloud",
-   "endingName": "迷",
-   "seconds": 333,
-   "keyCorrect": 2,
-   "keyTotal": 2,
+   "storyId": "gmsrbz94d",
+   "cls": "8C",
+   "name": "k k",
+   "endingId": "e4",
+   "endingName": "尘路",
+   "seconds": 66,
+   "keyCorrect": 0,
+   "keyTotal": 0,
    "choices": [
     {
      "node": "n1",
-     "title": "标语下的夜晚",
-     "text": "询问向导：我们离安塞还有多远？",
+     "title": "第1段 · 周瑜看到诸葛亮挺有才干，心里…",
+     "text": "周瑜看到诸葛亮挺有才干，心里很妒忌",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n2",
-     "title": "白匪警告",
-     "text": "问清楚：你说的土匪是什么人？",
-     "depth": 2,
+     "title": "第2段 · 有一天，周瑜请诸葛亮商议军事…",
+     "text": "周瑜问：十天造得好吗",
+     "depth": 0,
      "key": false,
-     "correct": true
+     "correct": false
     },
     {
      "node": "n3",
-     "title": "白匪是什么",
-     "text": "追问：民团为什么这么恨红军？",
+     "title": "第3段 · 周瑜说：对，先生跟我想的一样…",
+     "text": "周瑜说：对，先生跟我想的一样",
      "depth": 2,
-     "key": true,
+     "key": false,
      "correct": true
     },
     {
      "node": "n4",
-     "title": "第一个红军战士",
-     "text": "问他：你在这边做什么工作？",
-     "depth": 2,
+     "title": "第4段 · 周瑜很高兴，叫诸葛亮当面立下…",
+     "text": "诸葛亮说：只要三天",
+     "depth": 0,
      "key": false,
-     "correct": true
+     "correct": false
     },
     {
      "node": "n5",
-     "title": "废墟之城",
-     "text": "问他：居民们现在住在哪里？",
-     "depth": 1,
+     "title": "第5段 · 诸葛亮喝了几杯酒就走了。鲁肃…",
+     "text": "诸葛亮喝了几杯酒就走了",
+     "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n6",
-     "title": "游击队的呐喊",
-     "text": "松一口气：原来是操练，虚惊一场",
-     "depth": 1,
+     "title": "第6段 · 鲁肃见了诸葛亮。诸葛亮说：三…",
+     "text": "诸葛亮说：既然就要交战，十天造好必然误了大事",
+     "depth": 0,
      "key": false,
-     "correct": true
+     "correct": false
     },
     {
      "node": "n7",
-     "title": "周恩来出场",
-     "text": "用英语回答：我是美国记者，来见毛泽东",
-     "depth": 2,
+     "title": "第7段 · 鲁肃答应了。他不知道诸葛亮借…",
+     "text": "接着叫二十条船驶回南岸",
+     "depth": 0,
      "key": false,
-     "correct": true
+     "correct": false
     },
     {
      "node": "n8",
-     "title": "书生出身的造反者",
-     "text": "问他：你参加革命前是什么出身？",
+     "title": "第8段 · 鲁肃私自拨了二十条快船，每条…",
+     "text": "鲁肃私自拨了二十条快船，每条船上配三十名军士，照诸葛…",
      "depth": 2,
-     "key": true,
+     "key": false,
      "correct": true
     },
     {
      "node": "n9",
-     "title": "李长林",
-     "text": "嘲笑这瘦马，抱怨条件太差",
+     "title": "第9段 · 第一天，不见诸葛亮有什么动静…",
+     "text": "第一天，不见诸葛亮有什么动静",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n10",
+     "title": "第10段 · 诸葛亮吩咐把二十条船用绳索连…",
+     "text": "诸葛亮说：只要三天",
      "depth": 0,
      "key": false,
      "correct": false
     },
     {
-     "node": "nz1",
-     "title": "糊里糊涂",
-     "text": "觉得太累，躺在路边睡着了",
+     "node": "n11",
+     "title": "第11段 · 诸葛亮下令把船头朝西，船尾朝…",
+     "text": "诸葛亮下令把船头朝西，船尾朝东，一字摆开，又叫船上的…",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n12",
+     "title": "第12段 · 曹操听到鼓声和呐喊声，就下令…",
+     "text": "这是公事，希望先生不要推却",
      "depth": 0,
      "key": false,
      "correct": false
     },
     {
-     "node": "nz3",
-     "title": "荒唐念头",
-     "text": "编一本\"红区见闻录\"，回去交差",
+     "node": "n13",
+     "title": "第13段 · 他派人去旱寨调来六千名弓弩手…",
+     "text": "周瑜看到诸葛亮挺有才干，心里很妒忌",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "n14",
+     "title": "第14段 · 诸葛亮又下令把船掉过来，船头…",
+     "text": "第三天管保有十万支箭",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "n15",
+     "title": "第15段 · 诸葛亮吩咐军士们齐声高喊：谢…",
+     "text": "第三天管保有十万支箭",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "n16",
+     "title": "第16段 · 二十条船靠岸的时候，周瑜派来…",
+     "text": "现在军中缺箭，想请先生负责赶造十万支",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "n17",
+     "title": "第17段 · 鲁肃见了周瑜，告诉他借箭的经…",
+     "text": "鲁肃吃惊地说：如果曹兵出来，怎么办",
      "depth": 0,
      "key": false,
      "correct": false
     }
    ],
-   "ts": "2026/8/28 15:23:49"
+   "ts": "2026/8/28 15:24:32"
   },
   {
    "storyId": "xiyouji10",
@@ -18923,153 +18971,145 @@
    "ts": "2026/8/28 15:26:30"
   },
   {
-   "storyId": "gmsrbz94d",
-   "cls": "8C",
-   "name": "k k",
-   "endingId": "e4",
-   "endingName": "尘路",
-   "seconds": 81,
-   "keyCorrect": 0,
-   "keyTotal": 0,
+   "storyId": "redstar_p2",
+   "cls": "8G",
+   "name": "刘雨昕",
+   "endingId": "e_light",
+   "endingName": "抵达",
+   "seconds": 173,
+   "keyCorrect": 3,
+   "keyTotal": 3,
    "choices": [
     {
      "node": "n1",
-     "title": "第1段 · 周瑜看到诸葛亮挺有才干，心里…",
-     "text": "周瑜看到诸葛亮挺有才干，心里很妒忌",
-     "depth": 2,
+     "title": "标语下的夜晚",
+     "text": "仔细观察这个村庄和标语，记在笔记本上",
+     "depth": 1,
      "key": false,
      "correct": true
     },
     {
      "node": "n2",
-     "title": "第2段 · 有一天，周瑜请诸葛亮商议军事…",
-     "text": "有一天，周瑜请诸葛亮商议军事，说：我们就要跟曹军交战",
+     "title": "白匪警告",
+     "text": "问清楚：你说的土匪是什么人？",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n3",
-     "title": "第3段 · 周瑜说：对，先生跟我想的一样…",
-     "text": "周瑜说：对，先生跟我想的一样",
+     "title": "白匪是什么",
+     "text": "追问：民团为什么这么恨红军？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "第一个红军战士",
+     "text": "问他：你在这边做什么工作？",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
-     "node": "n4",
-     "title": "第4段 · 周瑜很高兴，叫诸葛亮当面立下…",
-     "text": "诸葛亮说：只要三天",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
      "node": "n5",
-     "title": "第5段 · 诸葛亮喝了几杯酒就走了。鲁肃…",
-     "text": "水上交战，用什么兵器最好",
-     "depth": 0,
+     "title": "废墟之城",
+     "text": "问他：居民们现在住在哪里？",
+     "depth": 1,
      "key": false,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n6",
-     "title": "第6段 · 鲁肃见了诸葛亮。诸葛亮说：三…",
-     "text": "诸葛亮说：既然就要交战，十天造好必然误了大事",
-     "depth": 0,
+     "title": "游击队的呐喊",
+     "text": "松一口气：原来是操练，虚惊一场",
+     "depth": 1,
      "key": false,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n7",
-     "title": "第7段 · 鲁肃答应了。他不知道诸葛亮借…",
-     "text": "鲁肃见了周瑜，告诉他借箭的经过",
-     "depth": 0,
+     "title": "周恩来出场",
+     "text": "用英语回答：我是美国记者，来见毛泽东",
+     "depth": 2,
      "key": false,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n8",
-     "title": "第8段 · 鲁肃私自拨了二十条快船，每条…",
-     "text": "诸葛亮说：三天之内要造十万支箭，得请你帮帮我的忙",
-     "depth": 0,
-     "key": false,
-     "correct": false
+     "title": "书生出身的造反者",
+     "text": "问他：你参加革命前是什么出身？",
+     "depth": 2,
+     "key": true,
+     "correct": true
     },
     {
      "node": "n9",
-     "title": "第9段 · 第一天，不见诸葛亮有什么动静…",
-     "text": "有一天，周瑜请诸葛亮商议军事，说：我们就要跟曹军交战",
-     "depth": 0,
+     "title": "李长林",
+     "text": "问他：你当红军多久了？",
+     "depth": 1,
      "key": false,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n10",
-     "title": "第10段 · 诸葛亮吩咐把二十条船用绳索连…",
-     "text": "诸葛亮说：只要三天",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "n11",
-     "title": "第11段 · 诸葛亮下令把船头朝西，船尾朝…",
-     "text": "诸葛亮下令把船头朝西，船尾朝东，一字摆开，又叫船上的…",
+     "title": "贺龙的传说",
+     "text": "追问：贺龙后来怎么参加了共产党？",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n12",
-     "title": "第12段 · 曹操听到鼓声和呐喊声，就下令…",
-     "text": "周瑜看到诸葛亮挺有才干，心里很妒忌",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
-     "node": "n13",
-     "title": "第13段 · 他派人去旱寨调来六千名弓弩手…",
-     "text": "他派人去旱寨调来六千名弓弩手，到江边支援水军",
-     "depth": 2,
+     "title": "菜刀",
+     "text": "追问：贺龙的红二方面军后来怎么样了？",
+     "depth": 1,
      "key": false,
      "correct": true
     },
     {
-     "node": "n14",
-     "title": "第14段 · 诸葛亮又下令把船掉过来，船头…",
-     "text": "诸葛亮说：都督委托，当然照办",
-     "depth": 0,
-     "key": false,
-     "correct": false
-    },
-    {
      "node": "n15",
-     "title": "第15段 · 诸葛亮吩咐军士们齐声高喊：谢…",
-     "text": "鲁肃对周瑜说：十万支箭，三天怎么造得成呢",
-     "depth": 0,
+     "title": "少年红军",
+     "text": "问他们：你们为什么参加红军？",
+     "depth": 1,
      "key": false,
-     "correct": false
+     "correct": true
     },
     {
      "node": "n16",
-     "title": "第16段 · 二十条船靠岸的时候，周瑜派来…",
-     "text": "二十条船靠岸的时候，周瑜派来的五百个军士正好来到江边…",
+     "title": "喜欢红军吗",
+     "text": "记下这些，心里震动",
      "depth": 2,
      "key": false,
      "correct": true
     },
     {
      "node": "n17",
-     "title": "第17段 · 鲁肃见了周瑜，告诉他借箭的经…",
-     "text": "这是公事，希望先生不要推却",
-     "depth": 0,
+     "title": "考孩子们",
+     "text": "继续问：谁把这一切教给他们的？",
+     "depth": 1,
      "key": false,
-     "correct": false
+     "correct": true
+    },
+    {
+     "node": "n18",
+     "title": "老狗的故事",
+     "text": "问他：你走了这么远，不累吗？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n19",
+     "title": "六千里长征",
+     "text": "问他：红军教你们读书写字？",
+     "depth": 1,
+     "key": false,
+     "correct": true
     }
    ],
-   "ts": "2026/8/28 15:27:09"
+   "ts": "2026/8/28 15:27:11"
   }
  ]
 }
