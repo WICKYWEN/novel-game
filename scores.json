@@ -18522,6 +18522,107 @@
     }
    ],
    "ts": "2026/8/28 15:23:09"
+  },
+  {
+   "storyId": "redstar_p2",
+   "cls": "8G",
+   "name": "刘雨昕",
+   "endingId": "e_cloud",
+   "endingName": "迷",
+   "seconds": 333,
+   "keyCorrect": 2,
+   "keyTotal": 2,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "标语下的夜晚",
+     "text": "询问向导：我们离安塞还有多远？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "白匪警告",
+     "text": "问清楚：你说的土匪是什么人？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "白匪是什么",
+     "text": "追问：民团为什么这么恨红军？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "第一个红军战士",
+     "text": "问他：你在这边做什么工作？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "废墟之城",
+     "text": "问他：居民们现在住在哪里？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "游击队的呐喊",
+     "text": "松一口气：原来是操练，虚惊一场",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "周恩来出场",
+     "text": "用英语回答：我是美国记者，来见毛泽东",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "书生出身的造反者",
+     "text": "问他：你参加革命前是什么出身？",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "李长林",
+     "text": "嘲笑这瘦马，抱怨条件太差",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "觉得太累，躺在路边睡着了",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "编一本\"红区见闻录\"，回去交差",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/28 15:23:49"
   }
  ]
 }
