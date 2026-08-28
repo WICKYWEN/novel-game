@@ -17935,6 +17935,67 @@
     }
    ],
    "ts": "2026/8/26 14:40:43"
+  },
+  {
+   "storyId": "redstar_p4",
+   "cls": "8G",
+   "name": "p y c",
+   "endingId": "e_cloud",
+   "endingName": "惘",
+   "seconds": 57,
+   "keyCorrect": 1,
+   "keyTotal": 1,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "个人历史",
+     "text": "\"我要的就是这个！\"我兴奋地叫道",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "韶山冲",
+     "text": "记下这些细节，追问他的童年",
+     "depth": 2,
+     "key": true,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "读书与反抗",
+     "text": "问他：您小时候喜欢读什么书？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "《盛世危言》",
+     "text": "觉得他读书读傻了，好好的地不种",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "觉得采访太无聊，跑去逛集市",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "打包行李，连夜离开保安",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/28 15:19:01"
   }
  ]
 }
