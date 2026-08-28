@@ -17996,6 +17996,67 @@
     }
    ],
    "ts": "2026/8/28 15:19:01"
+  },
+  {
+   "storyId": "redstar_p2",
+   "cls": "8C",
+   "name": "j j",
+   "endingId": "e_cloud",
+   "endingName": "迷",
+   "seconds": 77,
+   "keyCorrect": 0,
+   "keyTotal": 1,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "标语下的夜晚",
+     "text": "询问向导：我们离安塞还有多远？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "白匪警告",
+     "text": "问清楚：你说的土匪是什么人？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n3",
+     "title": "白匪是什么",
+     "text": "记下这些制度，继续赶路",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n4",
+     "title": "第一个红军战士",
+     "text": "怀疑他在骗我，坚持要去安塞找毛泽东",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "觉得太累，躺在路边睡着了",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "编一本\"红区见闻录\"，回去交差",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/28 15:20:26"
   }
  ]
 }
