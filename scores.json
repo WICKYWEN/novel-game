@@ -19387,6 +19387,107 @@
     }
    ],
    "ts": "2026/8/28 15:28:35"
+  },
+  {
+   "storyId": "redstar_p4",
+   "cls": "8G",
+   "name": "不知道",
+   "endingId": "e_cloud",
+   "endingName": "惘",
+   "seconds": 166,
+   "keyCorrect": 0,
+   "keyTotal": 1,
+   "choices": [
+    {
+     "node": "n1",
+     "title": "个人历史",
+     "text": "问他：为什么您不愿意谈个人经历？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n2",
+     "title": "韶山冲",
+     "text": "问他：你父亲是个什么样的人？",
+     "depth": 1,
+     "key": true,
+     "correct": false
+    },
+    {
+     "node": "n3",
+     "title": "读书与反抗",
+     "text": "感叹：十岁就敢逃学反抗",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n4",
+     "title": "《盛世危言》",
+     "text": "问他：那时候湖南发生了什么大事？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n5",
+     "title": "湘乡学堂",
+     "text": "问他：那些看不起您的学生，后来怎么样了？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n6",
+     "title": "长沙",
+     "text": "问他：您剪辫子了吗？",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n7",
+     "title": "当兵与自学",
+     "text": "问他：您在图书馆读了些什么书？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n8",
+     "title": "新民学会",
+     "text": "问他：新民学会的会员们后来怎样了？",
+     "depth": 2,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "n9",
+     "title": "北京",
+     "text": "觉得当图书馆助理员太屈才了",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    },
+    {
+     "node": "nz1",
+     "title": "糊里糊涂",
+     "text": "想起自己来听故事的任务",
+     "depth": 1,
+     "key": false,
+     "correct": true
+    },
+    {
+     "node": "nz3",
+     "title": "荒唐念头",
+     "text": "打包行李，连夜离开保安",
+     "depth": 0,
+     "key": false,
+     "correct": false
+    }
+   ],
+   "ts": "2026/8/28 15:29:46"
   }
  ]
 }
