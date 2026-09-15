@@ -66,6 +66,17 @@
    "order": 6,
    "desc": "毛泽东自传: 童年·长沙·革命·井冈山",
    "author": "管理员"
+  },
+  {
+   "id": "kite_p1",
+   "title": "《追风筝的人》第一部·第1-5章",
+   "book": "追风筝的人",
+   "chapters": "第1-5章 · 童年",
+   "playMinutes": 20,
+   "open": false,
+   "order": 7,
+   "desc": "哈桑·石榴树·弹弓",
+   "author": "管理员"
   }
  ]
 }
