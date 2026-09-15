@@ -14,31 +14,36 @@
    "name": "石榴",
    "tier": "hidden",
    "score": 100,
-   "text": "你站在那棵石榴树下，抬头看着血红色的果实，还有树干上那行歪歪扭扭的字。'阿米尔和哈桑，喀布尔的苏丹。'——你记得那把小刀是从阿里厨房拿的，记得石榴汁把手指染成什么颜色，记得哈桑坐在树上看你的样子。"
+   "text": "你站在那棵石榴树下，抬头看着血红色的果实，还有树干上那行歪歪扭扭的字。'阿米尔和哈桑，喀布尔的苏丹。'——你记得那把小刀是从阿里厨房拿的，记得石榴汁把手指染成什么颜色，记得哈桑坐在树上看你的样子。",
+   "image": "https://wickywen.github.io/novel-game/images/kite_p1/ending_light.jpg"
   },
   "e_spark": {
    "name": "弹弓",
    "tier": "insight",
    "score": 85,
-   "text": "你想起了那把弹弓。一个瘦小的哈扎拉男孩，抖着双手，把橡皮带拉到最满，对准了那个所有人都怕的恶霸的左眼。他叫阿塞夫'少爷'，却让他退了一步。"
+   "text": "你想起了那把弹弓。一个瘦小的哈扎拉男孩，抖着双手，把橡皮带拉到最满，对准了那个所有人都怕的恶霸的左眼。他叫阿塞夫'少爷'，却让他退了一步。",
+   "image": "https://wickywen.github.io/novel-game/images/kite_p1/ending_spark.jpg"
   },
   "e_echo": {
    "name": "风筝",
    "tier": "understand",
    "score": 60,
-   "text": "你想起那些一起放风筝的冬天，想起树上的桑葚干和胡桃，想起《七侠荡寇志》看了十三遍还哭的那两个孩子。有些细节模糊了，可那种温暖还在。"
+   "text": "你想起那些一起放风筝的冬天，想起树上的桑葚干和胡桃，想起《七侠荡寇志》看了十三遍还哭的那两个孩子。有些细节模糊了，可那种温暖还在。",
+   "image": "https://wickywen.github.io/novel-game/images/kite_p1/ending_echo.jpg"
   },
   "e_dust": {
    "name": "巷子",
    "tier": "surface",
    "score": 35,
-   "text": "你读完了这段童年，却像是隔着一层雾看的。你记得那条小巷，记得结冰的小溪，可是你在看什么？为什么看了二十六年？"
+   "text": "你读完了这段童年，却像是隔着一层雾看的。你记得那条小巷，记得结冰的小溪，可是你在看什么？为什么看了二十六年？",
+   "image": "https://wickywen.github.io/novel-game/images/kite_p1/ending_dust.jpg"
   },
   "e_cloud": {
    "name": "野鸭",
    "tier": "absurd",
    "score": 10,
-   "text": "阿里说：'他们在猎杀野鸭。'你信了。于是这个国家的每一次剧变，在你眼里都只是野鸭飞过夜空的声音。"
+   "text": "阿里说：'他们在猎杀野鸭。'你信了。于是这个国家的每一次剧变，在你眼里都只是野鸭飞过夜空的声音。",
+   "image": "https://wickywen.github.io/novel-game/images/kite_p1/ending_cloud.jpg"
   }
  },
  "nodes": {
